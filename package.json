@@ -1,0 +1,20 @@
+{
+  "name": "lauranicolay_6_09082021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Devnicolay/LauraNicolay_6_10082021.git"
+  },
+  "author": "Nicolay Laura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Devnicolay/LauraNicolay_6_10082021/issues"
+  },
+  "homepage": "https://github.com/Devnicolay/LauraNicolay_6_10082021#readme"
+}
