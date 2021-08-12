@@ -3,7 +3,6 @@
 }
 
 body {
-  display: flex;
   margin: 40px;
 }
 
@@ -32,22 +31,29 @@ nav ul {
   display: flex;
   list-style: none;
 }
-
-nav li {
+nav ul li {
   color: #901c1c;
   border: 1px solid gray;
   border-radius: 30px;
   padding: 5px;
   margin: 5px;
 }
-
-nav a:link {
+nav ul a:link {
   text-decoration: none;
 }
 
+main img {
+  width: 19em;
+  height: 19em;
+  border-radius: 9.5em;
+  object-fit: cover;
+}
 main h1 {
   color: #901c1c;
   margin: 15px 0px 0px 60px;
+}
+main .Photographers section {
+  display: flex;
 }
 
 /*# sourceMappingURL=style.css.map */

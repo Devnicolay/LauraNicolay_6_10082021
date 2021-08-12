@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Devnicolay/LauraNicolay_6_10082021/issues"
   },
-  "homepage": "https://github.com/Devnicolay/LauraNicolay_6_10082021#readme"
+  "homepage": "https://github.com/Devnicolay/LauraNicolay_6_10082021#readme",
+  "dependencies": {
+    "eslint": "^7.32.0"
+  }
 }

@@ -1,4 +1,17 @@
-main h1 {
-  color: $primary-color;
-  margin: 15px 0px 0px 60px;
+main {
+  img {
+    width: 19em;
+    height: 19em;
+    border-radius: 9.5em;
+    object-fit: cover;
+  }
+  h1 {
+    color: $primary-color;
+    margin: 15px 0px 0px 60px;
+  }
+  .Photographers {
+    section {
+      display: flex;
+    }
+  }
 }
