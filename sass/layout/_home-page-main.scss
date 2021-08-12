@@ -8,10 +8,39 @@ main {
   h1 {
     color: $primary-color;
     margin: 15px 0px 0px 60px;
+    position: absolute;
+    right: 1.5em;
+    top: 1.2em;
   }
   .Photographers {
+    margin-top: 10em;
+    @include tags;
     section {
       display: flex;
+      article {
+        margin: 0em 8em 3em 0em;
+        text-align: center;
+        a {
+          text-decoration: none;
+        }
+        h2 {
+          color: $secondary-color;
+          font-size: 3em;
+          margin-bottom: 0.3em;
+        }
+        .city {
+          color: $primary-color;
+          font-size: 1.3em;
+          margin: 0;
+        }
+        .slogan {
+          margin: 0;
+        }
+        .prices {
+          color: gray;
+          margin: 0;
+        }
+      }
     }
   }
 }

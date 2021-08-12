@@ -27,18 +27,18 @@ header {
   margin-top: 10px;
 }
 
-nav ul {
+nav .tags {
   display: flex;
   list-style: none;
 }
-nav ul li {
+nav .tags li {
   color: #901c1c;
   border: 1px solid gray;
   border-radius: 30px;
   padding: 5px;
   margin: 5px;
 }
-nav ul a:link {
+nav .tags a:link {
   text-decoration: none;
 }
 
@@ -51,9 +51,53 @@ main img {
 main h1 {
   color: #901c1c;
   margin: 15px 0px 0px 60px;
+  position: absolute;
+  right: 1.5em;
+  top: 1.2em;
+}
+main .Photographers {
+  margin-top: 10em;
+}
+main .Photographers .tags {
+  display: flex;
+  list-style: none;
+}
+main .Photographers .tags li {
+  color: #901c1c;
+  border: 1px solid gray;
+  border-radius: 30px;
+  padding: 5px;
+  margin: 5px;
+}
+main .Photographers .tags a:link {
+  text-decoration: none;
 }
 main .Photographers section {
   display: flex;
+}
+main .Photographers section article {
+  margin: 0em 8em 3em 0em;
+  text-align: center;
+}
+main .Photographers section article a {
+  text-decoration: none;
+}
+main .Photographers section article h2 {
+  color: #d3573c;
+  font-size: 3em;
+  margin-bottom: 0.3em;
+}
+main .Photographers section article .city {
+  color: #901c1c;
+  font-size: 1.3em;
+  margin: 0;
+}
+main .Photographers section article .slogan {
+  margin: 0;
+}
+main .Photographers section article .prices {
+  color: gray;
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
