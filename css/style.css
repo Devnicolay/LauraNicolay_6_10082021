@@ -20,13 +20,21 @@ body {
 }
 
 header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 #logo {
   margin-top: 10px;
+  grid-column-start: 1;
+  grid-row-start: 1;
 }
 
+nav {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
 nav .tags {
   display: flex;
   list-style: none;
@@ -42,6 +50,11 @@ nav .tags a:link {
   text-decoration: none;
 }
 
+main h1 {
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+
 main img {
   width: 19em;
   height: 19em;
@@ -51,9 +64,6 @@ main img {
 main h1 {
   color: #901c1c;
   margin: 15px 0px 0px 60px;
-  position: absolute;
-  right: 1.5em;
-  top: 1.2em;
 }
 main .Photographers {
   margin-top: 10em;

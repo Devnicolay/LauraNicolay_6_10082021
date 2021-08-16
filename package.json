@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+    "sass": "sass --watch ./sass/main.scss:./css/style.css",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,8 @@
     "url": "https://github.com/Devnicolay/LauraNicolay_6_10082021/issues"
   },
   "homepage": "https://github.com/Devnicolay/LauraNicolay_6_10082021#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "eslint": "^7.32.0"
   }
 }
