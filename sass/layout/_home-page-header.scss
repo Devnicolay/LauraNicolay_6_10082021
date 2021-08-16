@@ -1,6 +1,6 @@
 header {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 400px;
   grid-template-rows: 1fr;
 }
 
@@ -14,11 +14,4 @@ nav {
   @include tags;
   grid-column-start: 2;
   grid-row-start: 1;
-}
-
-main {
-  h1 {
-    grid-column-start: 3;
-    grid-row-start: 1;
-  }
 }

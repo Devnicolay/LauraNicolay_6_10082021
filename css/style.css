@@ -21,7 +21,7 @@ body {
 
 header {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 400px;
   grid-template-rows: 1fr;
 }
 
@@ -50,11 +50,6 @@ nav .tags a:link {
   text-decoration: none;
 }
 
-main h1 {
-  grid-column-start: 3;
-  grid-row-start: 1;
-}
-
 main img {
   width: 19em;
   height: 19em;
@@ -63,7 +58,9 @@ main img {
 }
 main h1 {
   color: #901c1c;
-  margin: 15px 0px 0px 60px;
+  position: absolute;
+  right: 2em;
+  top: 1em;
 }
 main .Photographers {
   margin-top: 10em;
