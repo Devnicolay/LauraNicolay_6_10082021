@@ -8,7 +8,7 @@
         "tags": ["portrait", "events", "travel", "animals"],
         "tagline": "Voir le beau dans le quotidien",
         "price": 400,
-        "portrait": "images/Photographers ID Photos/MimiKeel.jpg"
+        "portrait": "images/Photographers-ID-Photos/MimiKeel.jpg"
       },
       {
         "name": "Ellie-Rose Wilkens",
@@ -18,7 +18,7 @@
         "tags": ["sports", "architecture"],
         "tagline": "Capturer des compositions complexes",
         "price": 250,
-        "portrait": "images/Photographers ID Photos/EllieRoseWilkens.jpg"
+        "portrait": "images/Photographers-ID-Photos/EllieRoseWilkens.jpg"
       },
       {
         "name": "Tracy Galindo",
@@ -28,7 +28,7 @@
         "tags": ["art", "fashion", "events"],
         "tagline": "Photographe freelance",
         "price": 500,
-        "portrait": "images/Photographers ID Photos/TracyGalindo.jpg"
+        "portrait": "images/Photographers-ID-Photos/TracyGalindo.jpg"
       },
       {
         "name": "Nabeel Bradford",
@@ -38,7 +38,7 @@
         "tags": ["travel", "portrait"],
         "tagline": "Toujours aller de l'avant",
         "price": 350,
-        "portrait": "images/Photographers ID Photos/NabeelBradford.jpg"
+        "portrait": "images/Photographers-ID-Photos/NabeelBradford.jpg"
       },
       {
         "name": "Rhode Dubois",
@@ -48,7 +48,7 @@
         "tags": ["sport", "fashion", "events", "animals"],
         "tagline": "Je crée des souvenirs",
         "price": 275,
-        "portrait": "images/Photographers ID Photos/RhodeDubois.jpg"
+        "portrait": "images/Photographers-ID-Photos/RhodeDubois.jpg"
       },
       {
         "name": "Marcel Nikolic",
@@ -58,7 +58,7 @@
         "tags": ["travel", "architecture"],
         "tagline": "Toujours à la recherche de LA photo",
         "price": 300,
-        "portrait": "images/Photographers ID Photos/MarcelNikolic.jpg"
+        "portrait": "images/Photographers-ID-Photos/MarcelNikolic.jpg"
       }
     ],
     "media": [
