@@ -7,22 +7,31 @@ async function displayPhotographers() {
       "./data-photographers/photographers.json"
     );
     const data = await dataPhotographers.json();
-    containerPhotographers.innerHTML =
-      "<section><article><a><img src=" +
-      data.photographers[0].portrait +
-      "></a><h2>" +
-      data.photographers[0].name +
-      "</h2><p class=city>" +
-      data.photographers[0].city +
-      "</p><p class=slogan>" +
-      data.photographers[0].tagline +
-      "</p><p class=prices>" +
-      data.photographers[0].price +
-      "€/jour</p><div aria-label=tag filter><ul class=tags><a href=#><li><span aria-hidden=true>#</span>" +
-      data.photographers[0].tags.join(
-        "</li></a><a href=#><li><span aria-hidden=true>#</span>"
-      ) +
-      "</li></a></ul></div></article><section>";
+    for (var i = 0; i < data.photographers.length; i++) {
+      const portraitPhotographer = data.photographers[i].portrait;
+      const namePhotographer = data.photographers[i].name;
+      const cityPhotographer = data.photographers[i].city;
+      const taglinePhotographer = data.photographers[i].tagline;
+      const pricePhotographer = data.photographers[i].price;
+      const tagsPhotographer = data.photographers[i].tags;
+
+      containerPhotographers.innerHTML +=
+        "<section><article><a href=#><img src=" +
+        portraitPhotographer +
+        "><h2>" +
+        namePhotographer +
+        "</h2></a><p class=city>" +
+        cityPhotographer +
+        "</p><p class=slogan>" +
+        taglinePhotographer +
+        "</p><p class=prices>" +
+        pricePhotographer +
+        "€/jour</p><div aria-label=tag filter><ul class=tags><a href=#><li><span aria-hidden=true>#</span>" +
+        tagsPhotographer.join(
+          "</li></a><a href=#><li><span aria-hidden=true>#</span>"
+        ) +
+        "</li></a></ul></div></article><section>";
+    }
     return data;
   } catch (exception) {
     console.log("attention une erreur a été rencontrée");
