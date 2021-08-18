@@ -1,6 +1,6 @@
-const portrait = document.querySelector(".portrait");
+const body = document.querySelector("body");
 const containerPhotographers = document.querySelector(".Photographers");
-portrait.addEventListener("click", displayPhotographers);
+window.onload = displayPhotographers();
 async function displayPhotographers() {
   try {
     const dataPhotographers = await fetch(
@@ -16,7 +16,7 @@ async function displayPhotographers() {
       const tagsPhotographer = data.photographers[i].tags;
 
       containerPhotographers.innerHTML +=
-        "<section><article><a href=#><img src=" +
+        "<article><a href=#><img src=" +
         portraitPhotographer +
         "><h2>" +
         namePhotographer +
@@ -30,7 +30,7 @@ async function displayPhotographers() {
         tagsPhotographer.join(
           "</li></a><a href=#><li><span aria-hidden=true>#</span>"
         ) +
-        "</li></a></ul></div></article><section>";
+        "</li></a></ul></div></article>";
     }
     return data;
   } catch (exception) {

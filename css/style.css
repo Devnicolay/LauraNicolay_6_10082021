@@ -64,6 +64,8 @@ main h1 {
 }
 main .Photographers {
   margin-top: 10em;
+  width: 22em;
+  display: flex;
 }
 main .Photographers .tags {
   display: flex;
@@ -79,32 +81,33 @@ main .Photographers .tags li {
 main .Photographers .tags a:link {
   text-decoration: none;
 }
-main .Photographers section {
-  display: flex;
-}
-main .Photographers section article {
+main .Photographers article {
   margin: 0em 8em 3em 0em;
   text-align: center;
 }
-main .Photographers section article a {
+main .Photographers article a {
   text-decoration: none;
 }
-main .Photographers section article h2 {
+main .Photographers article h2 {
   color: #d3573c;
   font-size: 3em;
   margin-bottom: 0.3em;
 }
-main .Photographers section article .city {
+main .Photographers article .city {
   color: #901c1c;
   font-size: 1.3em;
   margin: 0;
 }
-main .Photographers section article .slogan {
+main .Photographers article .slogan {
   margin: 0;
 }
-main .Photographers section article .prices {
+main .Photographers article .prices {
   color: gray;
   margin: 0;
+}
+main .Photographers article .tags {
+  justify-content: center;
+  padding-right: 2.3em;
 }
 
 /*# sourceMappingURL=style.css.map */
