@@ -1,23 +1,25 @@
-// DOM elements
-const portraitTag = document.querySelector(".portrait");
-const artTag = document.querySelector(".art");
-const fashionTag = document.querySelector(".fashion");
-const architectureTag = document.querySelector(".architecture");
-const travelTag = document.querySelector(".travel");
-const sportTag = document.querySelector(".sport");
-const animalsTag = document.querySelector(".animals");
-const eventsTag = document.querySelector(".events");
-
-// Import data JSON
-const getPhotographers = async function () {
-  const reponse = await fetch("./data-photographers/photographers.json");
-  const data = await reponse.json();
-};
+import("./list-photographers.js");
 
 // Apply filters tags
-portraitTag.addEventListener("click", displayPortraitPhotographer);
-function displayPortraitPhotographer() {
-    if photographers.tags.index.of("portrait") {
-        // afficher le photographe
+const tags = document.querySelector(".tag");
+
+[tags].forEach((tag, index) => {
+  const tagValue = tags.getAttribute("data");
+  tags.addEventListener("click", () => {
+    displayFilter(tagValue);
+  });
+});
+
+async function displayFilter(tagValue) {
+  console.log("tagValue");
+  const photographers = await fetchPhotographers();
+  const filteredPhotographers = Array.from(photographers).filter(
+    (photographer) => {
+      return photographer.tags.includes(tagValue);
     }
+  );
+  containerPhotographers.innerHTML = "";
+  filteredPhotographers.forEach((photographer) => {
+    createTemplate(photographer);
+  });
 }
