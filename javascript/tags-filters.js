@@ -1,19 +1,15 @@
-import("./list-photographers.js");
-
 // Apply filters tags
-const tags = document.querySelector(".tag");
-
-[tags].forEach((tag, index) => {
-  const tagValue = tags.getAttribute("data");
-  tags.addEventListener("click", () => {
+const tags = document.querySelectorAll(".tag");
+tags.forEach((tag, index) => {
+  const tagValue = tag.getAttribute("data");
+  tag.addEventListener("click", () => {
     displayFilter(tagValue);
   });
 });
 
 async function displayFilter(tagValue) {
-  console.log("tagValue");
   const photographers = await fetchPhotographers();
-  const filteredPhotographers = Array.from(photographers).filter(
+  const filteredPhotographers = photographers.photographers.filter(
     (photographer) => {
       return photographer.tags.includes(tagValue);
     }
