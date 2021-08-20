@@ -5,26 +5,24 @@ main {
     border-radius: 9.5em;
     object-fit: cover;
   }
-  h1 {
-    color: $primary-color;
-    position: absolute;
-    right: 2em;
-    top: 1em;
-  }
+
   .Photographers {
     margin-top: 10em;
-    width: 22em;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     @include tags;
     article {
-      margin: 0em 8em 3em 0em;
+      margin: 0em 0em 3em 0em;
       text-align: center;
+      justify-content: space-between;
+      width: 30em;
       a {
         text-decoration: none;
       }
       h2 {
         color: $secondary-color;
-        font-size: 3em;
+        font-size: 2.25em;
         margin-bottom: 0.3em;
       }
       .city {

@@ -3,7 +3,7 @@
 }
 
 body {
-  margin: 40px;
+  margin: 0;
 }
 
 @font-face {
@@ -20,34 +20,32 @@ body {
 }
 
 header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 400px;
-  grid-template-rows: 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0em 6em;
 }
-
-#logo {
+header #logo {
   margin-top: 10px;
-  grid-column-start: 1;
-  grid-row-start: 1;
 }
-
-nav {
-  grid-column-start: 2;
-  grid-row-start: 1;
-}
-nav .tags {
+header nav .tags {
   display: flex;
   list-style: none;
 }
-nav .tags li {
+header nav .tags li {
   color: #901c1c;
   border: 1px solid gray;
   border-radius: 30px;
   padding: 5px;
   margin: 5px;
 }
-nav .tags a:link {
+header nav .tags a:link {
   text-decoration: none;
+}
+header h1 {
+  color: #901c1c;
+  margin-top: 0.4em;
+  font-size: 2.25em;
 }
 
 main img {
@@ -56,16 +54,11 @@ main img {
   border-radius: 9.5em;
   object-fit: cover;
 }
-main h1 {
-  color: #901c1c;
-  position: absolute;
-  right: 2em;
-  top: 1em;
-}
 main .Photographers {
   margin-top: 10em;
-  width: 22em;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 main .Photographers .tags {
   display: flex;
@@ -82,15 +75,17 @@ main .Photographers .tags a:link {
   text-decoration: none;
 }
 main .Photographers article {
-  margin: 0em 8em 3em 0em;
+  margin: 0em 0em 3em 0em;
   text-align: center;
+  justify-content: space-between;
+  width: 30em;
 }
 main .Photographers article a {
   text-decoration: none;
 }
 main .Photographers article h2 {
   color: #d3573c;
-  font-size: 3em;
+  font-size: 2.25em;
   margin-bottom: 0.3em;
 }
 main .Photographers article .city {

@@ -1,17 +1,17 @@
 header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 400px;
-  grid-template-rows: 1fr;
-}
-
-#logo {
-  margin-top: 10px;
-  grid-column-start: 1;
-  grid-row-start: 1;
-}
-
-nav {
-  @include tags;
-  grid-column-start: 2;
-  grid-row-start: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0em 6em;
+  #logo {
+    margin-top: 10px;
+  }
+  nav {
+    @include tags;
+  }
+  h1 {
+    color: $primary-color;
+    margin-top: 0.4em;
+    font-size: 2.25em;
+  }
 }
