@@ -1,38 +1,35 @@
-// Template photographer
-const containerPhotographers = document.querySelector(".Photographers");
+// Template photographers page
+const pagePhotographer = document.querySelector(".page-photographer");
 
 async function createTemplate(photographers) {
   const portraitPhotographer = photographers.portrait;
   const namePhotographer = photographers.name;
   const cityPhotographer = photographers.city;
   const taglinePhotographer = photographers.tagline;
-  const pricePhotographer = photographers.price;
   const tagsPhotographer = photographers.tags;
 
-  containerPhotographers.innerHTML +=
-    "<article><a href=photographes.html><img src=" +
-    portraitPhotographer +
-    "><h2>" +
+  pagePhotographer.innerHTML =
+    "<article class=header-main><div class=name-and-contact><h1 class=h1-page-photographer>" +
     namePhotographer +
-    "</h2></a><p class=city>" +
+    "</h1><button>Contactez-moi</button></div><p class=city>" +
     cityPhotographer +
     "</p><p class=slogan>" +
     taglinePhotographer +
-    "</p><p class=prices>" +
-    pricePhotographer +
-    "€/jour</p><div aria-label=tag filter><ul class=tags><a href=#><li><span aria-hidden=true>#</span>" +
+    "</p><ul class=tags><a href=#><li><span aria-hidden=true>#</span>" +
     tagsPhotographer.join(
       "</li></a><a href=#><li><span aria-hidden=true>#</span>"
     ) +
-    "</li></a></ul></div></article>";
+    "</li></a></ul></article><aside><a href=photographes.html><img src=" +
+    portraitPhotographer +
+    "></aside>";
 }
 
-// Apply show all photographer
-window.onload = displayPhotographers();
-async function displayPhotographers() {
+// Display photographer info and medias
+window.onload = displayPagePhotographer();
+async function displayPagePhotographer() {
   const photographerData = await fetchPhotographers();
   const showAll = photographerData.photographers;
-  containerPhotographers.innerHTML = "";
+  pagePhotographer.innerHTML = "";
   showAll.forEach((photographer) => {
     createTemplate(photographer);
   });

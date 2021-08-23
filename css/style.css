@@ -60,7 +60,7 @@ main img {
   border-radius: 9.5em;
   object-fit: cover;
 }
-main h1 {
+main .h1-index {
   color: #901c1c;
   font-size: 2.25em;
   position: absolute;
@@ -132,6 +132,53 @@ main .scroll-link {
 main .scroll-link a {
   text-decoration: none;
   color: black;
+}
+
+.page-photographer {
+  display: flex;
+}
+.page-photographer .header-main {
+  margin: 0em 6em;
+}
+.page-photographer .header-main .tags {
+  display: flex;
+  list-style: none;
+}
+.page-photographer .header-main .tags li {
+  color: #901c1c;
+  border: 1px solid gray;
+  border-radius: 30px;
+  padding: 5px;
+  margin: 5px;
+}
+.page-photographer .header-main .tags a:link {
+  text-decoration: none;
+}
+.page-photographer .header-main .name-and-contact {
+  display: flex;
+}
+.page-photographer .header-main .name-and-contact .h1-page-photographer {
+  color: #d3573c;
+  font-size: 4em;
+  margin-right: 2em;
+}
+.page-photographer .header-main .name-and-contact button {
+  background-color: #901c1c;
+  color: white;
+  border: #901c1c;
+  border-radius: 0.31em;
+  font-size: 1em;
+  height: 3.12em;
+  padding: 0em 1em;
+  margin: 4.2em 10em 0em 0em;
+}
+.page-photographer .header-main .city {
+  color: #901c1c;
+  font-size: 1.5em;
+}
+.page-photographer .header-main .slogan {
+  color: gray;
+  font-size: 1.12em;
 }
 
 /*# sourceMappingURL=style.css.map */

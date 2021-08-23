@@ -1,0 +1,33 @@
+.page-photographer {
+  display: flex;
+  .header-main {
+    margin: 0em 6em;
+    @include tags;
+    .name-and-contact {
+      display: flex;
+      .h1-page-photographer {
+        color: $secondary-color;
+        font-size: 4em;
+        margin-right: 2em;
+      }
+      button {
+        background-color: $primary-color;
+        color: white;
+        border: $primary-color;
+        border-radius: 0.31em;
+        font-size: 1em;
+        height: 3.12em;
+        padding: 0em 1em;
+        margin: 4.2em 10em 0em 0em;
+      }
+    }
+    .city {
+      color: $primary-color;
+      font-size: 1.5em;
+    }
+    .slogan {
+      color: gray;
+      font-size: 1.12em;
+    }
+  }
+}
