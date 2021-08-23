@@ -4,12 +4,11 @@ header {
   justify-content: space-between;
   margin: 0em 6em;
   #logo {
-    margin-top: 10px;
+    margin-top: 0.62em;
   }
   nav {
     @include tags;
     margin-right: 19.4em;
-    flex-wrap: wrap;
   }
 }
 

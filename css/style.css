@@ -28,11 +28,10 @@ header {
   margin: 0em 6em;
 }
 header #logo {
-  margin-top: 10px;
+  margin-top: 0.62em;
 }
 header nav {
   margin-right: 19.4em;
-  flex-wrap: wrap;
 }
 header nav .tags {
   display: flex;
@@ -126,8 +125,8 @@ main .scroll-link {
   position: fixed;
   top: 0;
   left: 44%;
-  padding: 5px 15px;
-  border-radius: 5px;
+  padding: 0.31em 0.94em;
+  border-radius: 0.31em;
   font-weight: bold;
 }
 main .scroll-link a {
