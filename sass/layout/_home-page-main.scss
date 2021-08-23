@@ -6,6 +6,15 @@ main {
     object-fit: cover;
   }
 
+  h1 {
+    color: $primary-color;
+    font-size: 2.25em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0.3em;
+  }
+
   .Photographers {
     margin-top: 10em;
     display: flex;

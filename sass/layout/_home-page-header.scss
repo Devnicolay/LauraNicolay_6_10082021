@@ -8,10 +8,15 @@ header {
   }
   nav {
     @include tags;
+    margin-right: 19.4em;
   }
-  h1 {
-    color: $primary-color;
-    margin-top: 0.4em;
-    font-size: 2.25em;
+}
+
+/* Pour écran plus petit que 1440px */
+@media screen and (max-width: 1440px) {
+  header {
+    nav {
+      margin: 3.75em 0 0 -15em;
+    }
   }
 }
