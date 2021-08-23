@@ -9,6 +9,7 @@ header {
   nav {
     @include tags;
     margin-right: 19.4em;
+    flex-wrap: wrap;
   }
 }
 
@@ -16,7 +17,7 @@ header {
 @media screen and (max-width: 1440px) {
   header {
     nav {
-      margin: 3.75em 0 0 -15em;
+      margin-left: 20%;
     }
   }
 }

@@ -5,6 +5,7 @@
 
 body {
   margin: 0;
+  margin-top: 1.87em;
 }
 
 @font-face {
@@ -31,6 +32,7 @@ header #logo {
 }
 header nav {
   margin-right: 19.4em;
+  flex-wrap: wrap;
 }
 header nav .tags {
   display: flex;
@@ -50,7 +52,7 @@ header nav .tags a:link {
 /* Pour écran plus petit que 1440px */
 @media screen and (max-width: 1440px) {
   header nav {
-    margin: 3.75em 0 0 -15em;
+    margin-left: 20%;
   }
 }
 main img {
@@ -63,7 +65,7 @@ main h1 {
   color: #901c1c;
   font-size: 2.25em;
   position: absolute;
-  top: 0;
+  top: 0.8em;
   right: 0;
   margin-top: 0.3em;
 }
@@ -116,6 +118,21 @@ main .Photographers article .prices {
 main .Photographers article .tags {
   justify-content: center;
   padding-right: 2.3em;
+}
+
+main .scroll-link {
+  display: none;
+  background-color: #d3573c;
+  position: fixed;
+  top: 0;
+  left: 44%;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+main .scroll-link a {
+  text-decoration: none;
+  color: black;
 }
 
 /*# sourceMappingURL=style.css.map */

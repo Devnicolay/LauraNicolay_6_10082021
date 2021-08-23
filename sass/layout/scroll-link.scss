@@ -1,0 +1,16 @@
+main {
+  .scroll-link {
+    display: none;
+    background-color: $secondary-color;
+    position: fixed;
+    top: 0;
+    left: 44%;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
