@@ -9,7 +9,7 @@ async function createTemplate(photographers) {
   const tagsPhotographer = photographers.tags;
 
   pagePhotographer.innerHTML =
-    "<article class=header-main><div class=name-and-contact><h1 class=h1-page-photographer>" +
+    "<section class=header-main><article class=header-left><div class=name-and-contact><h1 class=h1-page-photographer>" +
     namePhotographer +
     "</h1><button>Contactez-moi</button></div><p class=city>" +
     cityPhotographer +
@@ -21,7 +21,7 @@ async function createTemplate(photographers) {
     ) +
     "</li></a></ul></article><aside><a href=photographes.html><img src=" +
     portraitPhotographer +
-    "></aside>";
+    "></aside></section><section class=main-page-photographer>";
 }
 
 // Display photographer info and medias

@@ -1,33 +1,100 @@
-.page-photographer {
-  display: flex;
-  .header-main {
-    margin: 0em 6em;
-    @include tags;
-    .name-and-contact {
+#main-page-photographer {
+  margin: 2em 6em;
+  .page-photographer {
+    .header-main {
       display: flex;
-      .h1-page-photographer {
-        color: $secondary-color;
-        font-size: 4em;
-        margin-right: 2em;
+      background-color: #fafafa;
+      .header-left {
+        margin: 0em 6em 0em 3.5em;
+        @include tags;
+        .tags {
+          padding-left: 0;
+          margin-bottom: 2.5em;
+        }
+        .name-and-contact {
+          display: flex;
+          .h1-page-photographer {
+            color: $secondary-color;
+            font-size: 4em;
+            margin-right: 2em;
+            margin-bottom: 0;
+          }
+          button {
+            background-color: $primary-color;
+            color: white;
+            border: $primary-color;
+            border-radius: 0.31em;
+            height: 3em;
+            font-size: 1em;
+            padding: 0em 1em;
+            margin: 5em 10em 0em 0em;
+          }
+        }
+        .city {
+          color: $primary-color;
+          font-size: 1.5em;
+        }
+        .slogan {
+          color: gray;
+          font-size: 1em;
+        }
       }
+      aside {
+        img {
+          margin-top: 3.75em;
+        }
+      }
+    }
+  }
+  .select-filters {
+    display: flex;
+    margin-top: 1em;
+    label {
+      font-weight: bold;
+      margin-right: 1em;
+      margin-top: 0.5em;
+    }
+    .dropdown-filters {
+      background-color: $primary-color;
+      border-radius: 0.31em;
+      padding: 0.3em 1em 0em 1em;
       button {
-        background-color: $primary-color;
         color: white;
-        border: $primary-color;
-        border-radius: 0.31em;
+        background-color: $primary-color;
+        border-color: transparent;
+        font-family: DM_Sans;
         font-size: 1em;
-        height: 3.12em;
-        padding: 0em 1em;
-        margin: 4.2em 10em 0em 0em;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        padding-left: 0.5em;
+        span {
+          margin-right: 1.2em;
+        }
+      }
+      ul {
+        list-style: none;
+        padding-left: 0;
+        display: none;
+        li {
+          border-top: 1px solid white;
+          padding-top: 0.6em;
+          padding-bottom: 0.6em;
+        }
       }
     }
-    .city {
-      color: $primary-color;
-      font-size: 1.5em;
-    }
-    .slogan {
-      color: gray;
-      font-size: 1.12em;
+  }
+  .select-filters {
+    select {
+      background-color: $primary-color;
+      color: white;
+      font-family: DM_Sans;
+      border-radius: 0.31em;
+      border-color: $primary-color;
+      .date {
+        background-color: red !important;
+      }
     }
   }
 }

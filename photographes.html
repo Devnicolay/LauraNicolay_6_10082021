@@ -11,10 +11,39 @@
         <header role="banner">
                 <a href="index.html" aria-label="FishEye" id="logo"><img src="images/logo.svg" alt="Fisheye Home page" /></a>
         </header>
-        <main>
+        <main id="main-page-photographer">
+            <!-- Header of main -->
             <div class="page-photographer"></div>
+            <!-- Select filter for medias -->
+            <div class="select-filters">
+                <label for="sort">Trier par</label>
+                <div class="dropdown-filters">
+                    <button class="dropdown-select" aria-haspopup="true" aria-expanded="false" href="#">
+                        <span class="dropdown-select-content">
+                            Popularité
+                        </span>
+                        <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1.33447L8.00465 8.13311L14.5973 1.33447" stroke="#E9E9E9" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <ul class="dropdown">
+                        <li>
+                            <a href="">
+                                Date
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                Titre
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Medias fo photographer -->         
         </main>
         <script src="./javascript/collect-json-data.js"></script>
         <script src="./javascript/photographers-page.js"></script>
+        <script src="./javascript/dropdown-select.js"></script>
     </body>
 </html>
