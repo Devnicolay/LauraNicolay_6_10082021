@@ -212,6 +212,15 @@ main .scroll-link a {
   border-color: transparent;
   font-family: DM_Sans;
   font-size: 1em;
+  display: flex;
+}
+#main-page-photographer .select-filters .dropdown-filters button i {
+  margin-left: 1em;
+}
+#main-page-photographer .select-filters .dropdown-filters button img {
+  width: 1em;
+  height: 0.7em;
+  margin-left: 1em;
 }
 #main-page-photographer .select-filters .dropdown-filters a {
   text-decoration: none;
@@ -231,6 +240,9 @@ main .scroll-link a {
   padding-top: 0.6em;
   padding-bottom: 0.6em;
 }
+#main-page-photographer .select-filters {
+  margin-bottom: 3em;
+}
 #main-page-photographer .select-filters select {
   background-color: #901c1c;
   color: white;
@@ -240,6 +252,25 @@ main .scroll-link a {
 }
 #main-page-photographer .select-filters select .date {
   background-color: red !important;
+}
+#main-page-photographer .medias {
+  display: flex;
+}
+#main-page-photographer .medias article .title-and-likes {
+  display: flex;
+  justify-content: space-between;
+  color: #901c1c;
+}
+#main-page-photographer .medias article .title-and-likes .number-heart {
+  display: flex;
+}
+#main-page-photographer .medias article .title-and-likes .number-heart .like {
+  font-weight: bold;
+}
+#main-page-photographer .medias article .title-and-likes .number-heart img {
+  width: 1.3em;
+  height: 1.3em;
+  margin: 1em 0em 0em 0.3em;
 }
 
 /*# sourceMappingURL=style.css.map */

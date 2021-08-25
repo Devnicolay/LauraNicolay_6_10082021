@@ -64,6 +64,15 @@
         border-color: transparent;
         font-family: DM_Sans;
         font-size: 1em;
+        display: flex;
+        i {
+          margin-left: 1em;
+        }
+        img {
+          width: 1em;
+          height: 0.7em;
+          margin-left: 1em;
+        }
       }
       a {
         text-decoration: none;
@@ -86,6 +95,7 @@
     }
   }
   .select-filters {
+    margin-bottom: 3em;
     select {
       background-color: $primary-color;
       color: white;
@@ -94,6 +104,27 @@
       border-color: $primary-color;
       .date {
         background-color: red !important;
+      }
+    }
+  }
+  .medias {
+    display: flex;
+    article {
+      .title-and-likes {
+        display: flex;
+        justify-content: space-between;
+        color: $primary-color;
+        .number-heart {
+          display: flex;
+          .like {
+            font-weight: bold;
+          }
+          img {
+            width: 1.3em;
+            height: 1.3em;
+            margin: 1em 0em 0em 0.3em;
+          }
+        }
       }
     }
   }
