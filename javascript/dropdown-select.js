@@ -6,8 +6,7 @@ dropdownMenu.addEventListener("click", unrollDropdown);
 function unrollDropdown() {
   dropdownLink.style.display = "block";
   dropdownMenu.setAttribute("aria-expanded", "true");
-  arrow.innerHTML =
-    "<img onclick=rollUpDropdown class=chevron-up src=./images/rollup.svg alt=fermeture-liste-déroulante>";
+  arrow.innerHTML = "<i onclick=rollUpDropdown class='fas fa-chevron-up'></i>";
 }
 
 function rollUpDropdown() {

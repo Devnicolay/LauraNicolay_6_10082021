@@ -38,7 +38,7 @@ async function createTemplateMedias(media) {
     title +
     "</p><div class=number-heart><p class=like>" +
     like +
-    "</p><img src=./images/heart.png></div></div></article>";
+    "</p><i class='fas fa-heart' aria-label='likes'></i></div></div></article>";
 }
 
 // Display photographer info and medias
