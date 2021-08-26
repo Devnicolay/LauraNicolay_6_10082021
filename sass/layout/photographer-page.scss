@@ -109,7 +109,14 @@
   }
   .medias {
     display: flex;
-    article {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .block-media {
+      margin-bottom: 0.5em;
+      .media-img-video {
+        border-radius: 0.31em;
+        object-fit: cover;
+      }
       .title-and-likes {
         display: flex;
         justify-content: space-between;

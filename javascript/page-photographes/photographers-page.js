@@ -31,8 +31,8 @@ async function createTemplateMedias(media) {
   const title = media.title;
   const like = media.likes;
 
-  pagePhotographerMedia.innerHTML =
-    "<article><img src=" +
+  pagePhotographerMedia.innerHTML +=
+    "<article class=block-media><img class=media-img-video src=" +
     medias +
     "><div class=title-and-likes><p class=title>" +
     title +
