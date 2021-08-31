@@ -2,6 +2,7 @@
 const containerPhotographers = document.querySelector(".Photographers");
 
 async function createTemplate(photographers) {
+  const idPhotographer = photographers.id;
   const portraitPhotographer = photographers.portrait;
   const namePhotographer = photographers.name;
   const cityPhotographer = photographers.city;
@@ -10,7 +11,9 @@ async function createTemplate(photographers) {
   const tagsPhotographer = photographers.tags;
 
   containerPhotographers.innerHTML +=
-    "<article><a href=photographes.html><img src=" +
+    "<article><a href=photographes.html?id=" +
+    idPhotographer +
+    "><img src=" +
     portraitPhotographer +
     "><h2>" +
     namePhotographer +
