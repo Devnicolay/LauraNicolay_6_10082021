@@ -103,11 +103,9 @@ window.onload = loadMediaPhotographers();
 async function loadMediaPhotographers() {
   const photographerData = await fetchPhotographers();
   const showAllMedias = photographerData.media;
-  showAllMedias.forEach((data) => {
-    const media = MediaFactory.createMedia(data);
-
-    pagePhotographerMedia.innerHTML += media.createHtml();
-
-    media.say();
+  const mediasInstances = showAllMedias.map((media) => {
+    const medias = MediaFactory.createMedia(media);
+    pagePhotographerMedia.innerHTML += medias.createHtml();
+    medias.say();
   });
 }
