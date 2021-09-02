@@ -1,138 +1,91 @@
-// Display ID for all photographer
-async function finderPhotographerId(photographers) {
-  const IdPhotographer = photographers.id;
-  console.log(IdPhotographer);
-}
+//Test class
+class PhotographerFactory {
+  static finderIdPhotographer(data) {
+    let id;
 
-async function displayPhotographer() {
-  const photographerData = await fetchPhotographers();
-  const showAll = photographerData.photographers;
-  showAll.forEach((photographer) => {
-    finderPhotographerId(photographer);
-  });
-}
-
-// display all media for Mimi Keel
-async function finderMediasMimi(media) {
-  const IdPhotographer = media.photographerId;
-  const imagePhotographer = media.image;
-  const videoPhotographer = media.video;
-  if (IdPhotographer === 243) {
-    console.log(imagePhotographer + videoPhotographer);
+    if (location.search === "?id=243") {
+      id = new Mimi(data);
+    } else if (location.search === "?id=930") {
+      id = new Ellie(data);
+    } else if (location.search === "?id=82") {
+      id = new Tracy(data);
+    } else if (location.search === "?id=527") {
+      id = new Nabeel(data);
+    } else if (location.search === "?id=925") {
+      id = new Rhode(data);
+    } else if (location.search === "?id=195") {
+      id = new Marcel(data);
+    }
+    return id;
   }
 }
 
-async function displayMediaMimi() {
-  const photographerData = await fetchPhotographers();
-  const showAllMedias = photographerData.media;
-  showAllMedias.forEach((medias) => {
-    finderMediasMimi(medias);
-  });
-}
-
-// display all media for Ellie-Rose Wilkens
-async function finderMediasEllie(media) {
-  const IdPhotographer = media.photographerId;
-  const imagePhotographer = media.image;
-  const videoPhotographer = media.video;
-  if (IdPhotographer === 930) {
-    console.log(imagePhotographer + videoPhotographer);
+class Photographer {
+  constructor(photographer) {
+    this.IdPhotographer = photographer.photographerId;
+    this.imagePhotographer = photographer.image;
+    this.videoPhotographer = photographer.video;
   }
 }
 
-async function displayMediaEllie() {
-  const photographerData = await fetchPhotographers();
-  const showAllMedias = photographerData.media;
-  showAllMedias.forEach((medias) => {
-    finderMediasEllie(medias);
-  });
-}
-
-// display all media for Tracy Galindo
-async function finderMediasTracy(media) {
-  const IdPhotographer = media.photographerId;
-  const imagePhotographer = media.image;
-  const videoPhotographer = media.video;
-  if (IdPhotographer === 82) {
-    console.log(imagePhotographer + videoPhotographer);
+class Mimi extends Photographer {
+  say() {
+    console.log("I'm Mimi", this);
   }
 }
 
-async function displayMediaTracy() {
-  const photographerData = await fetchPhotographers();
-  const showAllMedias = photographerData.media;
-  showAllMedias.forEach((medias) => {
-    finderMediasTracy(medias);
-  });
-}
-
-// display all media for Nabeel Bradford
-async function finderMediasNabeel(media) {
-  const IdPhotographer = media.photographerId;
-  const imagePhotographer = media.image;
-  const videoPhotographer = media.video;
-  if (IdPhotographer === 527) {
-    console.log(imagePhotographer + videoPhotographer);
+class Ellie extends Photographer {
+  say() {
+    console.log("I'm Ellie-Rose", this);
   }
 }
 
-async function displayMediaNabeel() {
-  const photographerData = await fetchPhotographers();
-  const showAllMedias = photographerData.media;
-  showAllMedias.forEach((medias) => {
-    finderMediasNabeel(medias);
-  });
-}
-
-// display all media for Rhode Dubois
-async function finderMediasRhode(media) {
-  const IdPhotographer = media.photographerId;
-  const imagePhotographer = media.image;
-  const videoPhotographer = media.video;
-  if (IdPhotographer === 925) {
-    console.log(imagePhotographer + videoPhotographer);
+class Tracy extends Photographer {
+  say() {
+    console.log("I'm Tracy", this);
   }
 }
 
-async function displayMediaRhode() {
-  const photographerData = await fetchPhotographers();
-  const showAllMedias = photographerData.media;
-  showAllMedias.forEach((medias) => {
-    finderMediasRhode(medias);
-  });
-}
-
-// display all media for Marcel Nikolic
-async function finderMediasMarcel(media) {
-  const IdPhotographer = media.photographerId;
-  const imagePhotographer = media.image;
-  const videoPhotographer = media.video;
-  if (IdPhotographer === 195) {
-    console.log(imagePhotographer + videoPhotographer);
+class Nabeel extends Photographer {
+  say() {
+    console.log("I'm Nabeel", this);
   }
 }
 
-async function displayMediaMarcel() {
-  const photographerData = await fetchPhotographers();
-  const showAllMedias = photographerData.media;
-  showAllMedias.forEach((medias) => {
-    finderMediasMarcel(medias);
-  });
+class Rhode extends Photographer {
+  say() {
+    console.log("I'm Rhode", this);
+  }
 }
 
-// display Photographer with url Id
-async function displayPagePhotographer() {
-  if (location.search === "?id=243") {
-    displayMediaMimi();
-  } else if (location.search === "?id=930") {
-    displayMediaEllie();
-  } else if (location.search === "?id=82") {
-    displayMediaTracy();
-  } else if (location.search === "?id=527") {
-    displayMediaNabeel();
-  } else if (location.search === "?id=925") {
-    displayMediaRhode();
-  } else if (location.search === "?id=195") {
-    displayMediaMarcel();
+class Marcel extends Photographer {
+  say() {
+    console.log("I'm Marcel", this);
   }
+}
+
+// Display photographer ID
+async function loadIdPhotographers() {
+  const photographerData = await fetchPhotographers();
+  const showAllId = photographerData.media;
+  const medias = showAllId.filter(function (media) {
+    if (location.search === "?id=243") {
+      return media.photographerId == "243";
+    } else if (location.search === "?id=930") {
+      return media.photographerId == "930";
+    } else if (location.search === "?id=82") {
+      return media.photographerId == "82";
+    } else if (location.search === "?id=527") {
+      return media.photographerId == "527";
+    } else if (location.search === "?id=925") {
+      return media.photographerId == "925";
+    } else if (location.search === "?id=195") {
+      return media.photographerId == "195";
+    }
+  });
+  showAllId.forEach((data) => {
+    const ID = PhotographerFactory.finderIdPhotographer(data);
+    ID.say();
+    console.log(medias);
+  });
 }
