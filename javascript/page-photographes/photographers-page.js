@@ -1,5 +1,4 @@
 // Template photographers page: Part Identity
-const pagePhotographer = document.querySelector(".page-photographer");
 const pagePhotographerMedia = document.querySelector(".medias");
 
 async function createTemplate(photographers) {
@@ -26,7 +25,6 @@ async function createTemplate(photographers) {
 }
 
 // Display photographer info
-window.onload = displayPagePhotographer();
 async function displayPagePhotographer() {
   const photographerData = await fetchPhotographers();
   const showAll = photographerData.photographers;
@@ -99,7 +97,6 @@ class Video extends Media {
 }
 
 // Display photographer medias
-window.onload = loadMediaPhotographers();
 async function loadMediaPhotographers() {
   const photographerData = await fetchPhotographers();
   const showAllMedias = photographerData.media;
