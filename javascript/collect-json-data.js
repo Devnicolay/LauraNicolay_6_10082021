@@ -10,3 +10,20 @@ async function fetchPhotographers() {
     console.log("attention une erreur a été rencontrée");
   }
 }
+
+async function data() {
+  const photographerData = await fetchPhotographers();
+  return photographerData;
+}
+
+async function dataPhotographers() {
+  const photographerData = await fetchPhotographers();
+  const dataPhotographers = photographerData.photographers;
+  return dataPhotographers;
+}
+
+async function dataMedias() {
+  const photographerData = await fetchPhotographers();
+  const dataMedias = photographerData.media;
+  return dataMedias;
+}

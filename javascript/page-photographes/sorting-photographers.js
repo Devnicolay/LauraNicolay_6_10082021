@@ -20,7 +20,7 @@ class Photographer {
       this.city +
       "</p><p class=slogan>" +
       this.tagline +
-      "</p><ul class=tags><a href=#><li><span aria-hidden=true>#</span>" +
+      "</p><ul class=tags><a class=tag href=#><li><span aria-hidden=true>#</span>" +
       this.tags.join("</li></a><a href=#><li><span aria-hidden=true>#</span>") +
       "</li></a></ul></article><aside><a href=photographes.html><img src=" +
       this.portrait +
@@ -55,5 +55,6 @@ async function loadIdPhotographers() {
   });
   const photographerConstructor = new Photographer(photographer, medias);
   console.log(photographerConstructor);
-  pagePhotographer.innerHTML = "";
+  pagePhotographer.innerHTML =
+    photographerConstructor.createTemplatePhotographer();
 }
