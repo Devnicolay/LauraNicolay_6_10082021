@@ -4,7 +4,6 @@ const arrow = document.querySelector(".arrow");
 const sortPopularity = document.querySelector(".dropdown-select-content");
 const sortDate = document.querySelector(".sort-date");
 const sortTitle = document.querySelector(".sort-title");
-const media = dataMedias();
 const btnSort = document.querySelector("button");
 
 dropdownMenu.addEventListener("click", displayDropdown);
@@ -23,36 +22,51 @@ function displayDropdown() {
 }
 
 // Sort medias with popularity
-sortPopularity.addEventListener("click", () => {
-  btnSort.innerHTML = `Popularité`;
+sortPopularity.addEventListener("click", async () => {
   dropdownLink.style.display = "none";
 
-  const medias = [media];
+  const media = await mediasByIdPhotographer();
+  const medias = media;
   const sortedMedias = medias.sort((a, b) => {
-    return b.this.likes - a.this.likes;
+    return b.likes - a.likes;
   });
-  console.log(sortedMedias);
+  pagePhotographerMedia.innerHTML = "";
+  sortedMedias.map((media) => {
+    const medias = MediaFactory.createMedia(media);
+    pagePhotographerMedia.innerHTML += medias.createHtml();
+  });
 });
 
 //Sort medias with date
-sortDate.addEventListener("click", () => {
-  btnSort.innerHTML = `Date`;
+sortDate.addEventListener("click", async () => {
+  btnSort.innerHTML = `Date<div class="arrow">
+  <i class="fas fa-chevron-down"></i>
+</div>`;
   dropdownLink.style.display = "none";
 
-  const medias = [media];
+  const media = await mediasByIdPhotographer();
+  const medias = media;
   const sortedMedias = medias.sort((a, b) => {
-    return a.this.date - b.this.date;
+    return a.date - b.date;
   });
   console.log(sortedMedias);
+  pagePhotographerMedia.innerHTML = "";
+  sortedMedias.map((media) => {
+    const medias = MediaFactory.createMedia(media);
+    pagePhotographerMedia.innerHTML += medias.createHtml();
+  });
 });
 
 //Sort medias with title
-sortTitle.addEventListener("click", () => {
-  btnSort.innerHTML = `Titre`;
+sortTitle.addEventListener("click", async () => {
+  btnSort.innerHTML = `Titre<div class="arrow">
+  <i class="fas fa-chevron-down"></i>
+</div>`;
   dropdownLink.style.display = "none";
 
-  const medias = [media];
-  medias.sort(function (a, b) {
+  const media = await mediasByIdPhotographer();
+  const medias = media;
+  const sortedMedias = medias.sort(function (a, b) {
     let x = a.title.toLowerCase();
     let y = b.title.toLowerCase();
     if (x < y) {
@@ -62,5 +76,10 @@ sortTitle.addEventListener("click", () => {
       return 1;
     }
     return 0;
+  });
+  pagePhotographerMedia.innerHTML = "";
+  sortedMedias.map((media) => {
+    const medias = MediaFactory.createMedia(media);
+    pagePhotographerMedia.innerHTML += medias.createHtml();
   });
 });

@@ -32,27 +32,14 @@ class Photographer {
 // Display medias for photographer ID
 window.onload = loadIdPhotographers();
 async function loadIdPhotographers() {
-  // Data for photographers
-  const photographerData = await fetchPhotographers();
-  const dataPhotographers = photographerData.photographers;
-  const dataMedias = photographerData.media;
-  // Search Id for photographer selected
-  const urlParams = new URLSearchParams(window.location.search);
-  const myParam = urlParams.get("id");
-  console.log(myParam);
   // Display medias for photographer
-  const medias = dataMedias.filter((media) => {
-    return media.photographerId == myParam;
-  });
-  console.log(medias);
+  const medias = await mediasByIdPhotographer();
   medias.map((media) => {
     const medias = MediaFactory.createMedia(media);
     pagePhotographerMedia.innerHTML += medias.createHtml();
   });
   // Display identity for photographer
-  const photographer = dataPhotographers.find((photograph) => {
-    return photograph.id == myParam;
-  });
+  const photographer = await photographerById();
   const photographerConstructor = new Photographer(photographer, medias);
   console.log(photographerConstructor);
   pagePhotographer.innerHTML =
