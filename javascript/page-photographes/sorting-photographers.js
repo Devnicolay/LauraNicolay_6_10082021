@@ -29,6 +29,16 @@ class Photographer {
   }
 }
 
+// Display photographer info
+async function displayPagePhotographer() {
+  const photographerData = await fetchPhotographers();
+  const showAll = photographerData.photographers;
+  pagePhotographer.innerHTML = "";
+  showAll.forEach((photographer) => {
+    createTemplate(photographer);
+  });
+}
+
 // Display medias for photographer ID
 window.onload = loadIdPhotographers();
 async function loadIdPhotographers() {
