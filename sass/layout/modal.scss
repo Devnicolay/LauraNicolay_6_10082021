@@ -40,6 +40,7 @@ body {
           }
         }
         .header-form {
+          position: relative;
           #titlemodal {
             font-size: 2.5em;
             margin-top: 0.3em;
@@ -51,8 +52,8 @@ body {
             border: none;
             font-size: 2em;
             position: absolute;
-            top: 3.2em;
-            right: 11.5em;
+            top: 0.3em;
+            right: 0em;
           }
         }
         /* error message for input */
@@ -64,6 +65,7 @@ body {
           text-align: right;
           line-height: 0.3;
           display: none;
+          white-space: pre-line;
         }
         #send {
           background-color: $primary-color;
