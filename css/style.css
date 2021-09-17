@@ -121,7 +121,7 @@ main .Photographers article .tags {
 
 main .scroll-link {
   display: none;
-  background-color: #d3573c;
+  background-color: #db8876;
   position: fixed;
   top: 0;
   left: 44%;
@@ -264,6 +264,8 @@ main .scroll-link a {
 #main-page-photographer .medias .block-media .media-img-video {
   border-radius: 0.31em;
   object-fit: cover;
+  width: 19em;
+  height: 19em;
 }
 #main-page-photographer .medias .block-media .title-and-likes {
   display: flex;
@@ -278,6 +280,82 @@ main .scroll-link a {
 }
 #main-page-photographer .medias .block-media .title-and-likes .number-heart i {
   margin: 1em 0em 0em 0.3em;
+}
+
+body .form-contact {
+  display: none;
+}
+body .form-contact .modal {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+body .form-contact .modal .modal-content {
+  background-color: #db8876;
+  border-radius: 0.3em;
+  width: 25em;
+  max-width: calc(100vw - 1.25em);
+  max-height: calc(100vh - 1.25em);
+  padding: 0em 1.25em 1.25em 1.25em;
+  overflow: auto;
+  /* error message for input */
+}
+body .form-contact .modal .modal-content #form {
+  /* red border for input with error message */
+}
+body .form-contact .modal .modal-content #form label {
+  font-size: 1.2em;
+}
+body .form-contact .modal .modal-content #form input {
+  border: none;
+  border-radius: 0.3em;
+  width: 100%;
+  height: 2.2em;
+}
+body .form-contact .modal .modal-content #form .text-control-message {
+  height: 10em;
+  overflow: auto;
+}
+body .form-contact .modal .modal-content #form .border-red {
+  border: 0.2em solid red;
+}
+body .form-contact .modal .modal-content .header-form #titlemodal {
+  font-size: 2.5em;
+  margin-top: 0.3em;
+  max-width: 9em;
+}
+body .form-contact .modal .modal-content .header-form .close-form {
+  background-color: #db8876;
+  color: white;
+  border: none;
+  font-size: 2em;
+  position: absolute;
+  top: 3.2em;
+  right: 11.5em;
+}
+body .form-contact .modal .modal-content .alert-msg {
+  font-size: 0.8em;
+  color: white;
+  margin-top: 0.62em;
+  margin-bottom: 0.44em;
+  text-align: right;
+  line-height: 0.3;
+  display: none;
+}
+body .form-contact .modal .modal-content #send {
+  background-color: #901c1c;
+  color: white;
+  border: none;
+  border-radius: 0.3em;
+  padding: 1em 2em;
+  margin-top: 1.5em;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -12,10 +12,10 @@
                 <a href="index.html" aria-label="FishEye" id="logo"><img src="images/logo.svg" alt="Fisheye Home page" /></a>
         </header>
         <main id="main-page-photographer">
+            <a href="#" class="lien">lien</a>
             <!-- Header of main -->
             <div class="page-photographer">
-                
-            </div>
+            </div> 
             <!-- Select filter for medias -->
             <div class="select-filters">
                 <label for="sort">Trier par</label>
@@ -46,10 +46,76 @@
             <section class="medias">
             </section>      
         </main>
+        <div class="form-contact">
+            <div class="modal" role="dialog" aria-hidden="true" aria-modal="false" 
+           aria-label="contact me" aria-labelledby="titlemodal">
+                <div class="modal-content">
+                    <div class="header-form">
+                        <h2 id="titlemodal">Contactez-moi</h2>
+                        <button class="close-form" type="button" aria-label="close contact form">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <form name="contact-form" action="" method="get" id="form" novalidate>
+                        <div
+                            class="formData firstname">
+                            <label for="firstname">Prénom</label><br>
+                            <input
+                            class="text-control"
+                            type="text"
+                            id="firstname"
+                            name="firstname"
+                            required
+                            minlength="2">
+                        <br>
+                            <div class="alert-msg">Veuillez entrer 2 caractères ou plus pour le champ du prénom.</div>
+                        </div>
+                        <div
+                            class="formData lastname">
+                            <label for="lastname">Nom</label><br>
+                            <input
+                            class="text-control"
+                            type="text"
+                            id="lastname"
+                            name="lastname"
+                            required>
+                        <br>
+                            <div class="alert-msg">Veuillez entrer 2 caractères ou plus pour le champ du nom.</div>
+                        </div>
+                        <div
+                            class="formData email">
+                            <label for="email">Email</label><br>
+                            <input
+                            class="text-control"
+                            type="email"
+                            id="email"
+                            name="email"
+                            required>
+                        <br>
+                            <div class="alert-msg">Veuillez entrer une adresse mail valide.</div>
+                        </div>
+                        <div
+                            class="formData message">
+                            <label for="yourmessage">Votre message</label><br>
+                            <input
+                            class="text-control-message"
+                            type="text"
+                            id="yourmessage"
+                            name="yourmessage"
+                            required
+                            minlength="2">
+                        <br>
+                            <div class="alert-msg">Veuillez écrire votre message ici.</div>
+                        </div>
+                        <button id="send" class="form-submit" type="submit" aria-label="send">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
         <script src="./javascript/collect-json-data.js"></script>
         <script src="./javascript/page-photographes/medias-factory.js"></script>
         <script src="./javascript/page-photographes/dropdown-select.js"></script>
         <script src="./javascript/page-photographes/sorting-photographers.js"></script>
-        <script src="./javascript/page-photographes/tags-filters-page-photographer.js"></script>
+        <script src="./javascript/page-photographes/form-modal.js"></script>
     </body>
 </html>

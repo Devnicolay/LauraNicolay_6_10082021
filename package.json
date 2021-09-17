@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Devnicolay/LauraNicolay_6_10082021#readme",
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^7.32.0"
+    "eslint": "^7.32.0",
+    "eslint-plugin-html": "^6.1.2"
   }
 }
