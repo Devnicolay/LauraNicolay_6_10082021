@@ -34,7 +34,7 @@ class Image extends Media {
   }
   createHtml() {
     return (
-      "<article class=block-media><img class=media-img-video src=" +
+      "<article class=block-media><img class=media-img-video onclick=launchLightbox() src=" +
       this.image +
       "><div class=title-and-likes><p class=title>" +
       this.title +
@@ -51,7 +51,7 @@ class Video extends Media {
   }
   createHtml() {
     return (
-      "<article class=block-media><video controls class=media-img-video><source src=" +
+      "<article class=block-media><video controls class=media-img-video onclick=launchLightbox()><source src=" +
       this.mediaVideo +
       "></video><div class=title-and-likes><p class=title>" +
       this.title +
