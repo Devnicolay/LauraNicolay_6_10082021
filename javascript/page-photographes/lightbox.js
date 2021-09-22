@@ -1,17 +1,15 @@
 const lightbox = document.querySelector(".lightbox");
 
 // launch lightbox
-window.addEventListener("DOMContentLoaded", (event) => {
-  console.log("DOM entièrement chargé");
-  const medias = document.querySelectorAll(".media-img-video");
-  medias.forEach((media) => {
-    media.addEventListener("click", launchLightbox);
-  });
-});
+const container = document.querySelector(".medias");
+container.addEventListener("click", launchLightbox);
 
-function launchLightbox() {
-  lightbox.style.cssText += ";display:flex !important;";
-  lightbox.ariaModal = "true";
+function launchLightbox(e) {
+  const medias = document.querySelectorAll(".media-img-video");
+  if (e.target != medias) {
+    lightbox.style.cssText += ";display:flex !important;";
+    lightbox.ariaModal = "true";
+  }
 }
 
 // close lightbox with click on cross
