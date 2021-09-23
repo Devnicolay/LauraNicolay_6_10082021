@@ -1,9 +1,7 @@
-const modalBtn = document.querySelector(".page-photographer .contact");
 const modal = document.querySelector(".form-contact");
 const contactMe = document.querySelector(".header-form #titlemodal");
 const closeBtn = document.querySelector(".header-form .close-form");
 const sendBtn = document.querySelector("#send");
-const lien = document.querySelector(".lien");
 const firstName = document.getElementById("firstname");
 const lastName = document.getElementById("lastname");
 const email = document.getElementById("email");
@@ -11,22 +9,27 @@ const message = document.getElementById("yourmessage");
 const form = document.getElementById("form");
 
 //launch modal form
-lien.addEventListener("click", openModal);
-
 async function openModal() {
   modal.style.display = "block";
   modal.setAttribute("aria-hidden", false);
   modal.setAttribute("aria-modal", true);
   const name = await displayNamePhotographer();
-  console.log(name);
   contactMe.innerHTML = "Contactez-moi " + name;
 }
 
-// close modal form
+// close modal form with mouseclick
 closeBtn.addEventListener("click", closeModal);
 
 function closeModal() {
   modal.style.display = "none";
+}
+
+// close modal with press escape on keyboard
+window.addEventListener("keydown", escapeKeyForm);
+function escapeKeyForm(e) {
+  if (modal.ariaModal === "true" && e.key === "Escape") {
+    closeModal();
+  }
 }
 
 // Display the name for Photographer next to "Contactez-moi"
@@ -107,7 +110,14 @@ function messageCheck() {
 }
 
 // Send form
-sendBtn.addEventListener("click", formValidation);
+sendBtn.addEventListener("click", formValidation); // send form with mouseclick
+// send form with press escape on keyboard
+window.addEventListener("keydown", enterKeyForm);
+function enterKeyForm(e) {
+  if (modal.ariaModal === "true" && e.key === "Enter") {
+    formValidation(event);
+  }
+}
 
 function formValidation(event) {
   event.preventDefault();

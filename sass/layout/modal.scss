@@ -54,6 +54,7 @@ body {
             position: absolute;
             top: 0.3em;
             right: 0em;
+            cursor: pointer;
           }
         }
         /* error message for input */
@@ -63,7 +64,6 @@ body {
           margin-top: 0.62em;
           margin-bottom: 0.44em;
           text-align: right;
-          line-height: 0.3;
           display: none;
           white-space: pre-line;
         }
@@ -74,6 +74,7 @@ body {
           border-radius: 0.3em;
           padding: 1em 2em;
           margin-top: 1.5em;
+          cursor: pointer;
         }
       }
     }

@@ -61,4 +61,8 @@ async function loadIdPhotographers() {
   pagePhotographer.innerHTML =
     photographerConstructor.createTemplatePhotographer();
   pagePhotographerMedia.innerHTML = photographerConstructor.initializeMedia();
+  const contactBtn = document.querySelector(".contact");
+  contactBtn.onclick = function () {
+    openModal();
+  };
 }
