@@ -1,15 +1,9 @@
 const lightbox = document.querySelector(".lightbox");
 
 // launch lightbox
-const container = document.querySelector(".medias");
-container.addEventListener("click", launchLightbox);
-
-function launchLightbox(e) {
-  const medias = document.querySelectorAll(".media-img-video");
-  if (e.target != medias) {
-    lightbox.style.cssText += ";display:flex !important;";
-    lightbox.ariaModal = "true";
-  }
+function openLightbox() {
+  lightbox.style.cssText += ";display:flex !important;";
+  lightbox.ariaModal = "true";
 }
 
 // close lightbox with click on cross

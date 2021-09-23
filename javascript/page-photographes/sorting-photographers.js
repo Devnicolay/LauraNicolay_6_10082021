@@ -61,8 +61,14 @@ async function loadIdPhotographers() {
   pagePhotographer.innerHTML =
     photographerConstructor.createTemplatePhotographer();
   pagePhotographerMedia.innerHTML = photographerConstructor.initializeMedia();
+  // Open form modal
   const contactBtn = document.querySelector(".contact");
   contactBtn.onclick = function () {
     openModal();
   };
+  // Open lightbox
+  const media = document.querySelectorAll(".media-img-video");
+  media.forEach((media) => {
+    media.addEventListener("click", openLightbox);
+  });
 }
