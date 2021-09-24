@@ -1,9 +1,11 @@
 const lightbox = document.querySelector(".lightbox");
 
 // launch lightbox
-function openLightbox() {
+function openLightbox(param) {
   lightbox.style.cssText += ";display:flex !important;";
   lightbox.ariaModal = "true";
+  const lightboxContainer = document.querySelector(".lightbox-container");
+  lightboxContainer.innerHTML = "<img src=" + param + "><p>Arc-en-ciel</p>";
 }
 
 // close lightbox with click on cross

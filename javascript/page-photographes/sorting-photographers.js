@@ -34,6 +34,13 @@ class Photographer {
       "></aside></section>"
     );
   }
+  createTemplateLikes() {
+    return (
+      "<p class='counter-like' aria-label='total of like'><span></span><i class='fas fa-heart'></i></p><p>" +
+      this.price +
+      "€ / jour</p>"
+    );
+  }
 }
 
 // Display photographer info
@@ -61,14 +68,30 @@ async function loadIdPhotographers() {
   pagePhotographer.innerHTML =
     photographerConstructor.createTemplatePhotographer();
   pagePhotographerMedia.innerHTML = photographerConstructor.initializeMedia();
+  // display likes and price for photographer
+  likeAndPrice();
+  const likes = document.querySelectorAll(".like");
+  likes.forEach((like) => {
+    like.addEventListener("click", calculationLikeClicked);
+  });
   // Open form modal
   const contactBtn = document.querySelector(".contact");
   contactBtn.onclick = function () {
     openModal();
   };
   // Open lightbox
-  const media = document.querySelectorAll(".media-img-video");
-  media.forEach((media) => {
-    media.addEventListener("click", openLightbox);
+  const allMedias = Array.from(document.querySelectorAll(".media-img-video"));
+  allMedias.forEach((media) => {
+    media.addEventListener("click", (event) => {
+      const src = event.currentTarget.getAttribute("src");
+      const index = medias.indexOf(src);
+      console.log(index);
+      openLightbox(src);
+    });
+  });
+  // increment likes
+  const like = document.querySelectorAll(".like");
+  like.forEach((media) => {
+    media.addEventListener("click", likeMedia);
   });
 }

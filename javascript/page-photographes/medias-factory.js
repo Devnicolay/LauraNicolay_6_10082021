@@ -38,10 +38,16 @@ class Image extends Media {
       this.image +
       "><div class=title-and-likes><p class=title>" +
       this.title +
-      "</p><div class=number-heart><p class=like>" +
+      "</p><div class=number-heart><p class=like data-quantitylikes= false data-likes=" +
+      this.likes +
+      ">" +
       this.likes +
       "</p><i class='fas fa-heart' aria-label='likes'></i></div></div></article>"
     );
+  }
+  showLike() {
+    console.log(this.likes);
+    return this.likes;
   }
 }
 
@@ -55,20 +61,15 @@ class Video extends Media {
       this.mediaVideo +
       "></video><div class=title-and-likes><p class=title>" +
       this.title +
-      "</p><div class=number-heart><p class=like>" +
+      "</p><div class=number-heart><p class=like data-quantitylikes= false data-likes=" +
+      this.likes +
+      ">" +
       this.likes +
       "</p><i class='fas fa-heart' aria-label='likes'></i></div></div></article>"
     );
   }
-}
-
-// Display photographer medias
-async function loadMediaPhotographers() {
-  const photographerData = await fetchPhotographers();
-  const showAllMedias = photographerData.media;
-  const mediasInstances = showAllMedias.map((media) => {
-    const medias = MediaFactory.createMedia(media);
-    pagePhotographerMedia.innerHTML += medias.createHtml();
-    medias.say();
-  });
+  showLike() {
+    console.log(this.likes);
+    return this.likes;
+  }
 }

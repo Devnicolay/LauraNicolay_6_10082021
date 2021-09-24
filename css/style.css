@@ -276,12 +276,13 @@ main .scroll-link a {
 }
 #main-page-photographer .medias .block-media .title-and-likes .number-heart {
   display: flex;
+  cursor: pointer;
 }
 #main-page-photographer .medias .block-media .title-and-likes .number-heart .like {
   font-weight: bold;
 }
 #main-page-photographer .medias .block-media .title-and-likes .number-heart i {
-  margin: 1em 0em 0em 0.3em;
+  margin: 1.15em 0em 0em 0.3em;
 }
 
 body .form-contact {
@@ -406,6 +407,22 @@ body .form-contact .modal .modal-content #send {
 .lightbox .lightbox-container p {
   color: #901c1c;
   margin-top: 0.2em;
+}
+
+.likes-and-price {
+  background-color: #db8876;
+  position: fixed;
+  bottom: 0;
+  right: 3em;
+  padding: 0em 1em 0em 1em;
+  display: flex;
+  border-radius: 0.3em;
+}
+.likes-and-price .counter-like {
+  margin-right: 3em;
+}
+.likes-and-price .counter-like span {
+  margin-right: 0.3em;
 }
 
 /*# sourceMappingURL=style.css.map */

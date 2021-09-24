@@ -1,0 +1,15 @@
+.likes-and-price {
+  background-color: $secondary-color;
+  position: fixed;
+  bottom: 0;
+  right: 3em;
+  padding: 0em 1em 0em 1em;
+  display: flex;
+  border-radius: 0.3em;
+  .counter-like {
+    margin-right: 3em;
+    span {
+      margin-right: 0.3em;
+    }
+  }
+}
