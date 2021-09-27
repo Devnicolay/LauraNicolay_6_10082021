@@ -1,14 +1,13 @@
 const lightbox = document.querySelector(".lightbox");
 
 // launch lightbox
-function openLightbox(param) {
+function openLightbox(source) {
   lightbox.style.cssText += ";display:flex !important;";
   lightbox.ariaModal = "true";
-  const lightboxContainer = document.querySelector(".lightbox-container");
-  lightboxContainer.innerHTML = "<img src=" + param + "><p>Arc-en-ciel</p>";
+  lightboxContainer.innerHTML = "<img src=" + source + "><p>Arc-en-ciel</p>";
 }
 
-// close lightbox with click on cross
+// close, next and previous lightbox with press touch on keyboard
 const lightboxCloseMouse = document.querySelector(".lightbox-close");
 lightboxCloseMouse.addEventListener("click", closeLightbox);
 
@@ -16,28 +15,7 @@ function closeLightbox() {
   lightbox.style.cssText += ";display:none !important;";
 }
 
-// close lightbox with press escape on keyboard
-window.addEventListener("keydown", escapeKey);
-function escapeKey(e) {
-  if (lightbox.ariaModal === "true" && e.key === "Escape") {
-    closeLightbox();
-  }
-}
-
-// previous media
-const chevronLeft = document.querySelector(".fa-chevron-left");
-chevronLeft.addEventListener("click", previous);
-
 function previous() {
   //affiche media précédent
   console.log("previous");
-}
-
-// next media
-const chevronRight = document.querySelector(".fa-chevron-right");
-chevronRight.addEventListener("click", next);
-
-function next() {
-  //affiche media suivant
-  console.log("next");
 }

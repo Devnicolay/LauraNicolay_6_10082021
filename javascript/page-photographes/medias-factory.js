@@ -1,4 +1,5 @@
 const pagePhotographerMedia = document.querySelector(".medias");
+const lightboxContainer = document.querySelector(".lightbox-container");
 
 // Template photographers page: Part media
 class MediaFactory {
@@ -45,6 +46,12 @@ class Image extends Media {
       "</p><i class='fas fa-heart' aria-label='likes'></i></div></div></article>"
     );
   }
+  // template lightbox next and previous
+  createHtmlLightbox(media) {
+    const createHtml =
+      "<img src=" + media.image + "><p>" + media.title + "</p>";
+    lightboxContainer.innerHTML = createHtml;
+  }
   showLike() {
     console.log(this.likes);
     return this.likes;
@@ -57,7 +64,7 @@ class Video extends Media {
   }
   createHtml() {
     return (
-      "<article class=block-media><video controls class=media-img-video><source src=" +
+      "<article class=block-media><video controls class=media-img-video src=" +
       this.mediaVideo +
       "></video><div class=title-and-likes><p class=title>" +
       this.title +
@@ -67,6 +74,16 @@ class Video extends Media {
       this.likes +
       "</p><i class='fas fa-heart' aria-label='likes'></i></div></div></article>"
     );
+  }
+  // template lightbox next and previous
+  createHtmlLightbox(media) {
+    const createHtml =
+      "<video controls src=" +
+      media.mediaVideo +
+      "></video<p>" +
+      media.title +
+      "</p>";
+    lightboxContainer.innerHTML = createHtml;
   }
   showLike() {
     console.log(this.likes);

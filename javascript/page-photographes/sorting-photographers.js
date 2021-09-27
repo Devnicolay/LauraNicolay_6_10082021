@@ -79,14 +79,69 @@ async function loadIdPhotographers() {
   contactBtn.onclick = function () {
     openModal();
   };
-  // Open lightbox
+  // Lightbox : src for all medias
   const allMedias = Array.from(document.querySelectorAll(".media-img-video"));
+  const srcMedias = allMedias.map((media) => {
+    return media.getAttribute("src");
+  });
+  // search src for media
   allMedias.forEach((media) => {
     media.addEventListener("click", (event) => {
       const src = event.currentTarget.getAttribute("src");
-      const index = medias.indexOf(src);
-      console.log(index);
+      console.log(src);
+      // Open lightbox
       openLightbox(src);
+      // position for media in all medias
+      const indexSrc = srcMedias.indexOf(src);
+
+      // next media
+      const chevronRight = document.querySelector(".fa-chevron-right");
+      chevronRight.addEventListener("click", next);
+      function next() {
+        console.log("next");
+        const resultPosition = positionNextMedia(); // media next
+        resultPosition.createHtmlLightbox(resultPosition); // create Html for next media
+      }
+      function positionNextMedia() {
+        // position next media
+        const indexNextMedia = indexSrc + 1;
+        console.log(indexNextMedia);
+        // media next
+        const nextMedia = photographerConstructor.medias[indexNextMedia];
+        console.log(nextMedia);
+        return nextMedia;
+      }
+
+      // previous media
+      const chevronLeft = document.querySelector(".fa-chevron-left");
+      chevronLeft.addEventListener("click", previous);
+      function previous() {
+        console.log("previous");
+        const resultPosition = positionpreviousMedia(); // media previous
+        resultPosition.createHtmlLightbox(resultPosition); // create Html for previous media
+      }
+      function positionpreviousMedia() {
+        // position previous media
+        const indexPreviousMedia = indexSrc - 1;
+        console.log(indexPreviousMedia);
+        // media previous
+        const previousMedia =
+          photographerConstructor.medias[indexPreviousMedia];
+        console.log(previousMedia);
+        return previousMedia;
+      }
+
+      // close, next and previous lightbox with press touch on keyboard
+      window.addEventListener("keydown", keyboardTouch);
+      function keyboardTouch(e) {
+        if (lightbox.ariaModal === "true" && e.key === "Escape") {
+          closeLightbox();
+        } else if (lightbox.ariaModal === "true" && e.key === "ArrowRight") {
+          next();
+        } else if (lightbox.ariaModal === "true" && e.key === "ArrowLeft") {
+          previous();
+        }
+      }
     });
   });
   // increment likes
