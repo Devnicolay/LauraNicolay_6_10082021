@@ -38,11 +38,13 @@ header nav .tags {
   list-style: none;
 }
 header nav .tags li {
-  color: #901c1c;
   border: 1px solid gray;
   border-radius: 30px;
   padding: 5px;
   margin: 5px;
+}
+header nav .tags li span {
+  color: #901c1c;
 }
 header nav .tags a:link {
   text-decoration: none;
@@ -79,11 +81,13 @@ main .Photographers .tags {
   list-style: none;
 }
 main .Photographers .tags li {
-  color: #901c1c;
   border: 1px solid gray;
   border-radius: 30px;
   padding: 5px;
   margin: 5px;
+}
+main .Photographers .tags li span {
+  color: #901c1c;
 }
 main .Photographers .tags a:link {
   text-decoration: none;
@@ -149,11 +153,13 @@ main .scroll-link a {
   list-style: none;
 }
 #main-page-photographer .page-photographer .header-main .header-left .tags li {
-  color: #901c1c;
   border: 1px solid gray;
   border-radius: 30px;
   padding: 5px;
   margin: 5px;
+}
+#main-page-photographer .page-photographer .header-main .header-left .tags li span {
+  color: #901c1c;
 }
 #main-page-photographer .page-photographer .header-main .header-left .tags a:link {
   text-decoration: none;
@@ -282,7 +288,7 @@ main .scroll-link a {
   font-weight: bold;
 }
 #main-page-photographer .medias .block-media .title-and-likes .number-heart i {
-  margin: 1.15em 0em 0em 0.3em;
+  margin-left: 0.3em;
 }
 
 body .form-contact {

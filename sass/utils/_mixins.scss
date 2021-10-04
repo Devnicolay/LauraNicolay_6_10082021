@@ -3,11 +3,13 @@
     display: flex;
     list-style: none;
     li {
-      color: $primary-color;
       border: 1px solid gray;
       border-radius: 30px;
       padding: 5px;
       margin: 5px;
+      span {
+        color: $primary-color;
+      }
     }
     a:link {
       text-decoration: none;

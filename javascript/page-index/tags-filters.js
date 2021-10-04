@@ -16,6 +16,8 @@ async function displayFilter(tagValue) {
   );
   containerPhotographers.innerHTML = "";
   filteredPhotographers.forEach((photographer) => {
-    createTemplate(photographer);
+    const photographerConstructor = new Photographer(photographer);
+    containerPhotographers.innerHTML +=
+      photographerConstructor.createTemplateIndex();
   });
 }
