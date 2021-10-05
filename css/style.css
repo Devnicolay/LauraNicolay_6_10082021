@@ -38,6 +38,7 @@ header nav .tags {
   list-style: none;
 }
 header nav .tags li {
+  color: #901c1c;
   border: 1px solid gray;
   border-radius: 30px;
   padding: 5px;
@@ -81,6 +82,7 @@ main .Photographers .tags {
   list-style: none;
 }
 main .Photographers .tags li {
+  color: #901c1c;
   border: 1px solid gray;
   border-radius: 30px;
   padding: 5px;
@@ -153,6 +155,7 @@ main .scroll-link a {
   list-style: none;
 }
 #main-page-photographer .page-photographer .header-main .header-left .tags li {
+  color: #901c1c;
   border: 1px solid gray;
   border-radius: 30px;
   padding: 5px;

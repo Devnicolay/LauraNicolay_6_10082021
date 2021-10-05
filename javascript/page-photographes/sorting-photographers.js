@@ -1,59 +1,7 @@
 // Identity Photographer
+const containerPhotographers = document.querySelector(".Photographers");
 const pagePhotographer = document.querySelector(".page-photographer");
-class Photographer {
-  constructor(photographer, medias) {
-    this.IdPhotographer = photographer.id;
-    this.name = photographer.name;
-    this.city = photographer.city;
-    this.country = photographer.country;
-    this.tags = photographer.tags;
-    this.tagline = photographer.tagline;
-    this.price = photographer.price;
-    this.portrait = photographer.portrait;
-    this.medias = medias;
-  }
-  initializeMedia() {
-    return this.medias.map((media) => media.createHtml()).join("");
-  }
-  createTemplatePhotographer() {
-    return (
-      "<section class=header-main><article class=header-left><div class=name-and-contact><h1 class=h1-page-photographer>" +
-      this.name +
-      "</h1><button class=contact type=button aria-haspopup=dialog>Contactez-moi</button></div><p class=city>" +
-      this.city +
-      "</p><p class=slogan>" +
-      this.tagline +
-      "</p><ul class=tags>" +
-      this.tags
-        .map((tag) => {
-          return `<a href=# data="${tag}"><li><span aria-hidden=true>#${tag}</span></li></a>`;
-        })
-        .join("") +
-      "</ul></article><aside><a href=photographes.html><img src=" +
-      this.portrait +
-      "></aside></section>"
-    );
-  }
-  createTemplateLikes() {
-    return (
-      "<p class='counter-like' aria-label='total of like'><span></span><i class='fas fa-heart'></i></p><p>" +
-      this.price +
-      "€ / jour</p>"
-    );
-  }
-}
-
-// Display photographer info
-async function displayPagePhotographer() {
-  const photographerData = await fetchPhotographers();
-  const showAll = photographerData.photographers;
-  pagePhotographer.innerHTML = "";
-  showAll.forEach((photographer) => {
-    createTemplate(photographer);
-  });
-}
-
-// Display medias for photographer ID
+// for photographer ID
 window.onload = loadIdPhotographers();
 async function loadIdPhotographers() {
   // Display medias for photographer
@@ -67,13 +15,9 @@ async function loadIdPhotographers() {
   const photographerConstructor = new Photographer(photographer, medias);
   pagePhotographer.innerHTML =
     photographerConstructor.createTemplatePhotographer();
+  // Display medias for photographer
   pagePhotographerMedia.innerHTML = photographerConstructor.initializeMedia();
-  // display likes and price for photographer
-  likeAndPrice();
-  const likes = document.querySelectorAll(".like");
-  likes.forEach((like) => {
-    like.addEventListener("click", calculationLikeClicked);
-  });
+  photographerConstructor.datasPhotographer();
   // Open form modal
   const contactBtn = document.querySelector(".contact");
   contactBtn.onclick = function () {
@@ -84,7 +28,7 @@ async function loadIdPhotographers() {
   const srcMedias = allMedias.map((media) => {
     return media.getAttribute("src");
   });
-  // search src for media
+  // Lightbox : search src for media
   allMedias.forEach((media) => {
     media.addEventListener("click", (event) => {
       const src = event.currentTarget.getAttribute("src");
@@ -94,7 +38,7 @@ async function loadIdPhotographers() {
       // position for media in all medias
       const indexSrc = srcMedias.indexOf(src);
 
-      // next media
+      // Lightbox : next media
       const chevronRight = document.querySelector(".fa-chevron-right");
       chevronRight.addEventListener("click", next);
       function next() {
@@ -103,16 +47,16 @@ async function loadIdPhotographers() {
         resultPosition.createHtmlLightbox(resultPosition); // create Html for next media
       }
       function positionNextMedia() {
-        // position next media
+        // Lightbox : position next media
         const indexNextMedia = indexSrc + 1;
         console.log(indexNextMedia);
-        // media next
+        // Lightbox : media next
         const nextMedia = photographerConstructor.medias[indexNextMedia];
         console.log(nextMedia);
         return nextMedia;
       }
 
-      // previous media
+      // Lightbox : previous media
       const chevronLeft = document.querySelector(".fa-chevron-left");
       chevronLeft.addEventListener("click", previous);
       function previous() {
@@ -121,17 +65,17 @@ async function loadIdPhotographers() {
         resultPosition.createHtmlLightbox(resultPosition); // create Html for previous media
       }
       function positionpreviousMedia() {
-        // position previous media
+        // Lightbox : position previous media
         const indexPreviousMedia = indexSrc - 1;
         console.log(indexPreviousMedia);
-        // media previous
+        // Lightbox : media previous
         const previousMedia =
           photographerConstructor.medias[indexPreviousMedia];
         console.log(previousMedia);
         return previousMedia;
       }
 
-      // close, next and previous lightbox with press touch on keyboard
+      // Lightbox : close, next and previous lightbox with press touch on keyboard
       window.addEventListener("keydown", keyboardTouch);
       function keyboardTouch(e) {
         if (lightbox.ariaModal === "true" && e.key === "Escape") {
@@ -144,9 +88,12 @@ async function loadIdPhotographers() {
       }
     });
   });
-  // increment likes
-  const like = document.querySelectorAll(".like");
-  like.forEach((media) => {
-    media.addEventListener("click", likeMedia);
+  // Likes : increment and display likes at the bottom of the photographer's page
+  likeAndPrice();
+  const likes = document.querySelectorAll(".heart");
+  likes.forEach((like) => {
+    like.addEventListener("click", calculationLikeClicked);
+    like.addEventListener("click", likeMedia);
+    like.addEventListener("click", incrementTotalLikes);
   });
 }

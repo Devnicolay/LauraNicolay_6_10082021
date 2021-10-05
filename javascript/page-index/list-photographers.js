@@ -1,9 +1,9 @@
+import ApiFisheye from "../api-fisheye";
 /**
  * DOM
  */
 // Dom in home page
 const containerPhotographers = document.querySelector(".Photographers");
-// Dom in photographer page
 
 /**
  * loading home page
@@ -15,12 +15,10 @@ function loadIndex() {
 
 // Display photographer on home page
 async function displayPhotographer() {
-  const data = await fetchPhotographers();
-  const dataPhotographers = data.photographers;
+  let photographers = await ApiFisheye.getPhotographers();
   containerPhotographers.innerHTML = "";
-  dataPhotographers.forEach((photographer) => {
-    const photographerConstructor = new Photographer(photographer);
-    containerPhotographers.innerHTML +=
-      photographerConstructor.createTemplateIndex();
+  photographers.forEach((photographer) => {
+    containerPhotographers.innerHTML += photographer.createTemplateIndex();
   });
+  photographers = await ApiFisheye.getPhotographers();
 }
