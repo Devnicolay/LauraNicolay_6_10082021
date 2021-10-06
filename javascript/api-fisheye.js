@@ -37,6 +37,8 @@ export class ApiFisheye {
 
   static async getPhotographer(id) {
     const photographers = await ApiFisheye.getPhotographers();
-    return photographers.find((photographer) => photographer.id === id);
+    if (photographers.find((photographer) => photographer.id === "930")) {
+      console.log(photographer.name);
+    }
   }
 }
