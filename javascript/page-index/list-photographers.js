@@ -1,4 +1,4 @@
-import ApiFisheye from "../api-fisheye";
+import { ApiFisheye } from "../api-fisheye.js";
 /**
  * DOM
  */

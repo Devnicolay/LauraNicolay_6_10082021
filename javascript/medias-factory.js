@@ -1,9 +1,7 @@
-export class MediaFactory
-
 const lightboxContainer = document.querySelector(".lightbox-container");
 
 // Template photographers page: Part media
-class MediaFactory {
+export class MediaFactory {
   static createMedia(data) {
     let mediaType;
 
@@ -15,6 +13,7 @@ class MediaFactory {
     return mediaType;
   }
 }
+
 class Media {
   constructor(media) {
     this.id = media.id;

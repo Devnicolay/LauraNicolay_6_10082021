@@ -1,6 +1,7 @@
-import { MediaFactory } from "./medias-factory";
-class ApiFisheye {
-  static photographers;
+import { MediaFactory } from "./medias-factory.js";
+import { Photographer } from "./photographers.js";
+export class ApiFisheye {
+  static photographers = [];
 
   // Fetch data
   static async fetchPhotographers() {

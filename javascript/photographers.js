@@ -1,4 +1,4 @@
-class Photographer {
+export class Photographer {
   constructor(photographer, medias) {
     this.IdPhotographer = photographer.id;
     this.name = photographer.name;
@@ -27,7 +27,7 @@ class Photographer {
       this.tagline +
       "</p><p class=prices>" +
       this.price +
-      "€/jour</p><div aria-label=tag filter><ul class=tags><a href=#><li><span aria-hidden=true>#</span>" +
+      "€/jour</p><div aria-label=tag filter><ul class=tags>" +
       this.tags
         .map((tag) => {
           return `<a href=# data="${tag}"><li><span aria-hidden=true>#${tag}</span></li></a>`;
