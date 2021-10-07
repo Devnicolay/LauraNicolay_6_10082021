@@ -20,7 +20,6 @@ export class ApiFisheye {
           }
         });
         photographes.push(new Photographer(photographer, mediasByPhotographer));
-        console.log(photographer);
       });
       ApiFisheye.photographers = photographes;
     } catch (exception) {
@@ -35,10 +34,13 @@ export class ApiFisheye {
     return ApiFisheye.photographers;
   }
 
-  static async getPhotographer(id) {
+  static async getPhotographerId() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const photographerId = urlParams.get("id");
     const photographers = await ApiFisheye.getPhotographers();
-    if (photographers.find((photographer) => photographer.id === "930")) {
-      console.log(photographer.name);
-    }
+    const photographer = photographers.find((photographer) => {
+      return photographer.IdPhotographer == photographerId;
+    });
+    return photographer;
   }
 }

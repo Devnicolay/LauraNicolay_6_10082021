@@ -18,6 +18,8 @@ async function loadIdPhotographers() {
   // Display medias for photographer
   pagePhotographerMedia.innerHTML = photographerConstructor.initializeMedia();
   photographerConstructor.datasPhotographer();
+
+  //////////////////////
   // Open form modal
   const contactBtn = document.querySelector(".contact");
   contactBtn.onclick = function () {
