@@ -1,4 +1,8 @@
+/**
+ * DOM Lightbox
+ */
 const lightboxContainer = document.querySelector(".lightbox-container");
+const lightbox = document.querySelector(".lightbox");
 
 // Template photographers page: Part media
 export class MediaFactory {

@@ -1,4 +1,6 @@
-const lightbox = document.querySelector(".lightbox");
+import { MediaFactory } from "../medias-factory.js";
+
+export class Lightbox {}
 
 // launch lightbox
 function openLightbox(source) {

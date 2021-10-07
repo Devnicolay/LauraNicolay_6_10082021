@@ -1,5 +1,8 @@
 import { ApiFisheye } from "../api-fisheye.js";
+import { MediaFactory } from "../medias-factory.js";
+import { Photographer } from "../photographers.js";
 import { Form } from "./form-modal.js";
+import { Lightbox } from "./lightbox.js";
 /**
  * DOM
  */
@@ -54,6 +57,18 @@ export class PagePhotographer {
      */
     // Create Html for médias by photographer
     pagePhotographerMedia.innerHTML = photographerId.initializeMedia();
+    /**
+     * Lightbox
+     */
+    // know if it's image or video
+    const allMedias = Array.from(document.querySelectorAll(".media-img-video"));
+    allMedias.forEach((media) => {
+      media.addEventListener("click", (event) => {
+        const src = event.currentTarget.getAttribute("src");
+        console.log(src);
+        MediaFactory.createHtmlLightbox(src);
+      });
+    });
   }
 }
 
