@@ -60,11 +60,14 @@ export class PagePhotographer {
     /**
      * Lightbox
      */
-    // know current index of media
+    // // get source of media and launch lightbox
     const allMedias = Array.from(document.querySelectorAll(".media-img-video"));
     allMedias.forEach((media) => {
-      Lightbox.currentIndex();
-      Lightbox.createHtmlTest(media);
+      media.addEventListener("click", (event) => {
+        const src = event.currentTarget.getAttribute("src");
+        console.log(src);
+        Lightbox.openLightbox(src);
+      });
     });
   }
 }

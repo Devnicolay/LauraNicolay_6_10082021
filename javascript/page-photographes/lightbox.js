@@ -15,32 +15,12 @@ export class Lightbox {
     this.alt = media.alt;
   }
 
-  static currentIndex() {
-    const allMedias = Array.from(document.querySelectorAll(".media-img-video"));
-    allMedias.forEach((media) => {
-      const index = media.addEventListener("click", (event) => {
-        const src = event.currentTarget.getAttribute("src");
-        console.log(src);
-        const srcMedias = allMedias.map((media) => {
-          return media.getAttribute("src");
-        });
-        const indexSrc = srcMedias.indexOf(src);
-        console.log(indexSrc);
-        return indexSrc;
-      });
-      return index;
-    });
-  }
-
-  //create html Test
-  static createHtmlTest() {
-    lightboxContainer.innerHTML =
-      "<img src=" + this.image + "><p>" + this.title + "</p>";
-  }
-
-  // create html lightbox
-  static createHtmlLightbox(media) {
-    console.log(this.image);
+  // launch lightbox
+  static openLightbox(media) {
+    const lightbox = document.querySelector(".lightbox");
+    lightbox.style.cssText += ";display:flex !important;";
+    lightbox.ariaModal = "true";
+    console.log(media);
     if (media.endsWith(".jpg")) {
       lightboxContainer.innerHTML =
         "<img src=" + this.image + "><p>" + this.title + "</p>";
@@ -52,15 +32,6 @@ export class Lightbox {
         this.title +
         "</p>";
     }
-  }
-
-  // launch lightbox
-  static openLightbox(media) {
-    const lightbox = document.querySelector(".lightbox");
-    lightbox.style.cssText += ";display:flex !important;";
-    lightbox.ariaModal = "true";
-    console.log(media);
-    Lightbox.createHtmlLightbox();
   }
 
   // Close Lightbox
