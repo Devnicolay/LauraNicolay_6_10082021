@@ -60,14 +60,11 @@ export class PagePhotographer {
     /**
      * Lightbox
      */
-    // know if it's image or video
+    // know current index of media
     const allMedias = Array.from(document.querySelectorAll(".media-img-video"));
     allMedias.forEach((media) => {
-      media.addEventListener("click", (event) => {
-        const src = event.currentTarget.getAttribute("src");
-        console.log(src);
-        MediaFactory.createHtmlLightbox(src);
-      });
+      Lightbox.currentIndex();
+      Lightbox.createHtmlTest(media);
     });
   }
 }
