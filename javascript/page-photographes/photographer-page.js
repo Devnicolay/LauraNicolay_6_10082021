@@ -3,6 +3,7 @@ import { MediaFactory } from "../medias-factory.js";
 import { Photographer } from "../photographers.js";
 import { Form } from "./form-modal.js";
 import { Lightbox } from "./lightbox.js";
+import { Like } from "./likes-and-price.js";
 /**
  * DOM
  */
@@ -60,14 +61,40 @@ export class PagePhotographer {
     /**
      * Lightbox
      */
-    // // get source of media and launch lightbox
+    // Instantiate a Lightbox class
+    const mediasPhotographer = photographerId.medias;
+    console.log(mediasPhotographer);
+
+    // get source of media and launch lightbox
     const allMedias = Array.from(document.querySelectorAll(".media-img-video"));
     allMedias.forEach((media) => {
-      media.addEventListener("click", (event) => {
-        const src = event.currentTarget.getAttribute("src");
-        console.log(src);
-        Lightbox.openLightbox(src);
+      media.addEventListener("click", () => {
+        const source = Lightbox.sourceMedia(media); // get source of media clicked
+        const mediaClicked = Lightbox.findMediaClicked(source); // return media clicked
+        console.log(mediaClicked);
+        const lightboxConstructor = new Lightbox(mediaClicked);
+        console.log(lightboxConstructor);
+        Lightbox.openLightbox(mediaClicked);
       });
+    });
+    window.addEventListener("keydown", Lightbox.keyboardTouchLightbox);
+    // close, next and previous lightbox with mouse click
+    const crossLightbox = document.querySelector(".lightbox-close i");
+    crossLightbox.addEventListener("click", Lightbox.closeLightbox);
+    const chevronRight = document.querySelector(".fa-chevron-right");
+    chevronRight.addEventListener("click", Lightbox.next);
+    const chevronLeft = document.querySelector(".fa-chevron-left");
+    chevronLeft.addEventListener("click", Lightbox.previous);
+    /**
+     * Likes
+     */
+    // Likes : increment and display likes at the bottom of the photographer's page
+    Like.likeAndPrice();
+    const likes = document.querySelectorAll(".heart");
+    likes.forEach((like) => {
+      like.addEventListener("click", Like.calculationLikeClicked);
+      like.addEventListener("click", Like.likeMedia);
+      like.addEventListener("click", Like.incrementTotalLikes);
     });
   }
 }

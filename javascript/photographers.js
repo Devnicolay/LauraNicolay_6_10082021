@@ -38,13 +38,6 @@ export class Photographer {
   }
   /**
    *
-   * @returns HTML media template for photographers page
-   */
-  initializeMedia() {
-    return this.medias.map((media) => media.createHtml()).join("");
-  }
-  /**
-   *
    * @returns photographers template in header for photographers page
    */
   createTemplatePhotographer() {
@@ -65,6 +58,20 @@ export class Photographer {
       this.portrait +
       "></aside></section>"
     );
+  }
+  /**
+   *
+   * @returns HTML media template for photographers page
+   */
+  initializeMedia() {
+    return this.medias.map((media) => media.createHtml()).join("");
+  }
+  /**
+   *
+   * @returns array of medias by photographer
+   */
+  initializeLightboxMedias() {
+    return this.medias;
   }
   /**
    *

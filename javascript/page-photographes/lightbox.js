@@ -1,5 +1,5 @@
+import { ApiFisheye } from "../api-fisheye.js";
 import { MediaFactory } from "../medias-factory.js";
-
 /**
  * DOM
  */
@@ -15,23 +15,38 @@ export class Lightbox {
     this.alt = media.alt;
   }
 
+  // get source of media clicked
+  static sourceMedia(media) {
+    const src = media.getAttribute("src");
+    return src;
+  }
+  // return media clicked
+  static async findMediaClicked(source) {
+    // Array for médias by photographer
+    const photographerId = await ApiFisheye.getPhotographerId();
+    const galleryMedias = photographerId.initializeLightboxMedias();
+    console.log(galleryMedias);
+    const media = galleryMedias.find((media) => media.image == source);
+    console.log(media);
+    return media;
+  }
   // launch lightbox
   static openLightbox(media) {
     const lightbox = document.querySelector(".lightbox");
     lightbox.style.cssText += ";display:flex !important;";
     lightbox.ariaModal = "true";
     console.log(media);
-    if (media.endsWith(".jpg")) {
-      lightboxContainer.innerHTML =
-        "<img src=" + this.image + "><p>" + this.title + "</p>";
-    } else if (media.endsWith(".mp4")) {
-      lightboxContainer.innerHTML =
-        "<video controls src=" +
-        this.video +
-        "></video<p>" +
-        this.title +
-        "</p>";
-    }
+    lightboxContainer.innerHTML = MediaFactory.createLightboxHtml(media);
+  }
+
+  // Next media
+  static next() {
+    console.log("Média suivant");
+  }
+
+  // Previous media
+  static previous() {
+    console.log("Média précédent");
   }
 
   // Close Lightbox
@@ -39,9 +54,14 @@ export class Lightbox {
     lightbox.style.cssText += ";display:none !important;";
   }
 
-  // Close lightbox with mouse click
-  static closeLightboxClick() {
-    const crossLightbox = document.querySelector(".lightbox-close");
-    crossLightbox.addEventListener("click", Lightbox.closeLightbox);
+  // close, next and previous lightbox with press touch on keyboard
+  static keyboardTouchLightbox(e) {
+    if (lightbox.ariaModal === "true" && e.key === "Escape") {
+      Lightbox.closeLightbox();
+    } else if (lightbox.ariaModal === "true" && e.key === "ArrowRight") {
+      Lightbox.next();
+    } else if (lightbox.ariaModal === "true" && e.key === "ArrowLeft") {
+      Lightbox.previous();
+    }
   }
 }

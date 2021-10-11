@@ -41,6 +41,9 @@ class Image extends Media {
       "</p><p class='heart' data-clicked='false'><i class='far fa-heart' aria-label='likes'></i></p></div></div></article>"
     );
   }
+  static createLightboxHtml() {
+    return "<img src=" + this.image + "><p>" + this.title + "</p>";
+  }
 }
 
 class Video extends Media {
@@ -56,6 +59,9 @@ class Video extends Media {
       this.likes +
       "</p><p class='heart' data-clicked='false'><i class='far fa-heart' aria-label='likes'></i></p></div></div></article>"
     );
+  }
+  createLightboxHtml() {
+    return "<video src=" + this.video + "><p>" + this.title + "</p></video>";
   }
   showLike() {
     console.log(this.likes);
