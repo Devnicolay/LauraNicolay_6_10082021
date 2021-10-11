@@ -68,13 +68,6 @@ export class Photographer {
   }
   /**
    *
-   * @returns array of medias by photographer
-   */
-  initializeLightboxMedias() {
-    return this.medias;
-  }
-  /**
-   *
    * @returns counter template for the "likes" of the photographers page
    */
   createTemplateLikes() {

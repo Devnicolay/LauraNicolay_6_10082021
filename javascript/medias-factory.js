@@ -41,7 +41,7 @@ class Image extends Media {
       "</p><p class='heart' data-clicked='false'><i class='far fa-heart' aria-label='likes'></i></p></div></div></article>"
     );
   }
-  static createLightboxHtml() {
+  createLightboxHtml() {
     return "<img src=" + this.image + "><p>" + this.title + "</p>";
   }
 }

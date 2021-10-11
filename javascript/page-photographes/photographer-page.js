@@ -3,7 +3,7 @@ import { MediaFactory } from "../medias-factory.js";
 import { Photographer } from "../photographers.js";
 import { Form } from "./form-modal.js";
 import { Lightbox } from "./lightbox.js";
-import { Like } from "./likes-and-price.js";
+import * as Like from "./likes-and-price.js";
 /**
  * DOM
  */
@@ -61,23 +61,17 @@ export class PagePhotographer {
     /**
      * Lightbox
      */
-    // Instantiate a Lightbox class
-    const mediasPhotographer = photographerId.medias;
-    console.log(mediasPhotographer);
+    const lightbox = new Lightbox(photographerId.medias);
 
     // get source of media and launch lightbox
     const allMedias = Array.from(document.querySelectorAll(".media-img-video"));
     allMedias.forEach((media) => {
-      media.addEventListener("click", () => {
+      media.addEventListener("click", async () => {
         const source = Lightbox.sourceMedia(media); // get source of media clicked
-        const mediaClicked = Lightbox.findMediaClicked(source); // return media clicked
-        console.log(mediaClicked);
-        const lightboxConstructor = new Lightbox(mediaClicked);
-        console.log(lightboxConstructor);
-        Lightbox.openLightbox(mediaClicked);
+        const mediaClicked = await Lightbox.findMediaClicked(source); // return media clicked
+        lightbox.openLightbox(mediaClicked);
       });
     });
-    window.addEventListener("keydown", Lightbox.keyboardTouchLightbox);
     // close, next and previous lightbox with mouse click
     const crossLightbox = document.querySelector(".lightbox-close i");
     crossLightbox.addEventListener("click", Lightbox.closeLightbox);
