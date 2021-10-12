@@ -97,7 +97,6 @@ export class PagePhotographer {
       like.addEventListener("click", Like.likeMedia);
       like.addEventListener("click", Like.calculationLikeClicked);
       like.addEventListener("click", Like.increment);
-      like.addEventListener("click", Like.colorIcon());
     });
   }
 }

@@ -38,7 +38,7 @@ export class Lightbox {
 
   // Next media
   next() {
-    this.currentMediaIndex++; // @todo gérer le cas où on est déjà au début du tableau
+    this.currentMediaIndex++;
     const lastMedia = this.medias.length;
     if (this.currentMediaIndex == lastMedia) {
       this.currentMediaIndex = 0;
