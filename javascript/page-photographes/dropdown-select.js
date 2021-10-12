@@ -34,7 +34,7 @@ function displayDropdown() {
 sortPopularity.addEventListener("click", async () => {
   dropdownLink.style.display = "none";
 
-  const photographer = await ApiFisheye.getPhotographerId();
+  const photographer = await ApiFisheye.getPhotographerById();
   const medias = photographer.medias;
   console.log(medias);
   const sortedMedias = medias.sort((a, b) => {
@@ -56,7 +56,7 @@ sortDate.addEventListener("click", async () => {
     '<li><a class ="sort-popularity" href="#">Popularité</a></li><li><a class="sort-title" href="#">Titre</a></li>';
   dropdownLink.style.display = "none";
 
-  const photographer = await ApiFisheye.getPhotographerId();
+  const photographer = await ApiFisheye.getPhotographerById();
   const medias = photographer.medias;
   const sortedMedias = medias.sort((a, b) => {
     return a.date - b.date;
@@ -78,7 +78,7 @@ sortTitle.addEventListener("click", async () => {
     '<li><a class ="sort-date" href="#">Date</a></li><li><a class="sort-popularity" href="#">Popularité</a></li>';
   dropdownLink.style.display = "none";
 
-  const photographer = await ApiFisheye.getPhotographerId();
+  const photographer = await ApiFisheye.getPhotographerById();
   const medias = photographer.medias;
   const sortedMedias = medias.sort(function (a, b) {
     let x = a.title.toLowerCase();

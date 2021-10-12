@@ -34,7 +34,7 @@ export class ApiFisheye {
     return ApiFisheye.photographers;
   }
 
-  static async getPhotographerId() {
+  static async getPhotographerById() {
     const urlParams = new URLSearchParams(window.location.search);
     const photographerId = urlParams.get("id");
     const photographers = await ApiFisheye.getPhotographers();

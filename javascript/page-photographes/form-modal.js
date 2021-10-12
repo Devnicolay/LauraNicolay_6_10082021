@@ -1,44 +1,42 @@
-import { ApiFisheye } from "../api-fisheye.js";
 /**
  * DOM
  */
 
+const sendBtn = document.querySelector("#send");
 const modal = document.querySelector(".form-contact");
 const contactMe = document.querySelector(".header-form #titlemodal");
 const firstName = document.getElementById("firstname");
 const lastName = document.getElementById("lastname");
 const email = document.getElementById("email");
 const message = document.getElementById("yourmessage");
-const form = document.getElementById("form");
+const closeBtn = document.querySelector(".header-form .close-form");
 
 export class Form {
+  constructor(photographer) {
+    this.photographer = photographer;
+    this.initListeners();
+  }
+
   //Open modal form
-  static async openModal() {
+  openModal() {
     modal.style.display = "block";
     modal.setAttribute("aria-hidden", false);
     modal.setAttribute("aria-modal", true);
-    const name = await Form.displayNamePhotographer();
-    contactMe.innerHTML = "Contactez-moi " + name;
-  }
-
-  // Display the name for Photographer next to "Contactez-moi"
-  static async displayNamePhotographer() {
-    const namePhotographer = await ApiFisheye.getPhotographerId();
-    return namePhotographer.name;
+    contactMe.innerHTML = "Contactez-moi " + this.photographer.name;
   }
 
   // close modal form with mouseclick
-  static closeModal() {
+  closeModal() {
     modal.style.display = "none";
   }
 
   // Close and send form with press escape on keyboard
-  static keyboardTouchForm(e) {
+  keyboardTouchForm(e) {
     if (modal.ariaModal === "true" && e.key === "Escape") {
-      Form.closeModal();
+      this.closeModal();
     }
     if (modal.ariaModal === "true" && e.key === "Enter") {
-      Form.formValidation(event);
+      this.formValidation(event);
     }
   }
 
@@ -46,7 +44,7 @@ export class Form {
    * Check input validation
    */
   // Input firstname
-  static firstNameCheck() {
+  firstNameCheck() {
     const alertMsg = document.querySelector(".firstname .alert-msg");
     if (firstName.value.trim().length >= 2) {
       // the value of firstName must have 2 caracters or more
@@ -61,7 +59,7 @@ export class Form {
   }
 
   // Input lastname
-  static lastNameCheck() {
+  lastNameCheck() {
     const alertMsg = document.querySelector(".lastname .alert-msg");
     if (lastName.value.trim().length >= 2) {
       // the value of lastname must have 2 caracters or more
@@ -76,7 +74,7 @@ export class Form {
   }
 
   // Input email
-  static emailCheck() {
+  emailCheck() {
     const alertMsg = document.querySelector(".email .alert-msg");
     const mailFormat =
       /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+$/;
@@ -93,7 +91,7 @@ export class Form {
   }
 
   // Input message
-  static messageCheck() {
+  messageCheck() {
     const alertMsg = document.querySelector(".message .alert-msg");
     if (message.value.trim().length >= 2) {
       // the value of message must have 2 caracters or more
@@ -108,21 +106,21 @@ export class Form {
   }
 
   // Form validation
-  static formValidation(event) {
+  formValidation(event) {
     event.preventDefault();
-    const isFirstNameValid = Form.firstNameCheck();
-    const isLastNameValid = Form.lastNameCheck();
-    const isEmailValid = Form.emailCheck();
-    const isMessageValid = Form.messageCheck();
+    const isFirstNameValid = this.firstNameCheck();
+    const isLastNameValid = this.lastNameCheck();
+    const isEmailValid = this.emailCheck();
+    const isMessageValid = this.messageCheck();
     if (isFirstNameValid && isLastNameValid && isEmailValid && isMessageValid) {
-      Form.displayValuesInConsoleLog();
-      Form.closeModal();
-      form.reset();
+      this.displayValuesInConsoleLog();
+      this.closeModal();
+      this.reset();
     }
   }
 
   // Send form: display values for input in console.log
-  static displayValuesInConsoleLog() {
+  displayValuesInConsoleLog() {
     console.log(
       "Prénom:" +
         firstName.value +
@@ -133,5 +131,37 @@ export class Form {
         "\nMessage:" +
         message.value
     );
+  }
+
+  initListeners() {
+    // close and send form with keyboard
+    window.addEventListener("keydown", () => {
+      this.keyboardTouchForm();
+    });
+    // close form
+    closeBtn.addEventListener("click", () => {
+      this.closeModal();
+    });
+    // Send form with mouseclick
+    sendBtn.addEventListener("click", () => {
+      this.formValidation();
+    });
+    // Check input validation
+    firstName.addEventListener("blur", () => {
+      this.firstNameCheck();
+    });
+    lastName.addEventListener("blur", () => {
+      this.lastNameCheck();
+    });
+    email.addEventListener("blur", () => {
+      this.emailCheck();
+    });
+    message.addEventListener("blur", () => {
+      this.messageCheck();
+    });
+    const contactBtn = document.querySelector(".contact");
+    contactBtn.addEventListener("click", () => {
+      this.openModal();
+    });
   }
 }

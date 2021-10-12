@@ -1,10 +1,13 @@
 import { ApiFisheye } from "../api-fisheye.js";
-import { MediaFactory } from "../medias-factory.js";
+
 /**
  * DOM
  */
 const lightbox = document.querySelector(".lightbox");
 const lightboxContainer = document.querySelector(".lightbox-container");
+const crossLightbox = document.querySelector(".lightbox-close i");
+const chevronRight = document.querySelector(".fa-chevron-right");
+const chevronLeft = document.querySelector(".fa-chevron-left");
 
 export class Lightbox {
   constructor(medias) {
@@ -13,18 +16,12 @@ export class Lightbox {
     this.initListeners();
   }
 
-  // get source of media clicked
-  static sourceMedia(media) {
-    const src = media.getAttribute("src");
-    return src;
-  }
   // return media clicked
   static async findMediaClicked(source) {
     // Array for médias by photographer
-    const photographer = await ApiFisheye.getPhotographerId();
+    const photographer = await ApiFisheye.getPhotographerById();
     const medias = photographer.medias;
-    const media = medias.find((media) => media.image == source);
-    console.log(media);
+    const media = medias.find((media) => media.source == source);
     return media;
   }
   // launch lightbox
@@ -42,12 +39,9 @@ export class Lightbox {
     const lastMedia = this.medias.length;
     if (this.currentMediaIndex == lastMedia) {
       this.currentMediaIndex = 0;
-      lightboxContainer.innerHTML =
-        this.medias[this.currentMediaIndex].createLightboxHtml();
-    } else {
-      lightboxContainer.innerHTML =
-        this.medias[this.currentMediaIndex].createLightboxHtml();
     }
+    lightboxContainer.innerHTML =
+      this.medias[this.currentMediaIndex].createLightboxHtml();
   }
 
   // Previous media
@@ -56,12 +50,9 @@ export class Lightbox {
     if (this.currentMediaIndex < 0) {
       const lastMedia = this.medias.length;
       this.currentMediaIndex = lastMedia - 1;
-      lightboxContainer.innerHTML =
-        this.medias[this.currentMediaIndex].createLightboxHtml();
-    } else {
-      lightboxContainer.innerHTML =
-        this.medias[this.currentMediaIndex].createLightboxHtml();
     }
+    lightboxContainer.innerHTML =
+      this.medias[this.currentMediaIndex].createLightboxHtml();
   }
 
   // Close Lightbox
@@ -69,8 +60,8 @@ export class Lightbox {
     lightbox.style.cssText += ";display:none !important;";
   }
 
-  // close, next and previous lightbox with press touch on keyboard
-  initListeners(e) {
+  initListeners() {
+    // close, next and previous lightbox with press touch on keyboard
     window.addEventListener("keydown", (event) => {
       if (lightbox.ariaModal === "true" && event.key === "Escape") {
         this.closeLightbox();
@@ -79,6 +70,25 @@ export class Lightbox {
       } else if (lightbox.ariaModal === "true" && event.key === "ArrowLeft") {
         this.previous();
       }
+    });
+    // close, next and previous lightbox with mouse click
+    crossLightbox.addEventListener("click", () => {
+      this.closeLightbox();
+    });
+    chevronRight.addEventListener("click", () => {
+      this.next();
+    });
+    chevronLeft.addEventListener("click", () => {
+      this.previous();
+    });
+
+    const allMedias = Array.from(document.querySelectorAll(".media-img-video"));
+    allMedias.forEach((media) => {
+      media.addEventListener("click", async () => {
+        const source = media.getAttribute("src"); // get source of media clicked
+        const mediaClicked = await Lightbox.findMediaClicked(source); // return media clicked
+        this.openLightbox(mediaClicked);
+      });
     });
   }
 }

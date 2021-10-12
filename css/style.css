@@ -413,6 +413,12 @@ body .form-contact .modal .modal-content #send {
   height: 87%;
   object-fit: cover;
 }
+.lightbox .lightbox-container video {
+  max-width: 100%;
+  width: 100%;
+  height: 87%;
+  object-fit: cover;
+}
 .lightbox .lightbox-container p {
   color: #901c1c;
   margin-top: 0.2em;

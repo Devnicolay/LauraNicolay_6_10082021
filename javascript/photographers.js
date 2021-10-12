@@ -9,6 +9,7 @@ export class Photographer {
     this.price = photographer.price;
     this.portrait = photographer.portrait;
     this.medias = medias;
+    this.initListeners();
   }
   /**
    * photographers template for home page
@@ -71,10 +72,43 @@ export class Photographer {
    * @returns counter template for the "likes" of the photographers page
    */
   createTemplateLikes() {
-    return (
+    const likesAndPrice = document.querySelector(".likes-and-price");
+    likesAndPrice.innerHTML =
       "<p class='counter-like' aria-label='total of like'><span></span><i class='fas fa-heart'></i></p><p>" +
       this.price +
-      "€ / jour</p>"
+      "€ / jour</p>";
+    this.updateTotalLikes();
+  }
+
+  initListeners() {
+    const tags = document.querySelectorAll(".tag");
+    tags.forEach((tag) => {
+      const tagValue = tag.getAttribute("data");
+      tag.addEventListener("click", () => {
+        window.location.href = "index.html#" + tagValue;
+      });
+    });
+  }
+
+  // calculation total likes
+  updateTotalLikes() {
+    let nbLikes = 0;
+    this.medias.forEach((media) => {
+      nbLikes += media.likes;
+    });
+    const counterLikeSelector = document.querySelector(
+      ".likes-and-price .counter-like span"
     );
+    counterLikeSelector.innerHTML = nbLikes;
+  }
+
+  likeMedia(mediaId) {
+    const media = this.medias.find((media) => media.id == mediaId);
+    media.likes++;
+    media.clicked = true;
+    document.querySelector(`.number-heart[data-id="${media.id}"]`).innerHTML =
+      media.createLikeHtml();
+
+    this.updateTotalLikes();
   }
 }
