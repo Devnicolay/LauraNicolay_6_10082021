@@ -1,9 +1,8 @@
 import { ApiFisheye } from "../api-fisheye.js";
-import { MediaFactory } from "../medias-factory.js";
-import { Photographer } from "../photographers.js";
 import { Form } from "./form-modal.js";
 import { Lightbox } from "./lightbox.js";
-import * as Like from "./likes-and-price.js";
+import { Like } from "./likes-and-price.js";
+import { TagsFilter } from "../page-index/tags-filters.js";
 /**
  * DOM
  */
@@ -32,6 +31,15 @@ export class PagePhotographer {
     // Create Html for photographer identity
     pagePhotographer.innerHTML = "";
     pagePhotographer.innerHTML = photographerId.createTemplatePhotographer();
+    // Apply filters tags
+    const tags = document.querySelectorAll(".tag");
+    tags.forEach((tag) => {
+      const tagValue = tag.getAttribute("data");
+      tag.addEventListener("click", () => {
+        window.location.href = "index.html#" + tagValue;
+        setTimeout(TagsFilter.displayFilter(tagValue), 7000);
+      });
+    });
     /**
      * Form
      */
@@ -86,9 +94,10 @@ export class PagePhotographer {
     Like.likeAndPrice();
     const likes = document.querySelectorAll(".heart");
     likes.forEach((like) => {
-      like.addEventListener("click", Like.calculationLikeClicked);
       like.addEventListener("click", Like.likeMedia);
-      like.addEventListener("click", Like.incrementTotalLikes);
+      like.addEventListener("click", Like.calculationLikeClicked);
+      like.addEventListener("click", Like.increment);
+      like.addEventListener("click", Like.colorIcon());
     });
   }
 }

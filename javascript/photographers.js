@@ -51,7 +51,7 @@ export class Photographer {
       "</p><ul class=tags>" +
       this.tags
         .map((tag) => {
-          return `<a href=# data="${tag}"><li><span aria-hidden=true>#${tag}</span></li></a>`;
+          return `<a class=tag href=# data="${tag}"><li><span aria-hidden=true>#${tag}</span></li></a>`;
         })
         .join("") +
       "</ul></article><aside><a href=photographes.html><img src=" +
