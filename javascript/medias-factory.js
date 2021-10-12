@@ -3,9 +3,9 @@ export class MediaFactory {
   static createMedia(data) {
     let mediaType;
 
-    if (data.hasOwnProperty("image")) {
+    if (Object.prototype.hasOwnProperty.call(data, "image")) {
       mediaType = new Image(data);
-    } else if (data.hasOwnProperty("video")) {
+    } else if (Object.prototype.hasOwnProperty.call(data, "video")) {
       mediaType = new Video(data);
     }
     return mediaType;
@@ -61,7 +61,9 @@ class Video extends Media {
     );
   }
   createLightboxHtml() {
-    return "<video src=" + this.video + "><p>" + this.title + "</p></video>";
+    return (
+      "<video controls src=" + this.video + "><p>" + this.title + "</p></video>"
+    );
   }
   showLike() {
     console.log(this.likes);
