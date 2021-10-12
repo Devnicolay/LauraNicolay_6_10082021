@@ -15,32 +15,37 @@ function loadIndex() {
   getUrlFilter();
 }
 
-// Display photographer on home page
+/**
+ * Display photographer on home page
+ */
 async function displayPhotographer() {
   let photographers = await ApiFisheye.getPhotographers();
   containerPhotographers.innerHTML = "";
   photographers.forEach((photographer) => {
     containerPhotographers.innerHTML += photographer.createTemplateIndex();
   });
-  photographers = await ApiFisheye.getPhotographers();
 }
 
-// Apply filters tags
+/**
+ * Apply filters tags
+ */
 const tags = document.querySelectorAll(".tag");
 tags.forEach((tag) => {
   const tagValue = tag.getAttribute("data");
   tag.addEventListener("click", () => {
-    TagsFilter.displayFilter(tagValue);
+    TagsFilter.displayPhotographersFiltered(tagValue);
   });
 });
 
-//
+/**
+ * When click tag on photographer page, redirect on home page with filtered photographers with tag clicked
+ */
 function getUrlFilter() {
   const ancre = window.location.hash;
   const deleteHashtag = ancre.substring(1, 13);
   if (ancre == "") {
     console.log("none");
   } else {
-    TagsFilter.displayFilter(deleteHashtag);
+    TagsFilter.displayPhotographersFiltered(deleteHashtag);
   }
 }

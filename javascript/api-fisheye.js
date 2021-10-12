@@ -3,7 +3,9 @@ import { Photographer } from "./photographers.js";
 export class ApiFisheye {
   static photographers = [];
 
-  // Fetch data
+  /**
+   * Fetch data
+   */
   static async fetchPhotographers() {
     try {
       const dataPath = await fetch("./data-photographers/photographers.json");
@@ -27,6 +29,10 @@ export class ApiFisheye {
     }
   }
 
+  /**
+   *
+   * @returns photographers with their medias
+   */
   static async getPhotographers() {
     if (ApiFisheye.photographers.length === 0) {
       await ApiFisheye.fetchPhotographers();
@@ -34,6 +40,10 @@ export class ApiFisheye {
     return ApiFisheye.photographers;
   }
 
+  /**
+   *
+   * @returns photographer corresponding to the url id
+   */
   static async getPhotographerById() {
     const urlParams = new URLSearchParams(window.location.search);
     const photographerId = urlParams.get("id");

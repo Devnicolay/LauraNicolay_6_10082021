@@ -8,8 +8,6 @@ import { Lightbox } from "./lightbox.js";
 const pagePhotographer = document.querySelector(".page-photographer");
 const pagePhotographerMedia = document.querySelector(".medias");
 
-// Dom for form
-
 export class PagePhotographer {
   /**
    *
@@ -24,15 +22,22 @@ export class PagePhotographer {
     pagePhotographer.innerHTML = "";
     pagePhotographer.innerHTML = photographer.createTemplatePhotographer();
 
+    // Filter tags
+    photographer.redirectFilteredPhotographers();
+
     /**
      * Part medias
      */
     pagePhotographerMedia.innerHTML = photographer.initializeMedia();
+
     /**
      * Lightbox
      */
     new Lightbox(photographer.medias);
 
+    /**
+     * Form
+     */
     new Form(photographer);
 
     /**
@@ -40,7 +45,7 @@ export class PagePhotographer {
      */
     // Likes : increment and display likes at the bottom of the photographer's page
 
-    photographer.createTemplateLikes();
+    photographer.createTemplateLikes(); // create counter like bottom the page
     const likes = document.querySelectorAll(".heart");
     likes.forEach((like) => {
       const mediaId = like.getAttribute("data-id");

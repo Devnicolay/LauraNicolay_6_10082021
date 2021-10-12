@@ -16,7 +16,12 @@ export class Lightbox {
     this.initListeners();
   }
 
-  // return media clicked
+  /**
+   *
+   * Find the media that was clicked
+   * @param {string} source of media clicked
+   * @returns media that was clicked
+   */
   static async findMediaClicked(source) {
     // Array for médias by photographer
     const photographer = await ApiFisheye.getPhotographerById();
@@ -24,7 +29,11 @@ export class Lightbox {
     const media = medias.find((media) => media.source == source);
     return media;
   }
-  // launch lightbox
+  /**
+   *
+   * Launch lightbox
+   * @param {string} clickedMedia Media clicked for open lightbox
+   */
   openLightbox(clickedMedia) {
     const lightbox = document.querySelector(".lightbox");
     lightbox.style.cssText += ";display:flex !important;";
@@ -33,7 +42,9 @@ export class Lightbox {
     lightboxContainer.innerHTML = clickedMedia.createLightboxHtml();
   }
 
-  // Next media
+  /**
+   * Next media
+   */
   next() {
     this.currentMediaIndex++;
     const lastMedia = this.medias.length;
@@ -44,7 +55,9 @@ export class Lightbox {
       this.medias[this.currentMediaIndex].createLightboxHtml();
   }
 
-  // Previous media
+  /**
+   * Previous media
+   */
   previous() {
     this.currentMediaIndex--;
     if (this.currentMediaIndex < 0) {
@@ -55,11 +68,16 @@ export class Lightbox {
       this.medias[this.currentMediaIndex].createLightboxHtml();
   }
 
-  // Close Lightbox
+  /**
+   * Close Lightbox
+   */
   closeLightbox() {
     lightbox.style.cssText += ";display:none !important;";
   }
 
+  /**
+   * Listeners
+   */
   initListeners() {
     // close, next and previous lightbox with press touch on keyboard
     window.addEventListener("keydown", (event) => {

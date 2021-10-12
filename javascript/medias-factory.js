@@ -1,5 +1,10 @@
-// Template photographers page: Part media
 export class MediaFactory {
+  /**
+   *
+   * Create media if it's an image or a video
+   * @param {string} data for media
+   * @returns
+   */
   static createMedia(data) {
     let mediaType;
 
@@ -25,6 +30,10 @@ class Media {
     this.clicked = false;
   }
 
+  /**
+   *
+   * @returns Html for colored hearts likes
+   */
   createLikeHtml() {
     let iconName = "far";
     if (this.clicked) {
@@ -42,6 +51,10 @@ class Image extends Media {
     super(media);
     this.source = media.image;
   }
+  /**
+   *
+   * @returns Html for image
+   */
   createHtml() {
     return (
       "<article class=block-media><img class=media-img-video src=" +
@@ -55,6 +68,10 @@ class Image extends Media {
       "</div></div></article>"
     );
   }
+  /**
+   *
+   * @returns Html for content lightbox
+   */
   createLightboxHtml() {
     return "<img src=" + this.source + "><p>" + this.title + "</p>";
   }
@@ -65,6 +82,10 @@ class Video extends Media {
     super(media);
     this.source = media.video;
   }
+  /**
+   *
+   * @returns Html for video
+   */
   createHtml() {
     return (
       "<article class=block-media><video controls class=media-img-video src=" +
@@ -76,6 +97,10 @@ class Video extends Media {
       "</div></div></article>"
     );
   }
+  /**
+   *
+   * @returns Html for content lightbox
+   */
   createLightboxHtml() {
     return (
       "<video controls src=" +

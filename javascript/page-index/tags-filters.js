@@ -2,7 +2,11 @@ import { ApiFisheye } from "../api-fisheye.js";
 import { Photographer } from "../photographers.js";
 
 export class TagsFilter {
-  static async displayFilter(tagValue) {
+  /**
+   *
+   * @param {string} tagValue display photographers who have the tag clicked
+   */
+  static async displayPhotographersFiltered(tagValue) {
     const photographers = await ApiFisheye.getPhotographers();
     const filteredPhotographers = photographers.filter((photographer) => {
       return photographer.tags.includes(tagValue);

@@ -9,10 +9,10 @@ export class Photographer {
     this.price = photographer.price;
     this.portrait = photographer.portrait;
     this.medias = medias;
-    this.initListeners();
+    this.redirectFilteredPhotographers();
   }
   /**
-   * photographers template for home page
+   * @returns photographers template for home page
    */
   createTemplateIndex() {
     return (
@@ -60,6 +60,20 @@ export class Photographer {
       "></aside></section>"
     );
   }
+
+  /**
+   * when click on tag, redirect on index.html with photographer filter by tag
+   */
+  redirectFilteredPhotographers() {
+    const tags = document.querySelectorAll(".tag");
+    tags.forEach((tag) => {
+      const tagValue = tag.getAttribute("data");
+      tag.addEventListener("click", () => {
+        window.location.href = "index.html#" + tagValue;
+      });
+    });
+  }
+
   /**
    *
    * @returns HTML media template for photographers page
@@ -67,6 +81,7 @@ export class Photographer {
   initializeMedia() {
     return this.medias.map((media) => media.createHtml()).join("");
   }
+
   /**
    *
    * @returns counter template for the "likes" of the photographers page
@@ -80,17 +95,9 @@ export class Photographer {
     this.updateTotalLikes();
   }
 
-  initListeners() {
-    const tags = document.querySelectorAll(".tag");
-    tags.forEach((tag) => {
-      const tagValue = tag.getAttribute("data");
-      tag.addEventListener("click", () => {
-        window.location.href = "index.html#" + tagValue;
-      });
-    });
-  }
-
-  // calculation total likes
+  /**
+   *  Calculate total likes
+   */
   updateTotalLikes() {
     let nbLikes = 0;
     this.medias.forEach((media) => {
@@ -102,6 +109,10 @@ export class Photographer {
     counterLikeSelector.innerHTML = nbLikes;
   }
 
+  /**
+   *
+   * @param {string} mediaId Id for media
+   */
   likeMedia(mediaId) {
     const media = this.medias.find((media) => media.id == mediaId);
     media.likes++;

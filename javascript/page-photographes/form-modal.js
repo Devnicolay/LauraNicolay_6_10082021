@@ -17,7 +17,9 @@ export class Form {
     this.initListeners();
   }
 
-  //Open modal form
+  /**
+   * Open modal form
+   */
   openModal() {
     modal.style.display = "block";
     modal.setAttribute("aria-hidden", false);
@@ -25,19 +27,61 @@ export class Form {
     contactMe.innerHTML = "Contactez-moi " + this.photographer.name;
   }
 
-  // close modal form with mouseclick
+  /**
+   * Close modal
+   */
   closeModal() {
     modal.style.display = "none";
   }
 
-  // Close and send form with press escape on keyboard
+  /**
+   *
+   * @param {event} e Close and send form with press escape on keyboard
+   */
   keyboardTouchForm(e) {
     if (modal.ariaModal === "true" && e.key === "Escape") {
       this.closeModal();
     }
     if (modal.ariaModal === "true" && e.key === "Enter") {
-      this.formValidation(event);
+      this.formValidation();
     }
+  }
+
+  /**
+   *
+   * Listeners
+   *
+   */
+  initListeners() {
+    // close and send form with keyboard
+    window.addEventListener("keydown", () => {
+      this.keyboardTouchForm();
+    });
+    // close form
+    closeBtn.addEventListener("click", () => {
+      this.closeModal();
+    });
+    // Send form with mouseclick
+    sendBtn.addEventListener("click", () => {
+      this.formValidation();
+    });
+    // Check input validation
+    firstName.addEventListener("blur", () => {
+      this.firstNameCheck();
+    });
+    lastName.addEventListener("blur", () => {
+      this.lastNameCheck();
+    });
+    email.addEventListener("blur", () => {
+      this.emailCheck();
+    });
+    message.addEventListener("blur", () => {
+      this.messageCheck();
+    });
+    const contactBtn = document.querySelector(".contact");
+    contactBtn.addEventListener("click", () => {
+      this.openModal();
+    });
   }
 
   /**
@@ -105,8 +149,11 @@ export class Form {
     }
   }
 
-  // Form validation
-  formValidation(event) {
+  /**
+   *
+   * Form validation
+   */
+  formValidation() {
     event.preventDefault();
     const isFirstNameValid = this.firstNameCheck();
     const isLastNameValid = this.lastNameCheck();
@@ -119,7 +166,9 @@ export class Form {
     }
   }
 
-  // Send form: display values for input in console.log
+  /**
+   * Send form: display values for input in console.log
+   */
   displayValuesInConsoleLog() {
     console.log(
       "Prénom:" +
@@ -131,37 +180,5 @@ export class Form {
         "\nMessage:" +
         message.value
     );
-  }
-
-  initListeners() {
-    // close and send form with keyboard
-    window.addEventListener("keydown", () => {
-      this.keyboardTouchForm();
-    });
-    // close form
-    closeBtn.addEventListener("click", () => {
-      this.closeModal();
-    });
-    // Send form with mouseclick
-    sendBtn.addEventListener("click", () => {
-      this.formValidation();
-    });
-    // Check input validation
-    firstName.addEventListener("blur", () => {
-      this.firstNameCheck();
-    });
-    lastName.addEventListener("blur", () => {
-      this.lastNameCheck();
-    });
-    email.addEventListener("blur", () => {
-      this.emailCheck();
-    });
-    message.addEventListener("blur", () => {
-      this.messageCheck();
-    });
-    const contactBtn = document.querySelector(".contact");
-    contactBtn.addEventListener("click", () => {
-      this.openModal();
-    });
   }
 }
