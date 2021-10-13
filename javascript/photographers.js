@@ -115,11 +115,22 @@ export class Photographer {
    */
   likeMedia(mediaId) {
     const media = this.medias.find((media) => media.id == mediaId);
-    media.likes++;
-    media.clicked = true;
-    document.querySelector(`.number-heart[data-id="${media.id}"]`).innerHTML =
-      media.createLikeHtml();
+    if (media.clicked == false) {
+      media.likes++;
+      media.clicked = true;
+      console.log(media.clicked);
+      document.querySelector(`.number-heart[data-id="${media.id}"]`).innerHTML =
+        media.createLikeHtml();
 
-    this.updateTotalLikes();
+      this.updateTotalLikes();
+    } else if (media.clicked == true) {
+      media.likes--;
+      media.clicked = false;
+      console.log(media.clicked);
+      document.querySelector(`.number-heart[data-id="${media.id}"]`).innerHTML =
+        media.createLikeHtml();
+
+      this.updateTotalLikes();
+    }
   }
 }
