@@ -1,6 +1,7 @@
 import { ApiFisheye } from "../api-fisheye.js";
 import { Form } from "./form-modal.js";
 import { Lightbox } from "./lightbox.js";
+import { DropdownSelect } from "./dropdown-select.js";
 /**
  * DOM
  */
@@ -39,6 +40,11 @@ export class PagePhotographer {
      * Form
      */
     new Form(photographer);
+
+    /**
+     * Dropdown select
+     */
+    new DropdownSelect();
 
     /**
      * Likes
