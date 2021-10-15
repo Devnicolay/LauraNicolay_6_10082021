@@ -53,19 +53,19 @@
     label {
       font-weight: bold;
       margin-right: 1em;
-      margin-top: 0.5em;
+      margin-top: 1em;
     }
     .dropdown-filters {
       background-color: $primary-color;
       border-radius: 0.31em;
-      padding: 0.3em 1em 0em 1em;
+      padding: 0em 1em 0em 1em;
       button {
         color: white;
         background-color: $primary-color;
         border-color: transparent;
         font-family: DM_Sans;
         font-size: 1em;
-        display: flex;
+        padding: 0.9em 0.8em 0.5em 0.4em;
         i {
           margin-left: 1em;
         }
@@ -87,6 +87,13 @@
         list-style: none;
         padding-left: 0;
         display: none;
+        li:first-child {
+          border-top: none;
+          padding-top: 0;
+        }
+        .arrow-down {
+          margin-left: 0.8em;
+        }
         li {
           border-top: 1px solid white;
           padding-top: 0.6em;

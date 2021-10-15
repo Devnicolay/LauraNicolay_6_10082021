@@ -6,7 +6,8 @@ import { MediaFactory } from "../medias-factory.js";
  */
 const dropdownMenu = document.querySelector(".dropdown-select");
 const dropdownLink = document.querySelector(".dropdown");
-const arrow = document.querySelector(".arrow");
+const arrowDown = document.querySelector(".arrow-down");
+const arrowUp = document.querySelector(".arrow-up");
 const sortPopularity = document.querySelector(
   ".dropdown-select-content, .sort-popularity"
 );
@@ -27,11 +28,11 @@ export class DropdownSelect {
     if (isExpanded === "true") {
       dropdownLink.style.display = "none";
       dropdownMenu.setAttribute("aria-expanded", "false");
-      arrow.innerHTML = "<i class='fas fa-chevron-down'></i>";
+      arrowDown.innerHTML = "<i class='fas fa-chevron-down'></i>";
     } else {
       dropdownLink.style.display = "block";
+      btnSort.style.display = "none";
       dropdownMenu.setAttribute("aria-expanded", "true");
-      arrow.innerHTML = "<i class='fas fa-chevron-up'></i>";
     }
   }
 
@@ -39,11 +40,13 @@ export class DropdownSelect {
    * Sort medias with popularity
    */
   async popularitySort() {
+    btnSort.style.display = "block";
+    btnSort.innerHTML =
+      'Popularité<span class="arrow"><i class="fas fa-chevron-down"></i></span>';
     dropdownLink.style.display = "none";
 
     const photographer = await ApiFisheye.getPhotographerById();
     const medias = photographer.medias;
-    console.log(medias);
     const sortedMedias = medias.sort((a, b) => {
       return b.likes - a.likes;
     });
@@ -57,11 +60,9 @@ export class DropdownSelect {
    * Sort medias with date
    */
   async dateSort() {
-    btnSort.innerHTML = `Date<div class="arrow">
-  <i class="fas fa-chevron-down"></i>
-</div>`;
-    dropdownLink.innerHTML =
-      '<li><a class ="sort-popularity" href="#">Popularité</a></li><li><a class="sort-title" href="#">Titre</a></li>';
+    btnSort.style.display = "block";
+    btnSort.innerHTML =
+      'Date<span class="arrow"><i class="fas fa-chevron-down"></i></span>';
     dropdownLink.style.display = "none";
 
     const photographer = await ApiFisheye.getPhotographerById();
@@ -69,7 +70,6 @@ export class DropdownSelect {
     const sortedMedias = medias.sort((a, b) => {
       return a.date - b.date;
     });
-    console.log(sortedMedias);
     pagePhotographerMedia.innerHTML = "";
     sortedMedias.map((media) => {
       pagePhotographerMedia.innerHTML += media.createHtml();
@@ -78,11 +78,9 @@ export class DropdownSelect {
 
   /** Sort medias with title */
   async titleSort() {
-    btnSort.innerHTML = `Titre<div class="arrow">
-  <i class="fas fa-chevron-down"></i>
-</div>`;
-    dropdownLink.innerHTML =
-      '<li><a class ="sort-date" href="#">Date</a></li><li><a class="sort-popularity" href="#">Popularité</a></li>';
+    btnSort.style.display = "block";
+    btnSort.innerHTML =
+      'Titre<span class="arrow"><i class="fas fa-chevron-down"></i></span>';
     dropdownLink.style.display = "none";
 
     const photographer = await ApiFisheye.getPhotographerById();
