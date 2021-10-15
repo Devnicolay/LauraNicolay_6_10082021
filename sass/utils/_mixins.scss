@@ -11,6 +11,10 @@
       span {
         color: $primary-color;
       }
+      .tag {
+        color: $primary-color;
+        text-decoration: none;
+      }
     }
     a:link {
       text-decoration: none;

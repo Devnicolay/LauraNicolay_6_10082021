@@ -31,7 +31,7 @@ async function displayPhotographer() {
  */
 const tags = document.querySelectorAll(".tag");
 tags.forEach((tag) => {
-  const tagValue = tag.getAttribute("data");
+  const tagValue = tag.getAttribute("data-filter");
   tag.addEventListener("click", () => {
     TagsFilter.displayPhotographersFiltered(tagValue);
   });

@@ -47,6 +47,10 @@ header nav .tags li {
 header nav .tags li span {
   color: #901c1c;
 }
+header nav .tags li .tag {
+  color: #901c1c;
+  text-decoration: none;
+}
 header nav .tags a:link {
   text-decoration: none;
 }
@@ -90,6 +94,10 @@ main .Photographers .tags li {
 }
 main .Photographers .tags li span {
   color: #901c1c;
+}
+main .Photographers .tags li .tag {
+  color: #901c1c;
+  text-decoration: none;
 }
 main .Photographers .tags a:link {
   text-decoration: none;
@@ -163,6 +171,10 @@ main .scroll-link a {
 }
 #main-page-photographer .page-photographer .header-main .header-left .tags li span {
   color: #901c1c;
+}
+#main-page-photographer .page-photographer .header-main .header-left .tags li .tag {
+  color: #901c1c;
+  text-decoration: none;
 }
 #main-page-photographer .page-photographer .header-main .header-left .tags a:link {
   text-decoration: none;

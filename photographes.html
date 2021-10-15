@@ -8,24 +8,24 @@
         <title>FishEye</title>
     </head>
     <body>
-        <header role="banner">
+        <header>
                 <a href="index.html" aria-label="FishEye" id="logo"><img src="images/logo.svg" alt="Fisheye Home page" /></a>
         </header>
         <main id="main-page-photographer">
             <!-- Header of main -->
-            <div class="page-photographer">
-            </div> 
+            <section class="page-photographer">
+            </section> 
             <!-- Select filter for medias -->
-            <div class="select-filters">
+            <section class="select-filters">
                 <label for="sort">Trier par</label>
                 <div class="dropdown-filters">
-                    <button class="dropdown-select" aria-haspopup="true" aria-expanded="false" href="#">
+                    <button id="sort" class="dropdown-select" aria-haspopup="true" aria-expanded="false">
                         <span class="dropdown-select-content">
                             Popularité
                         </span>
-                        <div class="arrow">
+                        <span class="arrow">
                             <i class="fas fa-chevron-down"></i>
-                        </div>
+                        </span>
                     </button>
                     <ul class="dropdown">
                         <li>
@@ -40,13 +40,13 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </section>
             <!-- Medias for photographer -->   
             <section class="medias">
             </section>      
         </main>
         <!-- form for contact photographer --> 
-        <div class="form-contact">
+        <section class="form-contact">
             <div class="modal" role="dialog" aria-hidden="true" aria-modal="false" 
            aria-label="contact me" aria-labelledby="titlemodal">
                 <div class="modal-content">
@@ -56,7 +56,7 @@
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
-                    <form name="contact-form" action="" method="get" id="form" novalidate>
+                    <form name="contact-form" method="get" id="form" novalidate>
                         <div
                             class="formData firstname">
                             <label for="firstname">Prénom</label><br>
@@ -111,9 +111,9 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </section>
         <!-- lightbox for medias --> 
-        <div class="lightbox" role="dialog" aria-label="image closeup view"aria-hidden="true" aria-modal="false">
+        <section class="lightbox" role="dialog" aria-label="image closeup view" aria-hidden="true" aria-modal="false">
             <button class="lightbox-close" type="button" aria-label="close dialog">
                 <i class="fas fa-times"></i>
             </button>
@@ -125,10 +125,10 @@
             <button class="lightbox-next" type="button" aria-label="next image">
                 <i class="fas fa-chevron-right"></i>
             </button>
-        </div>
+        </section>
         <!-- increment likes and price for day --> 
-        <div class="likes-and-price">
-        </div>
+        <aside class="likes-and-price">
+        </aside>
         <script src="./javascript/api-fisheye.js" type="module"></script>
         <script src="./javascript/photographers.js" type="module"></script>
         <script src="./javascript/medias-factory.js" type="module"></script>
