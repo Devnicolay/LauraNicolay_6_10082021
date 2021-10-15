@@ -10,6 +10,7 @@ const lastName = document.getElementById("lastname");
 const email = document.getElementById("email");
 const message = document.getElementById("yourmessage");
 const closeBtn = document.querySelector(".header-form .close-form");
+const form = document.querySelector("form");
 
 export class Form {
   constructor(photographer) {
@@ -157,7 +158,7 @@ export class Form {
     if (isFirstNameValid && isLastNameValid && isEmailValid && isMessageValid) {
       this.displayValuesInConsoleLog();
       this.closeModal();
-      this.reset();
+      form.reset();
     }
   }
 
