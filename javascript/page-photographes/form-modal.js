@@ -36,26 +36,21 @@ export class Form {
 
   /**
    *
-   * @param {event} e Close and send form with press escape on keyboard
-   */
-  keyboardTouchForm(e) {
-    if (modal.ariaModal === "true" && e.key === "Escape") {
-      this.closeModal();
-    }
-    if (modal.ariaModal === "true" && e.key === "Enter") {
-      this.formValidation();
-    }
-  }
-
-  /**
-   *
    * Listeners
    *
    */
   initListeners() {
+    /**
+     *
+     * @param {event} e Close and send form with press escape on keyboard
+     */
     // close and send form with keyboard
-    window.addEventListener("keydown", () => {
-      this.keyboardTouchForm();
+    window.addEventListener("keydown", (e) => {
+      if (modal.ariaModal === "true" && e.key === "Escape") {
+        this.closeModal();
+      } else if (modal.ariaModal === "true" && e.key === "Enter") {
+        this.formValidation();
+      }
     });
     // close form
     closeBtn.addEventListener("click", () => {
