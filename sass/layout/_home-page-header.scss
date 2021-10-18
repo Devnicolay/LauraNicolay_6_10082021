@@ -12,11 +12,35 @@ header {
   }
 }
 
-/* Pour écran plus petit que 1440px */
-@media screen and (max-width: 1440px) {
+/* For screen smaller than 1130px */
+@media screen and (max-width: 1130px) {
   header {
     nav {
-      margin-left: 20%;
+      margin-right: 0;
+      .tags {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+/* For screen between 1130px and 900px */
+@media screen and (min-width: 900px) and (max-width: 1130px) {
+  header {
+    nav {
+      margin-left: 8%;
+    }
+  }
+}
+
+/* For screen between 900px and 600px */
+@media screen and (max-width: 900px) {
+  header {
+    margin: 0 2em;
+    nav {
+      margin-left: 5%;
     }
   }
 }

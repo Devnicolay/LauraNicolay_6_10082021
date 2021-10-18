@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .sr-only {
   overflow: hidden;
 }
@@ -55,10 +54,30 @@ header nav .tags a:link {
   text-decoration: none;
 }
 
-/* Pour écran plus petit que 1440px */
-@media screen and (max-width: 1440px) {
+/* For screen smaller than 1130px */
+@media screen and (max-width: 1130px) {
   header nav {
-    margin-left: 20%;
+    margin-right: 0;
+  }
+  header nav .tags {
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-left: 0;
+  }
+}
+/* For screen between 1130px and 900px */
+@media screen and (min-width: 900px) and (max-width: 1130px) {
+  header nav {
+    margin-left: 8%;
+  }
+}
+/* For screen between 900px and 600px */
+@media screen and (max-width: 900px) {
+  header {
+    margin: 0 2em;
+  }
+  header nav {
+    margin-left: 5%;
   }
 }
 main img {
@@ -72,7 +91,7 @@ main .h1-index {
   font-size: 2.25em;
   position: absolute;
   top: 0.8em;
-  right: 0;
+  right: 2.5em;
   margin-top: 0.3em;
 }
 main .Photographers {
@@ -133,6 +152,22 @@ main .Photographers article .tags {
   padding-right: 2.3em;
 }
 
+/* For screen smaller than 730px */
+@media screen and (max-width: 730px) {
+  main .h1-index {
+    position: absolute;
+    right: 0.5em;
+  }
+}
+/* For screen smaller than 560px */
+@media screen and (max-width: 560px) {
+  main .h1-index {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0.9em;
+  }
+}
 main .scroll-link {
   display: none;
   background-color: #db8876;
@@ -148,12 +183,31 @@ main .scroll-link a {
   color: black;
 }
 
+/* For screen smaller than 700px */
+@media screen and (max-width: 700px) {
+  main .scroll-link {
+    left: 37%;
+  }
+}
+/* For screen smaller than 600px */
+@media screen and (max-width: 600px) {
+  main .scroll-link {
+    left: 34%;
+  }
+}
+/* For screen smaller than 400px */
+@media screen and (max-width: 400px) {
+  main .scroll-link {
+    left: 30%;
+  }
+}
 #main-page-photographer {
   margin: 2em 6em;
 }
 #main-page-photographer .page-photographer .header-main {
   display: flex;
   background-color: #fafafa;
+  position: relative;
 }
 #main-page-photographer .page-photographer .header-main .header-left {
   margin: 0em 6em 0em 3.5em;
@@ -211,8 +265,14 @@ main .scroll-link a {
   color: gray;
   font-size: 1em;
 }
+#main-page-photographer .page-photographer .header-main aside {
+  position: absolute;
+  right: 1em;
+}
 #main-page-photographer .page-photographer .header-main aside img {
   margin-top: 3.75em;
+  width: 14em;
+  height: 14em;
 }
 #main-page-photographer .select-filters {
   display: flex;
@@ -313,6 +373,14 @@ main .scroll-link a {
   margin-left: 0.3em;
 }
 
+/* For screen smaller than 870px */
+@media screen and (max-width: 870px) {
+  #main-page-photographer .page-photographer .header-main .header-left .name-and-contact button {
+    position: fixed;
+    bottom: 0;
+    left: 45%;
+  }
+}
 body .form-contact {
   display: none;
 }

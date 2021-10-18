@@ -11,7 +11,7 @@ main {
     font-size: 2.25em;
     position: absolute;
     top: 0.8em;
-    right: 0;
+    right: 2.5em;
     margin-top: 0.3em;
   }
 
@@ -50,6 +50,28 @@ main {
         justify-content: center;
         padding-right: 2.3em;
       }
+    }
+  }
+}
+
+/* For screen smaller than 730px */
+@media screen and (max-width: 730px) {
+  main {
+    .h1-index {
+      position: absolute;
+      right: 0.5em;
+    }
+  }
+}
+
+/* For screen smaller than 560px */
+@media screen and (max-width: 560px) {
+  main {
+    .h1-index {
+      position: relative;
+      top: 0;
+      right: 0;
+      left: 0.9em;
     }
   }
 }

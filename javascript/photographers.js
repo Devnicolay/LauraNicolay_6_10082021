@@ -43,7 +43,7 @@ export class Photographer {
    */
   createTemplatePhotographer() {
     return (
-      "<section class=header-main><article class=header-left><div class=name-and-contact><h1 class=h1-page-photographer>" +
+      "<div class=header-main><article class=header-left><div class=name-and-contact><h1 class=h1-page-photographer>" +
       this.name +
       "</h1><button class=contact type=button aria-haspopup=dialog>Contactez-moi</button></div><p class=city>" +
       this.city +
@@ -57,7 +57,7 @@ export class Photographer {
         .join("") +
       "</ul></article><aside><a href=photographes.html><img src=" +
       this.portrait +
-      "></aside></section>"
+      "></aside></div>"
     );
   }
 

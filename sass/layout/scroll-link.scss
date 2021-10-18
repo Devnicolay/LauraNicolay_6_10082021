@@ -14,3 +14,30 @@ main {
     }
   }
 }
+
+/* For screen smaller than 700px */
+@media screen and (max-width: 700px) {
+  main {
+    .scroll-link {
+      left: 37%;
+    }
+  }
+}
+
+/* For screen smaller than 600px */
+@media screen and (max-width: 600px) {
+  main {
+    .scroll-link {
+      left: 34%;
+    }
+  }
+}
+
+/* For screen smaller than 400px */
+@media screen and (max-width: 400px) {
+  main {
+    .scroll-link {
+      left: 30%;
+    }
+  }
+}

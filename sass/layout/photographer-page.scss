@@ -4,6 +4,7 @@
     .header-main {
       display: flex;
       background-color: #fafafa;
+      position: relative;
       .header-left {
         margin: 0em 6em 0em 3.5em;
         @include tags;
@@ -41,8 +42,12 @@
         }
       }
       aside {
+        position: absolute;
+        right: 1em;
         img {
           margin-top: 3.75em;
+          width: 14em;
+          height: 14em;
         }
       }
     }
@@ -140,6 +145,25 @@
           }
           i {
             margin-left: 0.3em;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* For screen smaller than 870px */
+@media screen and (max-width: 870px) {
+  #main-page-photographer {
+    .page-photographer {
+      .header-main {
+        .header-left {
+          .name-and-contact {
+            button {
+              position: fixed;
+              bottom: 0;
+              left: 45%;
+            }
           }
         }
       }
