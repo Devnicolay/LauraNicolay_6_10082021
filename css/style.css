@@ -243,7 +243,7 @@ main .scroll-link a {
 #main-page-photographer .page-photographer .header-main .header-left .name-and-contact .h1-page-photographer {
   color: #d3573c;
   font-size: 4em;
-  margin-right: 2em;
+  margin-right: 1em;
   margin-bottom: 0;
 }
 #main-page-photographer .page-photographer .header-main .header-left .name-and-contact button {
@@ -379,6 +379,46 @@ main .scroll-link a {
     position: fixed;
     bottom: 0;
     left: 45%;
+  }
+}
+/* For screen smaller than 600px */
+@media screen and (max-width: 600px) {
+  #main-page-photographer {
+    margin: 2em 1em;
+  }
+  #main-page-photographer .page-photographer .header-main {
+    background-color: white;
+  }
+  #main-page-photographer .page-photographer .header-main .header-left {
+    margin-left: 0.5em;
+  }
+  #main-page-photographer .page-photographer .header-main .header-left .name-and-contact .h1-page-photographer {
+    font-size: 2em;
+  }
+  #main-page-photographer .page-photographer .header-main .header-left .name-and-contact button {
+    left: 35%;
+    margin: 0em 0em 1.5em 0em;
+    height: 2em;
+  }
+  #main-page-photographer .page-photographer .header-main .header-left .city {
+    font-size: 1em;
+  }
+  #main-page-photographer .page-photographer .header-main .tags .tag li span {
+    font-size: 0.8em;
+  }
+  #main-page-photographer .page-photographer .header-main aside {
+    bottom: 5em;
+    right: 0em;
+  }
+  #main-page-photographer .page-photographer .header-main aside img {
+    width: 8em;
+    height: 8em;
+  }
+  #main-page-photographer .select-filters {
+    display: none;
+  }
+  #main-page-photographer .medias {
+    justify-content: center;
   }
 }
 body .form-contact {
@@ -525,6 +565,13 @@ body .form-contact .modal .modal-content #send {
 }
 .likes-and-price .counter-like span {
   margin-right: 0.3em;
+}
+
+/* For screen smaller than 600px */
+@media screen and (max-width: 600px) {
+  .likes-and-price {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -17,7 +17,7 @@
           .h1-page-photographer {
             color: $tertiary-color;
             font-size: 4em;
-            margin-right: 2em;
+            margin-right: 1em;
             margin-bottom: 0;
           }
           button {
@@ -167,6 +167,57 @@
           }
         }
       }
+    }
+  }
+}
+
+/* For screen smaller than 600px */
+@media screen and (max-width: 600px) {
+  #main-page-photographer {
+    margin: 2em 1em;
+    .page-photographer {
+      .header-main {
+        background-color: white;
+        .header-left {
+          margin-left: 0.5em;
+          .name-and-contact {
+            .h1-page-photographer {
+              font-size: 2em;
+            }
+            button {
+              left: 35%;
+              margin: 0em 0em 1.5em 0em;
+              height: 2em;
+            }
+          }
+          .city {
+            font-size: 1em;
+          }
+        }
+        .tags {
+          .tag {
+            li {
+              span {
+                font-size: 0.8em;
+              }
+            }
+          }
+        }
+        aside {
+          bottom: 5em;
+          right: 0em;
+          img {
+            width: 8em;
+            height: 8em;
+          }
+        }
+      }
+    }
+    .select-filters {
+      display: none;
+    }
+    .medias {
+      justify-content: center;
     }
   }
 }

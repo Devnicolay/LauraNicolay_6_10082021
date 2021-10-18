@@ -13,3 +13,10 @@
     }
   }
 }
+
+/* For screen smaller than 600px */
+@media screen and (max-width: 600px) {
+  .likes-and-price {
+    display: none;
+  }
+}
