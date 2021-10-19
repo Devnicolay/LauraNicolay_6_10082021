@@ -163,10 +163,32 @@
               position: fixed;
               bottom: 0;
               left: 45%;
+              margin: 0em 0em 1.5em 0em;
+              height: 2em;
             }
           }
         }
       }
+    }
+  }
+}
+
+/* For screen smaller than 780px */
+@media screen and (max-width: 780px) {
+  #main-page-photographer {
+    .page-photographer {
+      .header-main {
+        aside {
+          right: 0em;
+          img {
+            width: 10em;
+            height: 10em;
+          }
+        }
+      }
+    }
+    .medias {
+      justify-content: center;
     }
   }
 }
@@ -185,9 +207,7 @@
               font-size: 2em;
             }
             button {
-              left: 35%;
-              margin: 0em 0em 1.5em 0em;
-              height: 2em;
+              left: 33%;
             }
           }
           .city {

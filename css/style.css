@@ -9,12 +9,12 @@ body {
 
 @font-face {
   font-family: DM_Sans;
-  src: url(/font/DM_Sans/DMSans-Bold.ttf);
-  src: url(/font/DM_Sans/DMSans-BoldItalic.ttf);
-  src: url(/font/DM_Sans/DMSans-Italic.ttf);
-  src: url(/font/DM_Sans/DMSans-Medium.ttf);
-  src: url(/font/DM_Sans/DMSans-MediumItalic.ttf);
-  src: url(/font/DM_Sans/DMSans-Regular.ttf);
+  src: url(./font/DM_Sans/DMSans-Bold.ttf);
+  src: url(./font/DM_Sans/DMSans-BoldItalic.ttf);
+  src: url(./font/DM_Sans/DMSans-Italic.ttf);
+  src: url(./font/DM_Sans/DMSans-Medium.ttf);
+  src: url(./font/DM_Sans/DMSans-MediumItalic.ttf);
+  src: url(./font/DM_Sans/DMSans-Regular.ttf);
 }
 body {
   font-family: DM_Sans;
@@ -379,6 +379,21 @@ main .scroll-link a {
     position: fixed;
     bottom: 0;
     left: 45%;
+    margin: 0em 0em 1.5em 0em;
+    height: 2em;
+  }
+}
+/* For screen smaller than 780px */
+@media screen and (max-width: 780px) {
+  #main-page-photographer .page-photographer .header-main aside {
+    right: 0em;
+  }
+  #main-page-photographer .page-photographer .header-main aside img {
+    width: 10em;
+    height: 10em;
+  }
+  #main-page-photographer .medias {
+    justify-content: center;
   }
 }
 /* For screen smaller than 600px */
@@ -396,9 +411,7 @@ main .scroll-link a {
     font-size: 2em;
   }
   #main-page-photographer .page-photographer .header-main .header-left .name-and-contact button {
-    left: 35%;
-    margin: 0em 0em 1.5em 0em;
-    height: 2em;
+    left: 33%;
   }
   #main-page-photographer .page-photographer .header-main .header-left .city {
     font-size: 1em;
@@ -567,8 +580,8 @@ body .form-contact .modal .modal-content #send {
   margin-right: 0.3em;
 }
 
-/* For screen smaller than 600px */
-@media screen and (max-width: 600px) {
+/* For screen smaller than 780px */
+@media screen and (max-width: 780px) {
   .likes-and-price {
     display: none;
   }
