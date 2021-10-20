@@ -6,30 +6,28 @@ import { DropdownSelect } from "./dropdown-select.js";
  * DOM
  */
 // Dom in photographer page
-const pagePhotographer = document.querySelector(".page-photographer");
-const pagePhotographerMedia = document.querySelector(".medias");
+const pagePhotographerPartPhotographer =
+  document.querySelector(".page-photographer");
+const pagePhotographerPartMedia = document.querySelector(".medias");
 
 export class PagePhotographer {
-  /**
-   *
-   * Display photographer and their medias
-   */
-  static async showPhotographerAndMedias() {
+  static async initPhotographerPage() {
     const photographer = await ApiFisheye.getPhotographerById();
     /**
      * Part photographer
      */
     // Create Html for photographer identity
-    pagePhotographer.innerHTML = "";
-    pagePhotographer.innerHTML = photographer.createTemplatePhotographer();
+    pagePhotographerPartPhotographer.innerHTML = "";
+    pagePhotographerPartPhotographer.innerHTML =
+      photographer.createTemplatePhotographer();
 
-    // Filter tags
+    // Filter tags: redirect on home page with filtered photographers
     photographer.redirectFilteredPhotographers();
 
     /**
      * Part medias
      */
-    pagePhotographerMedia.innerHTML = photographer.initializeMedia();
+    pagePhotographerPartMedia.innerHTML = photographer.initializeMedia();
 
     /**
      * Lightbox
@@ -44,28 +42,20 @@ export class PagePhotographer {
     /**
      * Dropdown select
      */
-    new DropdownSelect();
+    new DropdownSelect(photographer);
 
     /**
      * Likes
      */
     // Likes : increment and display likes at the bottom of the photographer's page
 
-    photographer.createTemplateLikes(); // create counter like bottom the page
-    const likes = document.querySelectorAll(".heart");
-    likes.forEach((like) => {
-      const mediaId = like.getAttribute("data-id");
-      like.addEventListener("click", () => {
-        photographer.likeMedia(mediaId);
-      });
-    });
+    photographer.createTemplateCounterLikes(); // create counter like bottom the page
+
+    photographer.initListenersforLikesButtons(); // init listerners for likes: Increment and color heart's icon
   }
 }
 
 /**
  * loading photographer page
  */
-window.onload = loadPagePhotographer();
-function loadPagePhotographer() {
-  PagePhotographer.showPhotographerAndMedias();
-}
+window.onload = PagePhotographer.initPhotographerPage();

@@ -4,7 +4,7 @@ import { ApiFisheye } from "../api-fisheye.js";
  * DOM
  */
 const lightbox = document.querySelector(".lightbox");
-const lightboxContainer = document.querySelector(".lightbox-container");
+const lightboxMediaContainer = document.querySelector(".lightbox-container");
 const crossLightbox = document.querySelector(".lightbox-close i");
 const chevronRight = document.querySelector(".fa-chevron-right");
 const chevronLeft = document.querySelector(".fa-chevron-left");
@@ -39,7 +39,7 @@ export class Lightbox {
     lightbox.style.cssText += ";display:flex !important;";
     lightbox.ariaModal = "true";
     this.currentMediaIndex = this.medias.indexOf(clickedMedia);
-    lightboxContainer.innerHTML = clickedMedia.createLightboxHtml();
+    lightboxMediaContainer.innerHTML = clickedMedia.createLightboxHtml();
   }
 
   /**
@@ -51,7 +51,7 @@ export class Lightbox {
     if (this.currentMediaIndex == lastMedia) {
       this.currentMediaIndex = 0;
     }
-    lightboxContainer.innerHTML =
+    lightboxMediaContainer.innerHTML =
       this.medias[this.currentMediaIndex].createLightboxHtml();
   }
 
@@ -64,7 +64,7 @@ export class Lightbox {
       const lastMedia = this.medias.length;
       this.currentMediaIndex = lastMedia - 1;
     }
-    lightboxContainer.innerHTML =
+    lightboxMediaContainer.innerHTML =
       this.medias[this.currentMediaIndex].createLightboxHtml();
   }
 

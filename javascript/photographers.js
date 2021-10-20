@@ -86,7 +86,7 @@ export class Photographer {
    *
    * @returns counter template for the "likes" of the photographers page
    */
-  createTemplateLikes() {
+  createTemplateCounterLikes() {
     const likesAndPrice = document.querySelector(".likes-and-price");
     likesAndPrice.innerHTML =
       "<p class='counter-like' aria-label='total of like'><span></span><i class='fas fa-heart'></i></p><p>" +
@@ -96,7 +96,7 @@ export class Photographer {
   }
 
   /**
-   *  Calculate total likes
+   *  Calculate total likes on counter like
    */
   updateTotalLikes() {
     let nbLikes = 0;
@@ -110,27 +110,42 @@ export class Photographer {
   }
 
   /**
+   * Increment, decrement like and color or decolor heart's icon
    *
    * @param {string} mediaId Id for media
    */
-  likeMedia(mediaId) {
+  IncrementLikeMedia(mediaId) {
     const media = this.medias.find((media) => media.id == mediaId);
     if (media.clicked == false) {
       media.likes++;
       media.clicked = true;
-      console.log(media.clicked);
-      document.querySelector(`.number-heart[data-id="${media.id}"]`).innerHTML =
-        media.createLikeHtml();
-
-      this.updateTotalLikes();
-    } else if (media.clicked == true) {
+    } else {
       media.likes--;
       media.clicked = false;
-      console.log(media.clicked);
-      document.querySelector(`.number-heart[data-id="${media.id}"]`).innerHTML =
-        media.createLikeHtml();
-
-      this.updateTotalLikes();
     }
+    const heart = document.querySelector(
+      `.number-heart[data-id="${media.id}"]`
+    );
+    heart.innerHTML = media.createLikeHtml();
+
+    this.updateTotalLikes();
+
+    const likes = heart.querySelector(".heart");
+    likes.addEventListener("click", () => {
+      this.IncrementLikeMedia(mediaId);
+    });
+  }
+
+  /**
+   * When click on heart for each media, launch "IncrementLikeMedia" function
+   */
+  initListenersforLikesButtons() {
+    const likes = document.querySelectorAll(".heart");
+    likes.forEach((like) => {
+      const mediaId = like.getAttribute("data-id");
+      like.addEventListener("click", () => {
+        this.IncrementLikeMedia(mediaId);
+      });
+    });
   }
 }
