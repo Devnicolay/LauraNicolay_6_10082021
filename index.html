@@ -1,45 +1,85 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/style.css"  />
-        <script src="https://kit.fontawesome.com/f8139cb276.js" crossorigin="anonymous"></script>
-        <title>FishEye</title>
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/f8139cb276.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>FishEye</title>
+  </head>
 
-    <body>
-
-        <header>
-            <a href="index.html" aria-label="FishEye" id="logo"><img src="images/logo.svg" alt="Fisheye Home page" /></a>
-            <nav aria-label="photographer categories">
-                <ul class="tags">
-                    <span class="sr-only">
-                        <span class="hidden">Current page:</span>
-                        Page d'accueil
-                    </span>
-                    <li><a class="tag" data-filter="portrait" href="#"><span aria-hidden="true">#</span>Portrait</a></li>
-                    <li><a class="tag" data-filter="art" href="#"><span aria-hidden="true">#</span>Art</a></li>
-                    <li><a class="tag" data-filter="fashion" href="#"><span aria-hidden="true">#</span>Fashion</a></li>
-                    <li><a class="tag" data-filter="architecture" href="#"><span aria-hidden="true">#</span>Architecture</a></li>
-                    <li><a class="tag" data-filter="travel" href="#"><span aria-hidden="true">#</span>Travel</a></li>
-                    <li><a class="tag" data-filter="sport" href="#"><span aria-hidden="true">#</span>Sport</a></li>
-                    <li><a class="tag" data-filter="animals" href="#"><span aria-hidden="true">#</span>Animals</a></li>
-                    <li><a class="tag" data-filter="events" href="#"><span aria-hidden="true">#</span>Events</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main id="ancre-main">
-            <h1 class="h1-index">Nos photographes</h1>
-            <div class="scroll-link"></div>
-            <section class="Photographers">
-            </section>
-        </main>
-        <script src="./javascript/api-fisheye.js" type="module"></script>
-        <script src="./javascript/photographers.js" type="module"></script>
-        <script src="./javascript/page-index/list-photographers.js" type="module"></script>
-        <script src="./javascript/page-index/tags-filters.js" type="module"></script>
-        <script src="./javascript/page-index/scroll-link.js" type="module"></script>
-    </body>
-
+  <body>
+    <header>
+      <a href="index.html" aria-label="FishEye" id="logo"
+        ><img src="images/logo.svg" alt="Fisheye Home page"
+      /></a>
+      <nav aria-label="photographer categories">
+        <ul class="tags">
+          <span class="sr-only">
+            <span class="hidden">Current page:</span>
+            Page d'accueil
+          </span>
+          <li>
+            <a class="tag" data-filter="portrait" href="#"
+              ><span aria-hidden="true">#</span>Portrait</a
+            >
+          </li>
+          <li>
+            <a class="tag" data-filter="art" href="#"
+              ><span aria-hidden="true">#</span>Art</a
+            >
+          </li>
+          <li>
+            <a class="tag" data-filter="fashion" href="#"
+              ><span aria-hidden="true">#</span>Fashion</a
+            >
+          </li>
+          <li>
+            <a class="tag" data-filter="architecture" href="#"
+              ><span aria-hidden="true">#</span>Architecture</a
+            >
+          </li>
+          <li>
+            <a class="tag" data-filter="travel" href="#"
+              ><span aria-hidden="true">#</span>Travel</a
+            >
+          </li>
+          <li>
+            <a class="tag" data-filter="sport" href="#"
+              ><span aria-hidden="true">#</span>Sport</a
+            >
+          </li>
+          <li>
+            <a class="tag" data-filter="animals" href="#"
+              ><span aria-hidden="true">#</span>Animals</a
+            >
+          </li>
+          <li>
+            <a class="tag" data-filter="events" href="#"
+              ><span aria-hidden="true">#</span>Events</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="ancre-main">
+      <h1 class="h1-index">Nos photographes</h1>
+      <div class="scroll-link"></div>
+      <section class="Photographers"></section>
+    </main>
+    <script src="./javascript/api-fisheye.js" type="module"></script>
+    <script src="./javascript/photographers.js" type="module"></script>
+    <script
+      src="./javascript/page-index/list-photographers.js"
+      type="module"
+    ></script>
+    <script
+      src="./javascript/page-index/tags-filters.js"
+      type="module"
+    ></script>
+    <script src="./javascript/page-index/scroll-link.js" type="module"></script>
+  </body>
 </html>

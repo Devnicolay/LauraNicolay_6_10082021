@@ -9,12 +9,12 @@ body {
 
 @font-face {
   font-family: DM_Sans;
-  src: url(/css/font/DMSans-Bold.ttf);
-  src: url(/css/font/DMSans-BoldItalic.ttf);
-  src: url(/css/font/DMSans-Italic.ttf);
-  src: url(/css/font/DMSans-Medium.ttf);
-  src: url(/css/font/DMSans-MediumItalic.ttf);
-  src: url(/css/font/DMSans-Regular.ttf);
+  src: url(css/font/DMSans-Bold.ttf);
+  src: url(css/font/DMSans-BoldItalic.ttf);
+  src: url(css/font/DMSans-Italic.ttf);
+  src: url(css/font/DMSans-Medium.ttf);
+  src: url(css/font/DMSans-MediumItalic.ttf);
+  src: url(css/font/DMSans-Regular.ttf);
 }
 body {
   font-family: DM_Sans;

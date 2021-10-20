@@ -1,143 +1,196 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/style.css"  />
-        <script src="https://kit.fontawesome.com/f8139cb276.js" crossorigin="anonymous"></script>
-        <title>FishEye</title>
-    </head>
-    <body>
-        <header>
-                <a href="index.html" aria-label="FishEye" id="logo"><img src="images/logo.svg" alt="Fisheye Home page" /></a>
-        </header>
-        <main id="main-page-photographer">
-            <!-- Header of main -->
-            <section class="page-photographer">
-            </section> 
-            <!-- Select filter for medias -->
-            <section class="select-filters">
-                <label for="sort">Trier par</label>
-                <div class="dropdown-filters">
-                    <button id="sort" class="dropdown-select" aria-haspopup="true" aria-expanded="false">Popularité<span class="arrow">
-                        <i class="fas fa-chevron-down"></i>
-                        </span></button>
-                    <ul class="dropdown">
-                        <li>
-                            <a class ="sort-popularity" href="#">
-                                Popularité <span class="arrow-down">
-                                    <i class="fas fa-chevron-up"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class ="sort-date" href="#">
-                                Date
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sort-title" href="#">
-                                Titre
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <!-- Medias for photographer -->   
-            <section class="medias">
-            </section>      
-        </main>
-        <!-- form for contact photographer --> 
-        <section class="form-contact">
-            <div class="modal" role="dialog" aria-hidden="true" aria-modal="false" 
-           aria-label="contact me" aria-labelledby="titlemodal">
-                <div class="modal-content">
-                    <div class="header-form">
-                        <h2 id="titlemodal">Contactez-moi</h2>
-                        <button class="close-form" type="button" aria-label="close contact form">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                    <form name="contact-form" method="get" id="form" novalidate>
-                        <div
-                            class="formData firstname">
-                            <label for="firstname">Prénom</label><br>
-                            <input
-                            class="text-control"
-                            type="text"
-                            id="firstname"
-                            name="firstname"
-                            required
-                            minlength="2">
-                        <br>
-                            <div class="alert-msg">Veuillez entrer 2 caractères ou plus pour le champ du prénom.</div>
-                        </div>
-                        <div
-                            class="formData lastname">
-                            <label for="lastname">Nom</label><br>
-                            <input
-                            class="text-control"
-                            type="text"
-                            id="lastname"
-                            name="lastname"
-                            required>
-                        <br>
-                            <div class="alert-msg">Veuillez entrer 2 caractères ou plus pour le champ du nom.</div>
-                        </div>
-                        <div
-                            class="formData email">
-                            <label for="email">Email</label><br>
-                            <input
-                            class="text-control"
-                            type="email"
-                            id="email"
-                            name="email"
-                            required>
-                        <br>
-                            <div class="alert-msg">Veuillez entrer une adresse mail valide.</div>
-                        </div>
-                        <div
-                            class="formData message">
-                            <label for="yourmessage">Votre message</label><br>
-                            <input
-                            class="text-control-message"
-                            type="text"
-                            id="yourmessage"
-                            name="yourmessage"
-                            required
-                            minlength="2">
-                        <br>
-                            <div class="alert-msg">Veuillez écrire votre message ici.</div>
-                        </div>
-                        <button id="send" class="form-submit" type="submit" aria-label="send">Envoyer</button>
-                    </form>
-                </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/f8139cb276.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>FishEye</title>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" aria-label="FishEye" id="logo"
+        ><img src="images/logo.svg" alt="Fisheye Home page"
+      /></a>
+    </header>
+    <main id="main-page-photographer">
+      <!-- Header of main -->
+      <section class="page-photographer"></section>
+      <!-- Select filter for medias -->
+      <section class="select-filters">
+        <label for="sort">Trier par</label>
+        <div class="dropdown-filters">
+          <button
+            id="sort"
+            class="dropdown-select"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Popularité<span class="arrow">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </button>
+          <ul class="dropdown">
+            <li>
+              <a class="sort-popularity" href="#">
+                Popularité
+                <span class="arrow-down">
+                  <i class="fas fa-chevron-up"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="sort-date" href="#"> Date </a>
+            </li>
+            <li>
+              <a class="sort-title" href="#"> Titre </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- Medias for photographer -->
+      <section class="medias"></section>
+    </main>
+    <!-- form for contact photographer -->
+    <section class="form-contact">
+      <div
+        class="modal"
+        role="dialog"
+        aria-hidden="true"
+        aria-modal="false"
+        aria-label="contact me"
+        aria-labelledby="titlemodal"
+      >
+        <div class="modal-content">
+          <div class="header-form">
+            <h2 id="titlemodal">Contactez-moi</h2>
+            <button
+              class="close-form"
+              type="button"
+              aria-label="close contact form"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <form name="contact-form" method="get" id="form" novalidate>
+            <div class="formData firstname">
+              <label for="firstname">Prénom</label><br />
+              <input
+                class="text-control"
+                type="text"
+                id="firstname"
+                name="firstname"
+                required
+                minlength="2"
+              />
+              <br />
+              <div class="alert-msg">
+                Veuillez entrer 2 caractères ou plus pour le champ du prénom.
+              </div>
             </div>
-        </section>
-        <!-- lightbox for medias --> 
-        <section class="lightbox" role="dialog" aria-label="image closeup view" aria-hidden="true" aria-modal="false">
-            <button class="lightbox-close" type="button" aria-label="close dialog">
-                <i class="fas fa-times"></i>
-            </button>
-            <button class="lightbox-previous" type="button" aria-label="previous image">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <div class="lightbox-container">
+            <div class="formData lastname">
+              <label for="lastname">Nom</label><br />
+              <input
+                class="text-control"
+                type="text"
+                id="lastname"
+                name="lastname"
+                required
+              />
+              <br />
+              <div class="alert-msg">
+                Veuillez entrer 2 caractères ou plus pour le champ du nom.
+              </div>
             </div>
-            <button class="lightbox-next" type="button" aria-label="next image">
-                <i class="fas fa-chevron-right"></i>
+            <div class="formData email">
+              <label for="email">Email</label><br />
+              <input
+                class="text-control"
+                type="email"
+                id="email"
+                name="email"
+                required
+              />
+              <br />
+              <div class="alert-msg">
+                Veuillez entrer une adresse mail valide.
+              </div>
+            </div>
+            <div class="formData message">
+              <label for="yourmessage">Votre message</label><br />
+              <input
+                class="text-control-message"
+                type="text"
+                id="yourmessage"
+                name="yourmessage"
+                required
+                minlength="2"
+              />
+              <br />
+              <div class="alert-msg">Veuillez écrire votre message ici.</div>
+            </div>
+            <button
+              id="send"
+              class="form-submit"
+              type="submit"
+              aria-label="send"
+            >
+              Envoyer
             </button>
-        </section>
-        <!-- increment likes and price for day --> 
-        <aside class="likes-and-price">
-        </aside>
-        <script src="./javascript/api-fisheye.js" type="module"></script>
-        <script src="./javascript/photographers.js" type="module"></script>
-        <script src="./javascript/medias-factory.js" type="module"></script>
-        <script src="./javascript/page-photographes/dropdown-select.js" type="module"></script>
-        <script src="./javascript/page-photographes/photographer-page.js" type="module"></script>
-        <script src="./javascript/page-photographes/form-modal.js" type="module"></script>
-        <script src="./javascript/page-photographes/lightbox.js" type="module"></script>
-        <script src="./javascript/page-index/tags-filters.js" type="module"></script>
-    </body>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- lightbox for medias -->
+    <section
+      class="lightbox"
+      role="dialog"
+      aria-label="image closeup view"
+      aria-hidden="true"
+      aria-modal="false"
+    >
+      <button class="lightbox-close" type="button" aria-label="close dialog">
+        <i class="fas fa-times"></i>
+      </button>
+      <button
+        class="lightbox-previous"
+        type="button"
+        aria-label="previous image"
+      >
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="lightbox-container"></div>
+      <button class="lightbox-next" type="button" aria-label="next image">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </section>
+    <!-- increment likes and price for day -->
+    <aside class="likes-and-price"></aside>
+    <script src="./javascript/api-fisheye.js" type="module"></script>
+    <script src="./javascript/photographers.js" type="module"></script>
+    <script src="./javascript/medias-factory.js" type="module"></script>
+    <script
+      src="./javascript/page-photographes/dropdown-select.js"
+      type="module"
+    ></script>
+    <script
+      src="./javascript/page-photographes/photographer-page.js"
+      type="module"
+    ></script>
+    <script
+      src="./javascript/page-photographes/form-modal.js"
+      type="module"
+    ></script>
+    <script
+      src="./javascript/page-photographes/lightbox.js"
+      type="module"
+    ></script>
+    <script
+      src="./javascript/page-index/tags-filters.js"
+      type="module"
+    ></script>
+  </body>
 </html>
