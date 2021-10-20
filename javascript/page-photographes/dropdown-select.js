@@ -27,7 +27,7 @@ export class DropdownSelect {
     if (isExpanded === "true") {
       dropdownLinkUl.style.display = "none";
       dropdownButton.setAttribute("aria-expanded", "false");
-      arrowDown.innerHTML = "<i class='fas fa-chevron-up'></i>";
+      arrowDown.innerHTML = `<i class="fas fa-chevron-up"></i>`;
     } else {
       dropdownLinkUl.style.display = "block";
       btnSort.style.display = "none";

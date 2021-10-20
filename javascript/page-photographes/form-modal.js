@@ -25,7 +25,7 @@ export class Form {
     modal.style.display = "block";
     modal.setAttribute("aria-hidden", false);
     modal.setAttribute("aria-modal", true);
-    contactMe.innerHTML = "Contactez-moi " + this.photographer.name;
+    contactMe.innerHTML = `Contactez-moi` + this.photographer.name;
   }
 
   /**

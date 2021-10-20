@@ -16,25 +16,25 @@ export class Photographer {
    */
   createTemplateIndex() {
     return (
-      "<article><a href=photographes.html?id=" +
+      `<article><a href="photographes.html?id=` +
       this.IdPhotographer +
-      "><img src=" +
+      `"><img src="` +
       this.portrait +
-      "><h2>" +
+      `"><h2>` +
       this.name +
-      "</h2></a><p class=city>" +
+      `</h2></a><p class="city">` +
       this.city +
-      "</p><p class=slogan>" +
+      `</p><p class="slogan">` +
       this.tagline +
-      "</p><p class=prices>" +
+      `</p><p class="prices">` +
       this.price +
-      "€/jour</p><div aria-label=tag filter><ul class=tags>" +
+      `€/jour</p><div aria-label="tag" filter><ul class="tags">` +
       this.tags
         .map((tag) => {
-          return `<a href=# data="${tag}"><li><span aria-hidden=true>#${tag}</span></li></a>`;
+          return `<a href="#" data="${tag}"><li><span aria-hidden="true">#${tag}</span></li></a>`;
         })
         .join("") +
-      "</ul></div></article>"
+      `</ul></div></article>`
     );
   }
   /**
@@ -43,21 +43,21 @@ export class Photographer {
    */
   createTemplatePhotographer() {
     return (
-      "<div class=header-main><article class=header-left><div class=name-and-contact><h1 class=h1-page-photographer>" +
+      `<div class="header-main"><article class="header-left"><div class="name-and-contact"><h1 class="h1-page-photographer">` +
       this.name +
-      "</h1><button class=contact type=button aria-haspopup=dialog>Contactez-moi</button></div><p class=city>" +
+      `</h1><button class="contact" type="button" aria-haspopup="dialog">Contactez-moi</button></div><p class="city">` +
       this.city +
-      "</p><p class=slogan>" +
+      `</p><p class="slogan">` +
       this.tagline +
-      "</p><ul class=tags>" +
+      `</p><ul class="tags">` +
       this.tags
         .map((tag) => {
-          return `<a class=tag href=# data="${tag}"><li><span aria-hidden=true>#${tag}</span></li></a>`;
+          return `<a class=tag href="#" data="${tag}"><li><span aria-hidden="true">#${tag}</span></li></a>`;
         })
         .join("") +
-      "</ul></article><aside><a href=photographes.html><img src=" +
+      `</ul></article><aside><a href="photographes.html"><img src="` +
       this.portrait +
-      "></aside></div>"
+      `"></aside></div>`
     );
   }
 
@@ -89,9 +89,9 @@ export class Photographer {
   createTemplateCounterLikes() {
     const likesAndPrice = document.querySelector(".likes-and-price");
     likesAndPrice.innerHTML =
-      "<p class='counter-like' aria-label='total of like'><span></span><i class='fas fa-heart'></i></p><p>" +
+      `<p class="counter-like" aria-label="total of like"><span></span><i class="fas fa-heart"></i></p><p>` +
       this.price +
-      "€ / jour</p>";
+      `€ / jour</p>`;
     this.updateTotalLikes();
   }
 

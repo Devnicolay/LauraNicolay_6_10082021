@@ -8,6 +8,6 @@ window.addEventListener("scroll", diplayBackToTop);
 function diplayBackToTop() {
   if (window.scrollY > 200) {
     containerDivScroll.style.display = "block";
-    containerDivScroll.innerHTML = "<a href=#ancre-main>Passer au contenu</a>";
+    containerDivScroll.innerHTML = `<a href="#ancre-main">Passer au contenu</a>`;
   }
 }
