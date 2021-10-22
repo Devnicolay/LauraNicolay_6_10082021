@@ -29,7 +29,6 @@ export class TagsFilter {
   redirectTagFilterHomePage() {
     const ancre = window.location.hash;
     const ancreWithoutHashtag = ancre.replace("#", "");
-    console.log(ancreWithoutHashtag);
     if (ancre == "") {
       console.log("none");
     } else {

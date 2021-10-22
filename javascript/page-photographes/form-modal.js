@@ -118,7 +118,7 @@ export class Form {
   emailCheck() {
     const alertMsg = document.querySelector(".email .alert-msg");
     const mailFormat =
-      /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+$/;
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+$/;
     // mailFormat is the format that the mail field must have, like letters, numbers, symbols @ letters, numbers .(dot) letters, numbers
     if (email.value.match(mailFormat)) {
       alertMsg.style.display = "none";
