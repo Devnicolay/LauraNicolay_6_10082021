@@ -4,6 +4,7 @@
 
 const sendBtn = document.querySelector("#send");
 const modal = document.querySelector(".form-contact");
+const modalContent = document.querySelector(".modal");
 const contactMe = document.querySelector(".header-form #titlemodal");
 const firstName = document.getElementById("firstname");
 const lastName = document.getElementById("lastname");
@@ -23,9 +24,9 @@ export class Form {
    */
   openModal() {
     modal.style.display = "block";
-    modal.setAttribute("aria-hidden", false);
-    modal.setAttribute("aria-modal", true);
-    contactMe.innerHTML = `Contactez-moi` + this.photographer.name;
+    modalContent.setAttribute("aria-hidden", "false");
+    modalContent.setAttribute("aria-modal", "true");
+    contactMe.innerHTML = `Contactez-moi ` + this.photographer.name;
   }
 
   /**
@@ -47,9 +48,9 @@ export class Form {
      */
     // close and send form with keyboard
     window.addEventListener("keydown", (e) => {
-      if (modal.ariaModal === "true" && e.key === "Escape") {
+      if (modalContent.ariaModal === "true" && e.key === "Escape") {
         this.closeModal();
-      } else if (modal.ariaModal === "true" && e.key === "Enter") {
+      } else if (modalContent.ariaModal === "true" && e.key === "Enter") {
         this.formValidation();
       }
     });

@@ -54,8 +54,14 @@ header nav .tags a:link {
   text-decoration: none;
 }
 
-/* For screen smaller than 1130px */
-@media screen and (max-width: 1130px) {
+/* For screen smaller than 1350px */
+@media screen and (max-width: 1350px) {
+  header nav {
+    margin-left: 15%;
+  }
+}
+/* For screen smaller than 1075px */
+@media screen and (max-width: 1075px) {
   header nav {
     margin-right: 0;
   }

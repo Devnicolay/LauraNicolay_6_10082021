@@ -8,11 +8,11 @@
       src="https://kit.fontawesome.com/f8139cb276.js"
       crossorigin="anonymous"
     ></script>
-    <title>FishEye</title>
+    <title>FishEye - Page photographe</title>
   </head>
   <body>
     <header>
-      <a href="index.html" aria-label="FishEye" id="logo"
+      <a href="index.html" aria-label="Logo à cliquer pour retourner vers la page d'accueil" id="logo"
         ><img src="images/logo.svg" alt="Fisheye Home page"
       /></a>
     </header>
@@ -28,6 +28,7 @@
             class="dropdown-select"
             aria-haspopup="true"
             aria-expanded="false"
+            aria-label="Liste déroulante pour trier des médias"
           >
             Popularité<span class="arrow">
               <i class="fas fa-chevron-down"></i>
@@ -35,7 +36,8 @@
           </button>
           <ul class="dropdown">
             <li>
-              <a class="sort-popularity" href="#">
+              <a class="sort-popularity" href="#"
+              aria-label="Trier les médias par Popularité">
                 Popularité
                 <span class="arrow-down">
                   <i class="fas fa-chevron-up"></i>
@@ -43,10 +45,10 @@
               </a>
             </li>
             <li>
-              <a class="sort-date" href="#"> Date </a>
+              <a class="sort-date" href="#" aria-label="Trier les médias par date"> Date </a>
             </li>
             <li>
-              <a class="sort-title" href="#"> Titre </a>
+              <a class="sort-title" href="#" aria-label="Trier les médias par titre"> Titre </a>
             </li>
           </ul>
         </div>
@@ -61,7 +63,7 @@
         role="dialog"
         aria-hidden="true"
         aria-modal="false"
-        aria-label="contact me"
+        aria-label="Formulaire de contact du photographe"
         aria-labelledby="titlemodal"
       >
         <div class="modal-content">
@@ -70,7 +72,7 @@
             <button
               class="close-form"
               type="button"
-              aria-label="close contact form"
+              aria-label="Ferme le formulaire de contact"
             >
               <i class="fas fa-times"></i>
             </button>

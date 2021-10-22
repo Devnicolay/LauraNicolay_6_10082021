@@ -18,20 +18,32 @@ export class Photographer {
     return (
       `<article><a href="photographes.html?id=` +
       this.IdPhotographer +
+      `" aria-label="Redirige vers la page de` +
+      this.name +
       `"><img src="` +
       this.portrait +
-      `"><h2>` +
+      `"aria-label="Portrait de ` +
       this.name +
-      `</h2></a><p class="city">` +
+      `"><h2 aria-label="Nom du photographe">` +
+      this.name +
+      `</h2></a><p class="city" aria-label="Ville de ` +
+      this.name +
+      `">` +
       this.city +
-      `</p><p class="slogan">` +
+      `</p><p class="slogan" aria-label="Slogan de ` +
+      this.name +
+      `">` +
       this.tagline +
-      `</p><p class="prices">` +
+      `</p><p class="prices" aria-label="Prix par jour de ` +
+      this.name +
+      `">` +
       this.price +
-      `€/jour</p><div aria-label="tag" filter><ul class="tags">` +
+      `€<span aria-hidden="true">/jour</span></p><div><ul class="tags" aria-label="Filtres des médias de ` +
+      this.name +
+      `">` +
       this.tags
         .map((tag) => {
-          return `<a href="#" data="${tag}"><li><span aria-hidden="true">#${tag}</span></li></a>`;
+          return `<a class="tag" aria-label="Filtre les photographes par ${tag}" href="#" data-filter="${tag}"><li><span aria-hidden="true">#${tag}</span></li></a>`;
         })
         .join("") +
       `</ul></div></article>`
@@ -43,19 +55,25 @@ export class Photographer {
    */
   createTemplatePhotographer() {
     return (
-      `<div class="header-main"><article class="header-left"><div class="name-and-contact"><h1 class="h1-page-photographer">` +
+      `<div class="header-main" role="header main"><article class="header-left"><div class="name-and-contact"><h1 class="h1-page-photographer">` +
       this.name +
-      `</h1><button class="contact" type="button" aria-haspopup="dialog">Contactez-moi</button></div><p class="city">` +
+      `</h1><button class="contact" type="button" aria-haspopup="dialog" aria-label="Formulaire de contact du photographe">Contactez-moi</button></div><p class="city" aria-label="Ville de ` +
+      this.name +
+      `">` +
       this.city +
-      `</p><p class="slogan">` +
+      `</p><p class="slogan" aria-label="Slogan de ` +
+      this.name +
+      `">` +
       this.tagline +
-      `</p><ul class="tags">` +
+      `</p><ul class="tags"aria-label="Retourne à la page d'accueil en filtrant les photographes">` +
       this.tags
         .map((tag) => {
-          return `<a class=tag href="#" data="${tag}"><li><span aria-hidden="true">#${tag}</span></li></a>`;
+          return `<a class=tag aria-label="Filtre les photographes par ${tag}" href="#" data="${tag}"><li><span aria-hidden="true">#${tag}</span></li></a>`;
         })
         .join("") +
-      `</ul></article><aside><a href="photographes.html"><img src="` +
+      `</ul></article><aside><a href="photographes.html" aria-label="Portrait de ` +
+      this.name +
+      `"><img alt="portrait"src="` +
       this.portrait +
       `"></aside></div>`
     );

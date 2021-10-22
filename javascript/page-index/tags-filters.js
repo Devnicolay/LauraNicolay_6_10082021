@@ -19,6 +19,7 @@ export class TagsFilter {
       const photographerConstructor = photographer;
       containerPhotographers.innerHTML +=
         photographerConstructor.createTemplateIndex();
+      this.initListeners();
     });
   }
 
@@ -27,11 +28,11 @@ export class TagsFilter {
    */
   redirectTagFilterHomePage() {
     const ancre = window.location.hash;
-    const deleteHashtag = ancre.substring(1, 13);
+    const ancreWithoutHashtag = ancre.substring(1, 13);
     if (ancre == "") {
       console.log("none");
     } else {
-      this.displayPhotographersFiltered(deleteHashtag);
+      this.displayPhotographersFiltered(ancreWithoutHashtag);
     }
   }
 
