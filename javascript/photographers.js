@@ -116,7 +116,7 @@ export class Photographer {
   /**
    * When click on heart for each media, launch "IncrementLikeMedia" function
    */
-  initListenersforLikesButtons() {
+  initListenersForLikesButtons() {
     const likes = document.querySelectorAll(".heart");
     likes.forEach((like) => {
       const mediaId = like.getAttribute("data-id");

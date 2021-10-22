@@ -51,7 +51,7 @@ export class PagePhotographer {
 
     photographer.createTemplateCounterLikes(); // create counter like bottom the page
 
-    photographer.initListenersforLikesButtons(); // init listerners for likes: Increment and color heart's icon
+    photographer.initListenersForLikesButtons(); // init listerners for likes: Increment and color heart's icon
   }
 }
 

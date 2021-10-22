@@ -89,7 +89,7 @@ export class DropdownSelect {
       mediasOfPagePhotographer.innerHTML += media.createHtml();
     });
     new Lightbox(this.photographer.medias); // init listeners for lightbox
-    this.photographer.initListenersforLikesButtons(); // init listerners for likes: Increment and color heart's icon
+    this.photographer.initListenersForLikesButtons(); // init listerners for likes: Increment and color heart's icon
   }
 
   /**
