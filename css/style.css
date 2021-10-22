@@ -465,9 +465,6 @@ body .form-contact .modal .modal-content {
   overflow: auto;
   /* error message for input */
 }
-body .form-contact .modal .modal-content #form {
-  /* red border for input with error message */
-}
 body .form-contact .modal .modal-content #form label {
   font-size: 1.2em;
 }
@@ -480,9 +477,6 @@ body .form-contact .modal .modal-content #form input {
 body .form-contact .modal .modal-content #form .text-control-message {
   height: 10em;
   overflow: auto;
-}
-body .form-contact .modal .modal-content #form .border-red {
-  border: 0.2em solid red;
 }
 body .form-contact .modal .modal-content .header-form {
   position: relative;
@@ -510,6 +504,9 @@ body .form-contact .modal .modal-content .alert-msg {
   text-align: right;
   display: none;
   white-space: pre-line;
+}
+body .form-contact .modal .modal-content .alert-msg span {
+  clip: rect(0 0 0 0);
 }
 body .form-contact .modal .modal-content #send {
   background-color: #901c1c;

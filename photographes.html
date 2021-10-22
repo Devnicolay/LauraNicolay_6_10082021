@@ -72,7 +72,7 @@
             <button
               class="close-form"
               type="button"
-              aria-label="Ferme le formulaire de contact"
+              aria-label="Appuyer sur la touche echappe pour fermer le formulaire de contact"
             >
               <i class="fas fa-times"></i>
             </button>
@@ -85,12 +85,11 @@
                 type="text"
                 id="firstname"
                 name="firstname"
-                required
                 minlength="2"
+                aria-label="Vous êtes actuellement sur le champs prénom. Veuillez entrer ici votre prénom"
               />
               <br />
               <div class="alert-msg">
-                Veuillez entrer 2 caractères ou plus pour le champ du prénom.
               </div>
             </div>
             <div class="formData lastname">
@@ -100,11 +99,10 @@
                 type="text"
                 id="lastname"
                 name="lastname"
-                required
+                aria-label="Vous êtes actuellement sur le champs nom. Veuillez entrer ici votre nom"
               />
               <br />
               <div class="alert-msg">
-                Veuillez entrer 2 caractères ou plus pour le champ du nom.
               </div>
             </div>
             <div class="formData email">
@@ -114,11 +112,10 @@
                 type="email"
                 id="email"
                 name="email"
-                required
+                aria-label="Vous êtes actuellement sur le champs Email. Veuillez entrer ici votre adresse Email"
               />
               <br />
               <div class="alert-msg">
-                Veuillez entrer une adresse mail valide.
               </div>
             </div>
             <div class="formData message">
@@ -128,17 +125,18 @@
                 type="text"
                 id="yourmessage"
                 name="yourmessage"
-                required
                 minlength="2"
+                aria-label= "Vous êtes actuellement sur le champs message. Veuillez entrer ici votre message"
               />
               <br />
-              <div class="alert-msg">Veuillez écrire votre message ici.</div>
+              <div class="alert-msg">
+              </div>
             </div>
             <button
               id="send"
               class="form-submit"
               type="submit"
-              aria-label="send"
+              aria-label="Envoyer le formulaire"
             >
               Envoyer
             </button>

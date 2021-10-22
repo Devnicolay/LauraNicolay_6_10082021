@@ -34,10 +34,6 @@ body {
             height: 10em;
             overflow: auto;
           }
-          /* red border for input with error message */
-          .border-red {
-            border: 0.2em solid red;
-          }
         }
         .header-form {
           position: relative;
@@ -66,6 +62,9 @@ body {
           text-align: right;
           display: none;
           white-space: pre-line;
+          span {
+            clip: rect(0 0 0 0);
+          }
         }
         #send {
           background-color: $primary-color;

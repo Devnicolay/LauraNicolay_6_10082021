@@ -12,6 +12,7 @@ const email = document.getElementById("email");
 const message = document.getElementById("yourmessage");
 const closeBtn = document.querySelector(".header-form .close-form");
 const form = document.querySelector("form");
+const backgroundPage = document.querySelector("#main-page-photographer");
 
 export class Form {
   constructor(photographer) {
@@ -26,7 +27,8 @@ export class Form {
     modal.style.display = "block";
     modalContent.setAttribute("aria-hidden", "false");
     modalContent.setAttribute("aria-modal", "true");
-    contactMe.innerHTML = `Contactez-moi ` + this.photographer.name;
+    closeBtn.focus();
+    contactMe.innerHTML = `<p aria-label="Remplir les champs du formulaire">Contactez-moi ${this.photographer.name}<p>`;
   }
 
   /**
@@ -79,6 +81,9 @@ export class Form {
     contactBtn.addEventListener("click", () => {
       this.openModal();
     });
+    contactBtn.addEventListener("enter", () => {
+      this.openModal();
+    });
   }
 
   /**
@@ -90,11 +95,11 @@ export class Form {
     if (firstName.value.trim().length >= 2) {
       // the value of firstName must have 2 caracters or more
       alertMsg.style.display = "none"; // alertMsg does not appear
-      firstName.classList.remove("border-red"); // remove the class "border-red"
       return true;
     } else {
       alertMsg.style.display = "flex"; // alertMsg appear
-      firstName.classList.add("border-red"); // add the class "border-red"
+      alertMsg.innerHTML = `<p role="alert">Veuillez entrer 2 caractères ou plus pour le champ du prénom.</p>`;
+      firstName.focus();
       return false;
     }
   }
@@ -105,11 +110,11 @@ export class Form {
     if (lastName.value.trim().length >= 2) {
       // the value of lastname must have 2 caracters or more
       alertMsg.style.display = "none";
-      lastName.classList.remove("border-red");
       return true;
     } else {
       alertMsg.style.display = "flex";
-      lastName.classList.add("border-red");
+      alertMsg.innerHTML = `<p role="alert">Veuillez entrer 2 caractères ou plus pour le champ du nom.</p>`;
+      lastName.focus();
       return false;
     }
   }
@@ -122,11 +127,11 @@ export class Form {
     // mailFormat is the format that the mail field must have, like letters, numbers, symbols @ letters, numbers .(dot) letters, numbers
     if (email.value.match(mailFormat)) {
       alertMsg.style.display = "none";
-      email.classList.remove("border-red");
       return true;
     } else {
       alertMsg.style.display = "flex";
-      email.classList.add("border-red");
+      alertMsg.innerHTML = `<p role="alert">Veuillez entrer une adresse Email valide.</p>`;
+      email.focus();
       return false;
     }
   }
@@ -137,11 +142,11 @@ export class Form {
     if (message.value.trim().length >= 2) {
       // the value of message must have 2 caracters or more
       alertMsg.style.display = "none";
-      message.classList.remove("border-red");
       return true;
     } else {
       alertMsg.style.display = "flex";
-      message.classList.add("border-red");
+      alertMsg.innerHTML = `<p role="alert">Veuillez écrire votre message ici.</p>`;
+      message.focus();
       return false;
     }
   }
