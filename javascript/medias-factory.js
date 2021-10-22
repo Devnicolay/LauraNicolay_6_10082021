@@ -32,7 +32,7 @@ class Media {
 
   /**
    *
-   * @returns Html for colored hearts likes
+   * @returns Html for colored hearts and number likes
    */
   createLikeHtml() {
     let iconName = `far`;
@@ -56,24 +56,20 @@ class Image extends Media {
    * @returns Html for image
    */
   createHtml() {
-    return (
-      `<article class="block-media"><img class="media-img-video" src="` +
-      this.source +
-      `"><div class="title-and-likes"><p class="title">` +
-      this.title +
-      `</p><div class="number-heart" data-id="` +
-      this.id +
-      `">` +
-      this.createLikeHtml() +
-      `</div></div></article>`
-    );
+    return `<article class="block-media"><img class="media-img-video" src="${
+      this.source
+    }"><div class="title-and-likes"><p class="title">${
+      this.title
+    }</p><div class="number-heart" data-id="${
+      this.id
+    }">${this.createLikeHtml()}</div></div></article>`;
   }
   /**
    *
    * @returns Html for content lightbox
    */
   createLightboxHtml() {
-    return `<img src="` + this.source + `"><p>` + this.title + `</p>`;
+    return `<img src="${this.source}"><p>${this.title}</p>`;
   }
 }
 
@@ -87,27 +83,17 @@ class Video extends Media {
    * @returns Html for video
    */
   createHtml() {
-    return (
-      `<article class="block-media"><video controls class="media-img-video" src="` +
-      this.source +
-      `"></video><div class="title-and-likes"><p class="title">` +
-      this.title +
-      `</p><div class="number-heart">` +
-      this.createLikeHtml() +
-      `</div></div></article>`
-    );
+    return `<article class="block-media"><video controls class="media-img-video" src="${
+      this.source
+    }"></video><div class="title-and-likes"><p class="title">${
+      this.title
+    }</p><div class="number-heart">${this.createLikeHtml()}</div></div></article>`;
   }
   /**
    *
    * @returns Html for content lightbox
    */
   createLightboxHtml() {
-    return (
-      `<video controls src="` +
-      this.source +
-      `"><p>` +
-      this.title +
-      `</p></video>`
-    );
+    return `<video controls src="${this.source}"><p>${this.title}</p></video>`;
   }
 }
