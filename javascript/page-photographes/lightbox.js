@@ -5,7 +5,7 @@ import { ApiFisheye } from "../api-fisheye.js";
  */
 const lightbox = document.querySelector(".lightbox");
 const lightboxMediaContainer = document.querySelector(".lightbox-container");
-const crossLightbox = document.querySelector(".lightbox-close i");
+const crossLightbox = document.querySelector(".lightbox-close");
 const chevronRight = document.querySelector(".fa-chevron-right");
 const chevronLeft = document.querySelector(".fa-chevron-left");
 
@@ -103,10 +103,23 @@ export class Lightbox {
     const allMedias = Array.from(document.querySelectorAll(".media-img-video"));
     allMedias.forEach((media) => {
       media.addEventListener("click", async () => {
-        const source = media.getAttribute("src"); // get source of media clicked
-        const mediaClicked = await Lightbox.findMediaClicked(source); // return media clicked
-        this.openLightbox(mediaClicked);
+        this.openMediaWithSource(media);
+      });
+      media.addEventListener("keyup", async (event) => {
+        if (event.key === "Enter") {
+          this.openMediaWithSource(media);
+        }
       });
     });
+  }
+  /**
+   * Open media in lightbox when click or press enter on media
+   *
+   * @param {string} media
+   */
+  async openMediaWithSource(media) {
+    const source = media.getAttribute("src"); // get source of media clicked
+    const mediaClicked = await Lightbox.findMediaClicked(source); // return media clicked
+    this.openLightbox(mediaClicked);
   }
 }
