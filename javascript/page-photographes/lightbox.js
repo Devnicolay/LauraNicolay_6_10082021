@@ -37,9 +37,48 @@ export class Lightbox {
   openLightbox(clickedMedia) {
     const lightbox = document.querySelector(".lightbox");
     lightbox.style.cssText += ";display:flex !important;";
+    lightbox.ariaHidden = "false";
     lightbox.ariaModal = "true";
+    crossLightbox.focus();
+    this.lightboxFocus();
     this.currentMediaIndex = this.medias.indexOf(clickedMedia);
     lightboxMediaContainer.innerHTML = clickedMedia.createLightboxHtml();
+  }
+
+  /**
+   * Keep the focus in the lightbox
+   */
+  lightboxFocus() {
+    const focusableElements =
+      'button, .lightbox-container, [tabindex]:not([tabindex="-1"])';
+    const firstFocusableElement =
+      lightbox.querySelectorAll(focusableElements)[0]; // get first element to be focused inside modal
+    const focusableContent = lightbox.querySelectorAll(focusableElements);
+    const lastFocusableElement = focusableContent[focusableContent.length - 1]; // get last element to be focused inside modal
+
+    document.addEventListener("keydown", function (e) {
+      let isTabPressed = e.key === "Tab";
+
+      if (!isTabPressed) {
+        return;
+      }
+
+      if (e.shiftKey) {
+        // if shift key pressed for shift + tab combination
+        if (document.activeElement === firstFocusableElement) {
+          // if focused is to first focusable element, focus on the last focusable element after pressing shift + tab
+          lastFocusableElement.focus(); // add focus for the last focusable element
+          e.preventDefault();
+        }
+      } else {
+        // if tab key is pressed
+        if (document.activeElement === lastFocusableElement) {
+          // if focused is to last focusable element, focus on the first focusable element after pressing tab
+          firstFocusableElement.focus(); // add focus for the first focusable element
+          e.preventDefault();
+        }
+      }
+    });
   }
 
   /**
@@ -73,6 +112,8 @@ export class Lightbox {
    */
   closeLightbox() {
     lightbox.style.cssText += ";display:none !important;";
+    lightbox.ariaHidden = "true";
+    lightbox.ariaModal = "false";
   }
 
   /**
@@ -97,6 +138,16 @@ export class Lightbox {
       this.next();
     });
     chevronLeft.addEventListener("click", () => {
+      this.previous();
+    });
+    // close, next and previous lightbox with press Enter touch on icon button
+    crossLightbox.addEventListener("Enter", () => {
+      this.closeLightbox();
+    });
+    chevronRight.addEventListener("Enter", () => {
+      this.next();
+    });
+    chevronLeft.addEventListener("Enter", () => {
       this.previous();
     });
 

@@ -540,6 +540,7 @@ body .form-contact .modal .modal-content #send {
 }
 
 .lightbox {
+  z-index: 11;
   display: none !important;
   position: fixed;
   top: 0;
