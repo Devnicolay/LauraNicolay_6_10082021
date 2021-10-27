@@ -34,6 +34,10 @@ body {
             height: 10em;
             overflow: auto;
           }
+          /* red border for input with error message */
+          .border-red {
+            border: 0.2em solid red;
+          }
         }
         .header-form {
           position: relative;
@@ -55,16 +59,12 @@ body {
         }
         /* error message for input */
         .alert-msg {
-          font-size: 0.8em;
-          color: white;
+          font-size: 1em;
+          color: #700909;
           margin-top: 0.62em;
           margin-bottom: 0.44em;
-          text-align: right;
           display: none;
           white-space: pre-line;
-          span {
-            clip: rect(0 0 0 0);
-          }
         }
         #send {
           background-color: $primary-color;

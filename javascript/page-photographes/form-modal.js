@@ -12,7 +12,6 @@ const email = document.getElementById("email");
 const message = document.getElementById("yourmessage");
 const closeBtn = document.querySelector(".header-form .close-form");
 const form = document.querySelector("form");
-const backgroundPage = document.querySelector("#main-page-photographer");
 
 export class Form {
   constructor(photographer) {
@@ -29,6 +28,42 @@ export class Form {
     modalContent.setAttribute("aria-modal", "true");
     closeBtn.focus();
     contactMe.innerHTML = `<p aria-label="Remplir les champs du formulaire">Contactez-moi ${this.photographer.name}<p>`;
+    this.modalFocus();
+  }
+
+  /**
+   * Keep the focus in the modal
+   */
+  modalFocus() {
+    const focusableElements =
+      '.header-form .close-form, #send, input , textarea, [tabindex]:not([tabindex="-1"])';
+    const firstFocusableElement = modal.querySelectorAll(focusableElements)[0]; // get first element to be focused inside modal
+    const focusableContent = modal.querySelectorAll(focusableElements);
+    const lastFocusableElement = focusableContent[focusableContent.length - 1]; // get last element to be focused inside modal
+
+    document.addEventListener("keydown", function (e) {
+      let isTabPressed = e.key === "Tab";
+
+      if (!isTabPressed) {
+        return;
+      }
+
+      if (e.shiftKey) {
+        // if shift key pressed for shift + tab combination
+        if (document.activeElement === firstFocusableElement) {
+          // if focused is to first focusable element, focus on the last focusable element after pressing shift + tab
+          lastFocusableElement.focus(); // add focus for the last focusable element
+          e.preventDefault();
+        }
+      } else {
+        // if tab key is pressed
+        if (document.activeElement === lastFocusableElement) {
+          // if focused is to last focusable element, focus on the first focusable element after pressing tab
+          firstFocusableElement.focus(); // add focus for the first focusable element
+          e.preventDefault();
+        }
+      }
+    });
   }
 
   /**
@@ -36,6 +71,8 @@ export class Form {
    */
   closeModal() {
     modal.style.display = "none";
+    modalContent.setAttribute("aria-hidden", "true");
+    modalContent.setAttribute("aria-modal", "false");
   }
 
   /**
@@ -95,11 +132,12 @@ export class Form {
     if (firstName.value.trim().length >= 2) {
       // the value of firstName must have 2 caracters or more
       alertMsg.style.display = "none"; // alertMsg does not appear
+      firstName.classList.remove("border-red"); // remove the class "border-red"
       return true;
     } else {
       alertMsg.style.display = "flex"; // alertMsg appear
-      alertMsg.innerHTML = `<p role="alert">Veuillez entrer 2 caractères ou plus pour le champ du prénom.</p>`;
-      firstName.focus();
+      firstName.classList.add("border-red"); // add the class "border-red"
+      firstName.setAttribute("aria-invalid", "true");
       return false;
     }
   }
@@ -110,11 +148,12 @@ export class Form {
     if (lastName.value.trim().length >= 2) {
       // the value of lastname must have 2 caracters or more
       alertMsg.style.display = "none";
+      lastName.classList.remove("border-red");
       return true;
     } else {
       alertMsg.style.display = "flex";
-      alertMsg.innerHTML = `<p role="alert">Veuillez entrer 2 caractères ou plus pour le champ du nom.</p>`;
-      lastName.focus();
+      lastName.classList.add("border-red");
+      lastName.setAttribute("aria-invalid", "true");
       return false;
     }
   }
@@ -127,11 +166,12 @@ export class Form {
     // mailFormat is the format that the mail field must have, like letters, numbers, symbols @ letters, numbers .(dot) letters, numbers
     if (email.value.match(mailFormat)) {
       alertMsg.style.display = "none";
+      email.classList.remove("border-red");
       return true;
     } else {
       alertMsg.style.display = "flex";
-      alertMsg.innerHTML = `<p role="alert">Veuillez entrer une adresse Email valide.</p>`;
-      email.focus();
+      email.classList.add("border-red");
+      email.setAttribute("aria-invalid", "true");
       return false;
     }
   }
@@ -142,11 +182,12 @@ export class Form {
     if (message.value.trim().length >= 2) {
       // the value of message must have 2 caracters or more
       alertMsg.style.display = "none";
+      message.classList.remove("border-red");
       return true;
     } else {
       alertMsg.style.display = "flex";
-      alertMsg.innerHTML = `<p role="alert">Veuillez écrire votre message ici.</p>`;
-      message.focus();
+      message.classList.add("border-red");
+      message.setAttribute("aria-invalid", "true");
       return false;
     }
   }

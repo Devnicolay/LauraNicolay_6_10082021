@@ -87,10 +87,13 @@
                 name="firstname"
                 minlength="2"
                 aria-label="Vous êtes actuellement sur le champs prénom. Veuillez entrer ici votre prénom"
+                aria-invalid="false" 
+                aria-describedBy="error_firstname"
               />
               <br />
-              <div class="alert-msg">
-              </div>
+              <span class="alert-msg" id="error_firstname">
+                Veuillez entrer 2 caractères ou plus pour le champ du prénom.
+              </span>
             </div>
             <div class="formData lastname">
               <label for="lastname">Nom</label><br />
@@ -100,10 +103,13 @@
                 id="lastname"
                 name="lastname"
                 aria-label="Vous êtes actuellement sur le champs nom. Veuillez entrer ici votre nom"
+                aria-invalid="false" 
+                aria-describedBy="error_lastname"
               />
               <br />
-              <div class="alert-msg">
-              </div>
+              <span class="alert-msg" id="error_lastname">
+                Veuillez entrer 2 caractères ou plus pour le champ du nom.
+              </span>
             </div>
             <div class="formData email">
               <label for="email">Email</label><br />
@@ -113,10 +119,13 @@
                 id="email"
                 name="email"
                 aria-label="Vous êtes actuellement sur le champs Email. Veuillez entrer ici votre adresse Email"
+                aria-invalid="false" 
+                aria-describedBy="error_mail"
               />
               <br />
-              <div class="alert-msg">
-              </div>
+              <span class="alert-msg" id="error_mail">
+                Veuillez entrer une adresse Email valide.
+              </span>
             </div>
             <div class="formData message">
               <label for="yourmessage">Votre message</label><br />
@@ -127,10 +136,13 @@
                 name="yourmessage"
                 minlength="2"
                 aria-label= "Vous êtes actuellement sur le champs message. Veuillez entrer ici votre message"
+                aria-invalid="false" 
+                aria-describedBy="error_message"
               />
               <br />
-              <div class="alert-msg">
-              </div>
+              <span class="alert-msg" id="error_message">
+                Veuillez écrire un message.
+              </span>
             </div>
             <button
               id="send"
