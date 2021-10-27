@@ -54,10 +54,27 @@ header nav .tags a:link {
   text-decoration: none;
 }
 
-/* For screen smaller than 1350px */
-@media screen and (max-width: 1350px) {
+/* For screen bigger than 1700px */
+@media screen and (min-width: 1700px) {
   header nav {
-    margin-left: 15%;
+    margin-right: 30em;
+  }
+}
+/* For screen between 1535px and 1699px */
+@media screen and (min-width: 1535px) and (max-width: 1699px) {
+  header nav {
+    margin-right: 25em;
+  }
+}
+/* For screen smaller than 1450px */
+@media screen and (max-width: 1450px) {
+  header {
+    flex-direction: column;
+  }
+  header nav {
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
   }
 }
 /* For screen smaller than 1075px */
@@ -69,12 +86,6 @@ header nav .tags a:link {
     justify-content: center;
     flex-wrap: wrap;
     padding-left: 0;
-  }
-}
-/* For screen between 1130px and 900px */
-@media screen and (min-width: 900px) and (max-width: 1130px) {
-  header nav {
-    margin-left: 8%;
   }
 }
 /* For screen between 900px and 600px */
