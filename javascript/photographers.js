@@ -37,7 +37,7 @@ export class Photographer {
           return `<a class=tag aria-label="Filtre les photographes par ${tag}" href="#" data="${tag}"><li><span aria-hidden="true">#${tag}</span></li></a>`;
         })
         .join("") +
-      `</ul></article><aside><a href="photographes.html" aria-label="Portrait de ${this.name}"><img alt="portrait"src="${this.portrait}"></aside></div>`
+      `</ul></article><aside><img alt="${this.name}"src="${this.portrait}"></aside></div>`
     );
   }
 
@@ -91,7 +91,7 @@ export class Photographer {
    *
    * @param {string} mediaId Id for media
    */
-  IncrementLikeMedia(mediaId) {
+  incrementLikeMedia(mediaId) {
     const media = this.medias.find((media) => media.id == mediaId);
     if (media.clicked == false) {
       media.likes++;
@@ -107,21 +107,21 @@ export class Photographer {
 
     this.updateTotalLikes();
 
-    const likes = heart.querySelector(".heart");
-    likes.addEventListener("click", () => {
-      this.IncrementLikeMedia(mediaId);
+    const hearts = heart.querySelector(".heart");
+    hearts.addEventListener("click", () => {
+      this.incrementLikeMedia(mediaId);
     });
   }
 
   /**
-   * When click on heart for each media, launch "IncrementLikeMedia" function
+   * When click on heart for each media, launch "incrementLikeMedia" function
    */
   initListenersForLikesButtons() {
-    const likes = document.querySelectorAll(".heart");
-    likes.forEach((like) => {
+    const hearts = document.querySelectorAll(".heart");
+    hearts.forEach((like) => {
       const mediaId = like.getAttribute("data-id");
       like.addEventListener("click", () => {
-        this.IncrementLikeMedia(mediaId);
+        this.incrementLikeMedia(mediaId);
       });
     });
   }

@@ -42,6 +42,7 @@ export class DropdownSelect {
     this.photographer.medias = this.photographer.medias.sort((a, b) => {
       return b.likes - a.likes;
     });
+    console.log("popularité");
     this.displaySortedMedias("popularité");
   }
 
@@ -50,7 +51,15 @@ export class DropdownSelect {
    */
   dateSort() {
     this.photographer.medias = this.photographer.medias.sort((a, b) => {
-      return a.date - b.date;
+      let x = a.date.toLowerCase();
+      let y = b.date.toLowerCase();
+      if (x < y) {
+        return -1;
+      }
+      if (x > y) {
+        return 1;
+      }
+      return 0;
     });
     this.displaySortedMedias("Date");
   }
@@ -97,6 +106,11 @@ export class DropdownSelect {
    */
   initListeners() {
     dropdownButton.addEventListener("click", () => this.initializeDropdown());
+    arrowDown.addEventListener("click", () => {
+      btnSort.style.display = "block";
+      dropdownLinkUl.style.display = "none";
+      dropdownButton.setAttribute("aria-expanded", "false");
+    });
     sortPopularity.addEventListener("click", () => this.popularitySort());
     sortDate.addEventListener("click", () => this.dateSort());
     sortTitle.addEventListener("click", () => this.titleSort());
