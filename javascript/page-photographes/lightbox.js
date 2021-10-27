@@ -17,8 +17,8 @@ export class Lightbox {
   }
 
   /**
-   *
    * Find the media that was clicked
+   *
    * @param {string} source of media clicked
    * @returns media that was clicked
    */
@@ -30,8 +30,8 @@ export class Lightbox {
     return media;
   }
   /**
-   *
    * Launch lightbox
+   *
    * @param {string} clickedMedia Media clicked for open lightbox
    */
   openLightbox(clickedMedia) {

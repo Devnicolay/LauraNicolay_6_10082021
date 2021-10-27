@@ -5,8 +5,9 @@ export class TagsFilter {
     this.redirectTagFilterHomePage();
   }
   /**
+   * Display photographers who have the tag clicked
    *
-   * @param {string} tagValue display photographers who have the tag clicked
+   * @param {string} tagValue name of tag
    */
   displayPhotographersFiltered(tagValue) {
     const photographers = this.photographers;
@@ -36,6 +37,9 @@ export class TagsFilter {
     }
   }
 
+  /**
+   * Listeners
+   */
   initListeners() {
     const tags = document.querySelectorAll(".tag");
     tags.forEach((tag) => {

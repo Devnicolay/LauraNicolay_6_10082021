@@ -31,7 +31,7 @@ export class Photographer {
    */
   createTemplatePhotographer() {
     return (
-      `<div class="header-main" role="header main"><article class="header-left"><div class="name-and-contact"><h1 class="h1-page-photographer">${this.name}</h1><button class="contact" type="button" aria-haspopup="dialog" aria-label="Formulaire de contact du photographe">Contactez-moi</button></div><p class="city" aria-label="Ville de ${this.name}">${this.city}</p><p class="slogan" aria-label="Slogan de ${this.name}">${this.tagline}</p><ul class="tags"aria-label="Retourne à la page d'accueil en filtrant les photographes">` +
+      `<div class="header-main" role="header main"><article class="header-left"><div class="name-and-contact"><h1 class="h1-page-photographer">${this.name}</h1><button class="contact" type="button" aria-haspopup="dialog" aria-label="Formulaire de contact de ${this.name}">Contactez-moi</button></div><p class="city" aria-label="Ville de ${this.name}">${this.city}</p><p class="slogan" aria-label="Slogan de ${this.name}">${this.tagline}</p><ul class="tags"aria-label="Retourne à la page d'accueil en filtrant les photographes">` +
       this.tags
         .map((tag) => {
           return `<a class=tag aria-label="Filtre les photographes par ${tag}" href="#" data="${tag}"><li><span aria-hidden="true">#${tag}</span></li></a>`;

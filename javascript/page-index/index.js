@@ -1,5 +1,8 @@
 import { ApiFisheye } from "../api-fisheye.js";
 import { TagsFilter } from "./tags-filters.js";
+import "../photographers.js";
+import "./scroll-link.js";
+
 /**
  * DOM
  */

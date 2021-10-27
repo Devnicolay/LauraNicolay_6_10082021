@@ -1,7 +1,7 @@
 export class MediaFactory {
   /**
-   *
    * Create media if it's an image or a video
+   *
    * @param {string} data for media
    * @returns
    */
@@ -66,7 +66,7 @@ class Image extends Media {
   }
   /**
    *
-   * @returns Html for content lightbox
+   * @returns Lightbox content html for image
    */
   createLightboxHtml() {
     return `<img src="${this.source}" alt="${this.alt}"><p>${this.title}</p>`;
@@ -93,7 +93,7 @@ class Video extends Media {
   }
   /**
    *
-   * @returns Html for content lightbox
+   * @returns Lightbox content html for video
    */
   createLightboxHtml() {
     return `<video controls src="${this.source}" alt="${this.alt}"><p>${this.title}</p></video>`;

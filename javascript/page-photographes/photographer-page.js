@@ -1,7 +1,11 @@
 import { ApiFisheye } from "../api-fisheye.js";
+import "../photographers.js";
+import "../medias-factory.js";
+import { DropdownSelect } from "./dropdown-select.js";
 import { Form } from "./form-modal.js";
 import { Lightbox } from "./lightbox.js";
-import { DropdownSelect } from "./dropdown-select.js";
+import "../page-index/tags-filters.js";
+
 /**
  * DOM
  */

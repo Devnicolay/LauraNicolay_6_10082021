@@ -82,6 +82,7 @@ export class Form {
    */
   initListeners() {
     /**
+     * Listeners
      *
      * @param {event} e Close and send form with press escape on keyboard
      */
