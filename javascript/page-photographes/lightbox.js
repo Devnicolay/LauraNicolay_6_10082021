@@ -114,6 +114,8 @@ export class Lightbox {
     lightbox.style.cssText += ";display:none !important;";
     lightbox.ariaHidden = "true";
     lightbox.ariaModal = "false";
+    const firstMedia = document.querySelector(".media-img-video");
+    firstMedia.focus();
   }
 
   /**

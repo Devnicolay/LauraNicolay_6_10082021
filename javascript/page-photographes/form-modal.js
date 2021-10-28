@@ -73,6 +73,8 @@ export class Form {
     modal.style.display = "none";
     modalContent.setAttribute("aria-hidden", "true");
     modalContent.setAttribute("aria-modal", "false");
+    const contactBtn = document.querySelector(".contact");
+    contactBtn.focus();
   }
 
   /**
