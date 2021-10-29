@@ -89,7 +89,9 @@ class Video extends Media {
       this.alt
     }"></video><div class="title-and-likes"><p class="title">${
       this.title
-    }</p><div class="number-heart">${this.createLikeHtml()}</div></div></article>`;
+    }</p><div class="number-heart" data-id="${
+      this.id
+    }">${this.createLikeHtml()}</div></div></article>`;
   }
   /**
    *

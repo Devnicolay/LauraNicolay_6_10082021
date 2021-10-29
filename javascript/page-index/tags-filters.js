@@ -45,6 +45,7 @@ export class TagsFilter {
     tags.forEach((tag) => {
       const tagValue = tag.getAttribute("data-filter");
       tag.addEventListener("click", () => {
+        console.log(tag);
         this.displayPhotographersFiltered(tagValue);
       });
     });
