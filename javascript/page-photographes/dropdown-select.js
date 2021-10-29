@@ -7,10 +7,10 @@ const dropdownButton = document.querySelector(".dropdown-select");
 const dropdownLinkUl = document.querySelector(".dropdown");
 const arrowDown = document.querySelector(".arrow-down");
 const sortPopularity = document.querySelector(
-  ".dropdown-select-content, .sort-popularity"
+  ".dropdown-select-content, #sort-popularity"
 );
-const sortDate = document.querySelector(".sort-date");
-const sortTitle = document.querySelector(".sort-title");
+const sortDate = document.querySelector("#sort-date");
+const sortTitle = document.querySelector("#sort-title");
 const btnSort = document.querySelector("#sort");
 const mediasOfPagePhotographer = document.querySelector(".medias");
 
