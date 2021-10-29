@@ -325,6 +325,7 @@ main .scroll-link a {
 }
 #main-page-photographer .select-filters .dropdown-filters button .arrow {
   margin-left: 1em;
+  cursor: pointer;
 }
 #main-page-photographer .select-filters .dropdown-filters button i {
   margin-left: 1em;
@@ -338,6 +339,7 @@ main .scroll-link a {
   text-decoration: none;
   color: white;
   padding-left: 0.5em;
+  cursor: pointer;
 }
 #main-page-photographer .select-filters .dropdown-filters a span {
   margin-right: 1.2em;
@@ -354,6 +356,7 @@ main .scroll-link a {
 #main-page-photographer .select-filters .dropdown-filters ul .arrow-down {
   color: white;
   margin-left: 1em;
+  cursor: pointer;
 }
 #main-page-photographer .select-filters .dropdown-filters ul li {
   border-top: 1px solid white;
