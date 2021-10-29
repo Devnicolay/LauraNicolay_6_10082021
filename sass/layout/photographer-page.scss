@@ -203,6 +203,11 @@
 
 /* For screen smaller than 600px */
 @media screen and (max-width: 600px) {
+  header {
+    #logo {
+      margin-top: 2.1em;
+    }
+  }
   #main-page-photographer {
     margin: 2em 1em;
     .page-photographer {
@@ -212,19 +217,27 @@
           margin-left: 0.5em;
           .name-and-contact {
             .h1-page-photographer {
-              font-size: 2em;
+              font-size: 2.5em;
+              margin-top: 0;
             }
             button {
-              left: 33%;
+              left: 29%;
+              font-size: 1.3em;
             }
           }
           .city {
             font-size: 1em;
+            margin: 0;
+          }
+          .slogan {
+            margin: 0;
           }
         }
         .tags {
+          margin-top: 0;
           .tag {
             li {
+              padding-top: 0;
               span {
                 font-size: 0.8em;
               }
@@ -232,11 +245,11 @@
           }
         }
         aside {
-          bottom: 5em;
+          bottom: 4.5em;
           right: 0em;
           img {
-            width: 8em;
-            height: 8em;
+            width: 7.5em;
+            height: 7.5em;
           }
         }
       }
@@ -246,6 +259,13 @@
     }
     .medias {
       justify-content: center;
+      .block-media {
+        margin-bottom: 0;
+        .media-img-video {
+          width: 23em;
+          height: 13em;
+        }
+      }
     }
   }
 }

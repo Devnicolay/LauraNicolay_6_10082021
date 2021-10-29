@@ -16,10 +16,10 @@ export class Photographer {
    */
   createTemplateIndex() {
     return (
-      `<article><a href="photographes.html?id=${this.IdPhotographer}"><img src="${this.portrait}"><h2>${this.name}</h2></a><p class="city">${this.city}</p><p class="slogan">${this.tagline}</p><p class="prices">${this.price}€/jour</p><div aria-label="tag" filter><ul class="tags">` +
+      `<article><a href="photographes.html?id=${this.IdPhotographer}"><img src="${this.portrait}"><h2>${this.name}</h2></a><p class="city">${this.city}, ${this.country}</p><p class="slogan">${this.tagline}</p><p class="prices">${this.price}€/jour</p><div aria-label="tag" filter><ul class="tags">` +
       this.tags
         .map((tag) => {
-          return `<a href="#" data="${tag}"><li><span aria-hidden="true">#${tag}</span></li></a>`;
+          return `<a class="tag" href="#" data-filter="${tag}"><li><span aria-hidden="true">#${tag}</span></li></a>`;
         })
         .join("") +
       `</ul></div></article>`
@@ -31,7 +31,7 @@ export class Photographer {
    */
   createTemplatePhotographer() {
     return (
-      `<div class="header-main" role="header main"><article class="header-left"><div class="name-and-contact"><h1 class="h1-page-photographer">${this.name}</h1><button class="contact" type="button" aria-haspopup="dialog" aria-label="Formulaire de contact de ${this.name}">Contactez-moi</button></div><p class="city" aria-label="Ville de ${this.name}">${this.city}</p><p class="slogan" aria-label="Slogan de ${this.name}">${this.tagline}</p><ul class="tags"aria-label="Retourne à la page d'accueil en filtrant les photographes">` +
+      `<div class="header-main" role="header main"><article class="header-left"><div class="name-and-contact"><h1 class="h1-page-photographer">${this.name}</h1><button class="contact" type="button" aria-haspopup="dialog" aria-label="Formulaire de contact de ${this.name}">Contactez-moi</button></div><p class="city" aria-label="Ville de ${this.name}">${this.city}, ${this.country}</p><p class="slogan" aria-label="Slogan de ${this.name}">${this.tagline}</p><ul class="tags"aria-label="Retourne à la page d'accueil en filtrant les photographes">` +
       this.tags
         .map((tag) => {
           return `<a class=tag aria-label="Filtre les photographes par ${tag}" href="#" data="${tag}"><li><span aria-hidden="true">#${tag}</span></li></a>`;

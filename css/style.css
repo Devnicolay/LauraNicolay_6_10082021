@@ -28,6 +28,7 @@ header {
 }
 header #logo {
   margin-top: 0.62em;
+  width: 15em;
 }
 header nav {
   margin-right: 19.4em;
@@ -95,6 +96,12 @@ header nav .tags a:link {
   }
   header nav {
     margin-left: 5%;
+  }
+}
+/* For screen smaller than 560px */
+@media screen and (max-width: 560px) {
+  header #logo img {
+    width: 10em;
   }
 }
 main img {
@@ -179,10 +186,9 @@ main .Photographers article .tags {
 /* For screen smaller than 560px */
 @media screen and (max-width: 560px) {
   main .h1-index {
-    position: relative;
-    top: 0;
-    right: 0;
-    left: 0.9em;
+    top: 2.2em;
+    right: 1em;
+    font-size: 1.2em;
   }
 }
 main .scroll-link {
@@ -423,6 +429,10 @@ main .scroll-link a {
 }
 /* For screen smaller than 600px */
 @media screen and (max-width: 600px) {
+  header #logo {
+    margin-top: 2.1em;
+  }
+
   #main-page-photographer {
     margin: 2em 1em;
   }
@@ -433,30 +443,49 @@ main .scroll-link a {
     margin-left: 0.5em;
   }
   #main-page-photographer .page-photographer .header-main .header-left .name-and-contact .h1-page-photographer {
-    font-size: 2em;
+    font-size: 2.5em;
+    margin-top: 0;
   }
   #main-page-photographer .page-photographer .header-main .header-left .name-and-contact button {
-    left: 33%;
+    left: 29%;
+    font-size: 1.3em;
   }
   #main-page-photographer .page-photographer .header-main .header-left .city {
     font-size: 1em;
+    margin: 0;
+  }
+  #main-page-photographer .page-photographer .header-main .header-left .slogan {
+    margin: 0;
+  }
+  #main-page-photographer .page-photographer .header-main .tags {
+    margin-top: 0;
+  }
+  #main-page-photographer .page-photographer .header-main .tags .tag li {
+    padding-top: 0;
   }
   #main-page-photographer .page-photographer .header-main .tags .tag li span {
     font-size: 0.8em;
   }
   #main-page-photographer .page-photographer .header-main aside {
-    bottom: 5em;
+    bottom: 4.5em;
     right: 0em;
   }
   #main-page-photographer .page-photographer .header-main aside img {
-    width: 8em;
-    height: 8em;
+    width: 7.5em;
+    height: 7.5em;
   }
   #main-page-photographer .select-filters {
     display: none;
   }
   #main-page-photographer .medias {
     justify-content: center;
+  }
+  #main-page-photographer .medias .block-media {
+    margin-bottom: 0;
+  }
+  #main-page-photographer .medias .block-media .media-img-video {
+    width: 23em;
+    height: 13em;
   }
 }
 body .form-contact {
@@ -562,33 +591,60 @@ body .form-contact .modal .modal-content #send {
   margin-bottom: 2em;
   cursor: pointer;
 }
-.lightbox .lightbox-close {
+.lightbox .close-next {
+  position: relative;
+}
+.lightbox .close-next .lightbox-next {
+  height: 91%;
+}
+.lightbox .close-next .lightbox-close {
   position: absolute;
-  top: 1.3em;
-  right: 0.6em;
+  right: 0.1em;
 }
 .lightbox .lightbox-container {
   justify-content: center;
   margin: 0em 1em;
-  width: 65.6em;
 }
 .lightbox .lightbox-container img {
   max-width: 100%;
-  width: 100%;
   height: 87%;
   object-fit: cover;
+  border-radius: 0.31em;
 }
 .lightbox .lightbox-container video {
   max-width: 100%;
   width: 100%;
   height: 87%;
   object-fit: cover;
+  border-radius: 0.31em;
 }
 .lightbox .lightbox-container p {
   color: #901c1c;
   margin-top: 0.2em;
 }
 
+/* For screen smaller than 600px */
+@media screen and (max-width: 600px) {
+  .lightbox .lightbox-previous {
+    margin-bottom: 1.3em;
+  }
+  .lightbox .close-next .lightbox-next {
+    height: 94%;
+  }
+  .lightbox .close-next .lightbox-close {
+    top: 6.7em;
+  }
+  .lightbox .lightbox-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .lightbox .lightbox-container img {
+    height: 16em;
+  }
+  .lightbox .lightbox-container video {
+    height: 19em;
+  }
+}
 .likes-and-price {
   background-color: #db8876;
   position: fixed;

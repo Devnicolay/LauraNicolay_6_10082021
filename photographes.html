@@ -26,7 +26,7 @@
           <button
             id="sort"
             class="dropdown-select"
-            aria-haspopup="true"
+            aria-haspopup="listbox"
             aria-expanded="false"
             aria-label="Liste déroulante pour trier des médias"
           >
@@ -36,16 +36,16 @@
           </button>
           <ul class="dropdown">
             <li>
-              <a class="sort-popularity" href="#" aria-label="Trier les médias par Popularité"> Popularité </a> 
+              <a class="sort-popularity" href="#" aria-label="Trier les médias par Popularité" role="listbox" aria-selected="false"> Popularité </a> 
               <span class="arrow-down">
                 <span class="fas fa-chevron-up"></span>
               </span>
             </li>
             <li>
-              <a class="sort-date" href="#" aria-label="Trier les médias par date"> Date </a>
+              <a class="sort-date" href="#" aria-label="Trier les médias par date" role="listbox" aria-selected="false"> Date </a>
             </li>
             <li>
-              <a class="sort-title" href="#" aria-label="Trier les médias par titre"> Titre </a>
+              <a class="sort-title" href="#" aria-label="Trier les médias par titre" role="listbox" aria-selected="false"> Titre </a>
             </li>
           </ul>
         </div>
@@ -161,9 +161,6 @@
       aria-hidden="true"
       aria-modal="false"
     >
-      <button class="lightbox-close" type="button" aria-label="Fermer lightbox">
-        <span class="fas fa-times"></span>
-      </button>
       <button
         class="lightbox-previous"
         type="button"
@@ -172,9 +169,14 @@
         <span class="fas fa-chevron-left"></span>
       </button>
       <div class="lightbox-container"></div>
-      <button class="lightbox-next" type="button" aria-label="Média suivant">
-        <span class="fas fa-chevron-right"></span>
-      </button>
+      <div class="close-next">
+        <button class="lightbox-next" type="button" aria-label="Média suivant">
+          <span class="fas fa-chevron-right"></span>
+        </button>
+        <button class="lightbox-close" type="button" aria-label="Fermer lightbox">
+          <span class="fas fa-times"></span>
+        </button>
+      </div>
     </section>
     <!-- increment likes and price for day -->
     <aside class="likes-and-price"></aside>

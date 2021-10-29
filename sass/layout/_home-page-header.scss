@@ -5,6 +5,7 @@ header {
   margin: 0em 6em;
   #logo {
     margin-top: 0.62em;
+    width: 15em;
   }
   nav {
     @include tags;
@@ -62,6 +63,17 @@ header {
     margin: 0 2em;
     nav {
       margin-left: 5%;
+    }
+  }
+}
+
+/* For screen smaller than 560px */
+@media screen and (max-width: 560px) {
+  header {
+    #logo {
+      img {
+        width: 10em;
+      }
     }
   }
 }

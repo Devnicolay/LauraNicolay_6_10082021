@@ -5,7 +5,7 @@ import { ApiFisheye } from "../api-fisheye.js";
  */
 const lightbox = document.querySelector(".lightbox");
 const lightboxMediaContainer = document.querySelector(".lightbox-container");
-const crossLightbox = document.querySelector(".lightbox-close");
+const crossLightbox = document.querySelector(".close-next .lightbox-close");
 const chevronRight = document.querySelector(".fa-chevron-right");
 const chevronLeft = document.querySelector(".fa-chevron-left");
 

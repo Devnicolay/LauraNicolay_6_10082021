@@ -27,11 +27,11 @@ export class DropdownSelect {
     if (isExpanded === "true") {
       dropdownLinkUl.style.display = "none";
       dropdownButton.setAttribute("aria-expanded", "false");
-      arrowDown.innerHTML = `<i class="fas fa-chevron-up"></i>`;
     } else {
       dropdownLinkUl.style.display = "block";
       btnSort.style.display = "none";
       dropdownButton.setAttribute("aria-expanded", "true");
+      arrowDown.innerHTML = `<i class="fas fa-chevron-up"></i>`;
     }
   }
 
@@ -42,7 +42,6 @@ export class DropdownSelect {
     this.photographer.medias = this.photographer.medias.sort((a, b) => {
       return b.likes - a.likes;
     });
-    console.log("popularité");
     this.displaySortedMedias("popularité");
   }
 
@@ -114,5 +113,15 @@ export class DropdownSelect {
     sortPopularity.addEventListener("click", () => this.popularitySort());
     sortDate.addEventListener("click", () => this.dateSort());
     sortTitle.addEventListener("click", () => this.titleSort());
+    //
+    window.addEventListener("keydown", (event) => {
+      const isExpanded = dropdownButton.getAttribute("aria-expanded");
+      if (isExpanded === "true" && event.key === "Escape") {
+        dropdownButton.setAttribute("aria-expanded", "false");
+        dropdownLinkUl.style.display = "none";
+        btnSort.style.display = "block";
+        btnSort.focus();
+      }
+    });
   }
 }
