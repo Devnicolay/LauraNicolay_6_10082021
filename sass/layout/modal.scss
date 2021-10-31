@@ -2,11 +2,11 @@ body {
   .form-contact {
     display: none;
     .modal {
+      z-index: 2;
       position: fixed;
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 1;
       left: 0;
       top: 0;
       height: 100%;

@@ -98,6 +98,13 @@ header nav .tags a:link {
     margin-left: 5%;
   }
 }
+/* For screen smaller than 700px */
+@media screen and (max-width: 700px) {
+  header nav {
+    margin-top: 2em;
+    margin-left: 0;
+  }
+}
 /* For screen smaller than 560px */
 @media screen and (max-width: 560px) {
   header #logo img {
@@ -313,7 +320,7 @@ main .scroll-link a {
   padding: 0em 1em 0em 1em;
   position: absolute;
   left: 100px;
-  z-index: 10;
+  z-index: 1;
 }
 #main-page-photographer .select-filters .dropdown-filters button {
   color: white;
@@ -432,10 +439,6 @@ main .scroll-link a {
 }
 /* For screen smaller than 600px */
 @media screen and (max-width: 600px) {
-  header #logo {
-    margin-top: 2.1em;
-  }
-
   #main-page-photographer {
     margin: 2em 1em;
   }
@@ -495,11 +498,11 @@ body .form-contact {
   display: none;
 }
 body .form-contact .modal {
+  z-index: 2;
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
   left: 0;
   top: 0;
   height: 100%;
