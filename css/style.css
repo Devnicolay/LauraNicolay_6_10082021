@@ -559,10 +559,8 @@ body .form-contact .modal .modal-content .header-form .close-form {
 body .form-contact .modal .modal-content .alert-msg {
   font-size: 1em;
   color: #700909;
-  margin-top: 0.62em;
-  margin-bottom: 0.44em;
+  margin-bottom: 1em;
   display: none;
-  white-space: pre-line;
 }
 body .form-contact .modal .modal-content #send {
   background-color: #901c1c;

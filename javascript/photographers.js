@@ -100,15 +100,13 @@ export class Photographer {
       media.likes--;
       media.clicked = false;
     }
-    const heart = document.querySelector(
-      `.number-heart[data-id="${media.id}"]`
-    );
-    heart.innerHTML = media.createLikeHtml();
+    const like = document.querySelector(`.number-heart[data-id="${media.id}"]`);
+    like.innerHTML = media.createLikeHtml();
 
     this.updateTotalLikes();
 
-    const hearts = heart.querySelector(".heart");
-    hearts.addEventListener("click", () => {
+    const heart = like.querySelector(".heart");
+    heart.addEventListener("click", () => {
       this.incrementLikeMedia(mediaId);
     });
   }
