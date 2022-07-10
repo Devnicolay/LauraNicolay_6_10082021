@@ -40,7 +40,7 @@ export class DropdownSelect {
    */
   popularitySort() {
     this.photographer.medias = this.photographer.medias.sort((a, b) => {
-      return b.likes - a.likes;
+      return b.likes - a.likes; // compared number : 1 - 2 ; 2 - 3 ; 3 - 4 ect...
     });
     this.displaySortedMedias("popularité");
   }
@@ -53,12 +53,12 @@ export class DropdownSelect {
       let x = a.date.toLowerCase();
       let y = b.date.toLowerCase();
       if (x < y) {
-        return -1;
+        return -1; // If less than 0, so -1 -> sorted a less than b
       }
       if (x > y) {
-        return 1;
+        return 1; // If more than 0, so 1 -> sorted b less than a
       }
-      return 0;
+      return 0; // a and b unchanged
     });
     this.displaySortedMedias("Date");
   }
@@ -71,12 +71,12 @@ export class DropdownSelect {
       let x = a.title.toLowerCase();
       let y = b.title.toLowerCase();
       if (x < y) {
-        return -1;
+        return -1; // If less than 0, so -1 -> sorted a less than b
       }
       if (x > y) {
-        return 1;
+        return 1; // If more than 0, so 1 -> sorted b less than a
       }
-      return 0;
+      return 0; // a and b unchanged
     });
     this.displaySortedMedias("Titre");
   }
